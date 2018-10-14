@@ -1,0 +1,23 @@
+$(document).ready(function(){
+let hash = window.location.hash;
+$('a').closest('li').removeClass('active');
+$('a[href=\"' + hash + '\"]').closest('li').addClass('active');
+
+
+    $("a[href^='#']").click(function(e) {
+        var position = $($(this).attr("href")).offset().top ;
+        $("body, html").animate({
+            scrollTop: position - 100
+        } ,800 );
+    });
+    $(".owl-carousel").owlCarousel({
+        navigation : true,
+        slideSpeed : 300,
+        paginationSpeed : 400,
+        singleItem: true,
+        pagination: true,
+        // navContainer: '#customNav',
+        // dotsContainer: '#customDots',
+        items:1
+    });
+});

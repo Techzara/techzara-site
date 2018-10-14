@@ -1,0 +1,125 @@
+{% extends 'backoffice/base_admin.html.twig' %}
+
+{% block title %}{{ parent() }} Liste des slides {% endblock %}
+
+{% set menu_slide      = true %}
+{% set menu_slide_list = true %}
+
+{% block body %}
+    {% for flashMessage in app.session.flashbag.get('success') %}
+        <div class="callout callout-success">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+    {% for flashMessage in app.session.flashbag.get('error') %}
+        <div class="callout callout-danger">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+    
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">                    
+                    <div class="list-count">
+                        <span class="title-count-text"> TOTAL: </span><span class="title-count"></span>
+                    </div>
+                </div>
+
+                {# Bouton création #}
+                <div class="row add-btn-top-list">
+                    <a href="{{ path('slide_new') }}" onclick=";">
+                        <button class="btn btn-primary">
+                            <i class="fa fa-plus"></i>
+                            Créer un slide
+                        </button>
+                    </a>
+                </div>
+                
+                <form action="{{ path('slide_delete_group') }}" method="POST" class="form-search">
+                    <div class="box-body table-responsive">
+                        <table id="list-slide" class="table table-bordered table-striped table-condensed">
+                            <thead>
+                                 <tr>
+                                     <th></th>
+                                     <th>Première titre</th>
+                                     <th>Seconde titre</th>
+                                     <th>Troisième titre</th>
+                                     <th>Image</th>
+                                     <th>Action</th>
+                                 </tr>
+                            </thead>
+                            <tbody>
+                                {% for slide in slides %}
+                                    <tr>
+                                        <td class="text-center">
+                                            <input type="checkbox" value="{{ slide.id }}" name="delete[]" />
+                                        </td>
+                                        <td>{{ slide.sldFirstTitle }}</td>
+                                        <td>{{ slide.sldSecondTitle }}</td>
+                                        <td>{{ slide.sldThirdTitle }}</td>
+                                        <td>
+                                            {% if slide.sldImageUrl and file_exists(web_path ~ slide.sldImageUrl) %}
+                                                <img style="max-width: 100px;" class="img-responsive"
+                                                     src="{{ slide.sldImageUrl }}" />
+                                            {% else %}
+                                                Aucun
+                                            {% endif %}
+                                        </td>
+                                        <td>
+                                            <a class="btn btn-primary" title="Modifier"
+                                               href="{{ path('slide_edit', { 'id': slide.id }) }}">
+                                                <i class="fa fa-edit"></i>
+                                            </a>
+                                            <a class="btn btn-danger remove-elt" title="Supprimer"
+                                               href="{{ path('slide_delete', { 'id': slide.id }) }}">
+                                                <i class="fa fa-trash"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+
+                        {# Bouton suppression #}
+                        <a href="#">
+                            <button type="submit" name="_group_delete" class="btn btn-danger delete-btn">
+                                <i class="fa fa-trash"></i>
+                                Supprimer la sélection
+                            </button>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    
+    <script type="text/javascript">
+        $(function () {
+            $('#list-slide').DataTable(
+            {
+                "aaSorting": [],
+                "bProcessing": true,
+                "bFilter": true,
+                "oLanguage": {
+                    "sProcessing": "Chargement...",
+                    "oPaginate": {
+                        "sPrevious": "Précédent", // This is the link to the previous page
+                        "sNext": "Suivant", // This is the link to the next page
+                    },
+                    "sSearch": "Filtrer: ",
+                    "sLengthMenu": "Afficher _MENU_ enregistrement par page",
+                    "sEmptyTable": "Aucun slide trouvé",
+                    "sInfo": "Voir _TOTAL_ de _PAGE_ pour _PAGES_ entrées",
+                },
+                "footerCallback": function ( row, data, start, end, display ) {
+                    $('.title-count').html(display.length);
+                }
+            });
+        });            
+    </script>
+{% endblock %}

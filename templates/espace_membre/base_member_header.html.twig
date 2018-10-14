@@ -1,0 +1,70 @@
+<div class="nav-mobile fixed">
+    <div class="mobile-sticky">
+        <div class="inner-sticky">
+            <ul>
+                <li>
+                    <div class="icon-btn trigger">
+                        <i class="fa fa-bars fa-2x"></i>
+                    </div>
+                </li>
+                <li><a href="tel:1234567890"><i class="fa fa-phone fa-2x"></i></a></li>
+                <li><a href="mailto:email@yourwebsite.com"><i class="fa fa-envelope fa-2x"></i></a></li>
+            </ul>
+        </div>
+    </div>
+    <nav id="slide-menu">
+        <div class="icon-btn slide-close"><i class="fas fa-times"></i></div>
+        <div class="menu">
+            <ul>
+                <li><a href="{{ path('home_index') }}"><span>{{ 'header.menu.home'|trans }}</span></a></li>
+                <li><a href="{{ path('fonctionnement_front_show') }}"><span>{{ 'header.menu.fonctionnement'|trans }}</span></a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <span>{{ 'header.menu.services'|trans }}</span> <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        {{ render(controller('FrontBundle:LvHeader:listService')) }}
+                    </ul>
+                </li>
+                <li><a href="{{ path('realisations_front_show') }}"><span>{{ 'header.menu.achievements'|trans }}</span></a></li>
+                <li><a href="{{ path('contact_send_mail') }}"><span>{{ 'header.menu.contact'|trans }}</span></a></li>
+                <li><a href="tel:0320532608" class="kl-rappel"><span>{{ 'header.menu.rappel'|trans }}</span></a></li>
+                <li><a href="{{ path('tz_login') }}"><span>{{ 'header.menu.member'|trans }}</span></a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+<header id="id-header" class="fixed">
+    <div class="container">
+        <div class="kl-logo relative pull-left">
+            <a href="{{ path('home_index') }}">
+                <img src="{{ asset('frontoffice/images/logo.svg') }}" alt="logo" width="267"/>
+            </a>
+        </div>
+        <div class="pull-right kl-nav-block">
+            <nav class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="{{ path('home_index') }}"><span>{{ 'header.menu.home'|trans }}</span></a></li>
+                    <li><a href="{{ path('fonctionnement_front_show') }}"><span>{{ 'header.menu.fonctionnement'|trans }}</span></a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span>{{ 'header.menu.services'|trans }}</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            {{ render(controller('FrontBundle:LvHeader:listService')) }}
+                        </ul>
+                    </li>
+                    <li><a href="{{ path('realisations_front_show') }}"><span>{{ 'header.menu.achievements'|trans }}</span></a></li>
+                    <li><a href="{{ path('contact_send_mail') }}"><span>{{ 'header.menu.contact'|trans }}</span></a></li>
+                    <li><a href="tel:0320532608" class="kl-rappel"><span>{{ 'header.menu.rappel'|trans }}</span></a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="absolute kl-devis-bloc">
+        {{ render(controller('FrontBundle:DevContactDevis:sendMail')) }}
+    </div>
+    <a href="{{ path('fos_user_security_logout') }}" class="absolute kl-member-area"><i class="fa fa-sign-out"></i> </a>
+</header>
+<div class="kl-empty"></div>

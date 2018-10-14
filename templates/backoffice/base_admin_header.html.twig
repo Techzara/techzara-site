@@ -1,0 +1,66 @@
+<header class="main-header">
+    <!-- Logo -->
+    <a href="{% if app.user.tzRole.id == constant("App\\Techzara\\Service\\MetierManagerBundle\\Utils\\RoleName::ID_ROLE_ADMIN_SITE") %}{{ path('home_site_index') }}{% endif %}"
+       class="logo" target="_blank" title="Voir le site">
+        <img src="{{ asset('img/header.png') }}" style="max-width: 50px" alt="logo" />
+    </a>
+
+    <nav class="navbar navbar-static-top">
+        <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="sr-only">Toggle navigation</span>
+        </a>
+
+        <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+                {# Profil #}
+                <li class="dropdown user user-menu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        {% set photo_profil = app.user.usrPhoto %}
+                        {% if photo_profil is null %}
+                            {% set photo_profil = asset('img/no-image-available.png') %}
+                        {% endif %}
+                        <img src="{{ photo_profil|imagine_filter('photo_user_profil') }}"
+                             class="user-image" alt="{{ app.user.username }}">
+
+                        <span class="hidden-xs">
+                            {% if app.user %}
+                                Bienvenue <b>{{ app.user.username }}</b>
+                            {% endif %}
+                        </span>
+                        <i class="fa fa-angle-down"></i>
+                    </a>
+
+                    <ul class="dropdown-menu">
+                        <!-- User image -->
+                        <li class="user-header">
+                            <img src="{{ photo_profil|imagine_filter('photo_user_profil') }}"
+                                 class="img-circle" alt="User Image">
+                            <p>
+                                {% if app.user %}
+                                    {{ app.user.username }}<br>
+                                    {{ app.user.tzRole.rlName }}
+                                {% endif %}
+                            </p>
+                        </li>
+
+                        <!-- Menu Footer-->
+                        <li class="user-footer">
+                            <div class="pull-left">
+                                <a href="{{ path('user_edit', { 'id': app.user.id }) }}"
+                                   class="btn btn-default btn-flat">
+                                    <i class="fa fa-user"></i> Profil
+                                </a>
+                            </div>
+                            <div class="pull-right">
+                                <a href="{{ path('fos_user_security_logout') }}"
+                                   class="btn btn-default btn-flat">
+                                    <i class="fa fa-sign-out"></i> Deconnecter
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>

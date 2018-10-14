@@ -1,0 +1,29 @@
+faq_index:
+    path:     /
+    defaults: { _controller: "AdminBundle:DevFaq:index" }
+    methods:  GET
+
+faq_new:
+    path:     /new
+    defaults: { _controller: "AdminBundle:DevFaq:new" }
+    methods:  [GET, POST]
+
+faq_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AdminBundle:DevFaq:edit" }
+    methods:  [GET, POST]
+
+faq_update:
+    path:     /{id}/update
+    defaults: { _controller: "AdminBundle:DevFaq:update" }
+    methods:  [POST, PUT]
+
+faq_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AdminBundle:DevFaq:delete" }
+    methods:  [GET, DELETE]
+
+faq_delete_group:
+    path:     /delete-group
+    defaults: { _controller: "AdminBundle:DevFaq:deleteGroup" }
+    methods:  POST

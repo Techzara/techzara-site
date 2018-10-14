@@ -1,0 +1,36 @@
+/* 
+    Created on : 27 déc. 2016, 09:44:32
+    Author     : Niaina
+*/
+body.login-page{
+    background: linear-gradient(to right, #3cadba, #1d8d9a);
+    overflow: hidden;
+}
+.login-logo > img {
+    width: 120px;
+}
+
+.login-page, .register-page {
+    background: white;
+}
+
+.login-box-body, .register-box-body {
+    background: transparent;
+}
+.margin-bottom-15{ margin-bottom:15px;}
+#login-form-submit.btn-primary,
+.kl-form-login .kl-btn-submit{ background:#ff8268; box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26); border:none; padding: 10px; margin-top:35px; transition:0.5s; border-radius: 0; display: block; width: 100%; color: #fff;}
+#login-form-submit.btn-primary:hover{ background:#fff; color:#5db6d7;}
+#login-form #password, #login-form #username, #login-form #username::placeholder,
+#login-form #password::placeholder, .kl-form-login input[name="user-email"]::placeholder{ color:#fff;}
+#login-form #username, #login-form #password, .kl-form-login input[name="user-email"]{ background:transparent;
+    border:none; border-bottom:1px solid #fff; color: #fff;}
+.glyphicon-envelope::before, .glyphicon-lock::before{ color:#fff;}
+.login-box{ margin:10% auto 0px auto;}
+.form-gourp.relative{position: relative;}
+.kl-forgot-pswd{ text-decoration: underline; color: #fff;}
+.kl-form-login .kl-extra .kl-forgot-pswd{background:#fff;text-align: center; display: block; box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+    border:none; padding: 10px; margin-top:14px; transition:0.5s; border-radius: 0; display: block; width: 100%; color: #ff8268; text-decoration: none; font-weight: 500;}
+.kl-form-login .kl-extra .kl-forgot-pswd:hover{background:#ff8268; color: #fff;}
+.form-group.has-feedback > a{color: #fff; text-decoration: underline;}
+.form-group.has-feedback > .pull-left > a {color: #fff; text-decoration: underline; margin-top: 13px; display: block;}

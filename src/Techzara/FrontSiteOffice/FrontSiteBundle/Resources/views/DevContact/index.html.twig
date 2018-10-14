@@ -1,0 +1,138 @@
+{% extends 'front_site_office/base_front.html.twig' %}
+
+{% block title %} Contact - Techzara {% endblock %}
+
+{% block body %}
+    <section class="kl-banner-contact"></section>
+    <section class="kl-contact">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12 kl-contact-col1">
+                    <div class="kl-info-contact">
+                        {% if cms_contact.translate('fr').cmstContent|striptags != '' %}
+                            {{ cms_contact.translate('fr').cmstContent|raw }}
+                        {% else %}
+                            <h3>
+                                <strong>Nous</strong><br/>
+                                Contacter
+                            </h3>
+                            <ul class="info-mail">
+                                <li id="id-mail">
+                                    <a href="mailto:commercial@techzara.fr">commercial@techzara.fr</a>&nbsp;&nbsp;
+                                    <span class="border-right"></span>&nbsp;&nbsp;
+                                    <span><img src="{{ asset('front_site_office/images/close-envelope.png') }}" width="30px"></span>
+                                </li>
+                                <li id="id-tel">
+                                    <a href="tel:+261 32 05 326 08">+261 32 05 326 08</a>
+                                    <span><img src="{{ asset('front_site_office/images/phone-receiver.png') }}" width="30px"></span>
+                                </li>
+                            </ul>
+                        {% endif %}
+                    </div>
+                </div>
+                <div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12 kl-contact-col2">
+                    {% for flashMessage in app.session.flashbag.get('success') %}
+                        <div class="alert alert-success">
+                            {{ flashMessage }}
+                        </div>
+                    {% endfor %}
+                    {% for flashMessage in app.session.flashbag.get('error') %}
+                        <div class="alert alert-danger">
+                            {{ flashMessage }}
+                        </div>
+                    {% endfor %}
+                    <form method="POST" action="{{ path('contact_site_send_mail') }}" id="contact-form"
+                          enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="form-group col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+                                <input type="text" class="form-control"  id="lastname" name="lastname"
+                                       required placeholder="Nom*">
+                            </div>
+                            <div class="form-group col-xl-4 col-lg-4 col-md-4 col-sm-12 col-12">
+                                <input type="text" class="form-control" id="firstname" name="firstname"
+                                       required placeholder="Prénom*">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12">
+                                <input type="email" class="form-control" id="email" name="email"
+                                       required placeholder="E-mail*">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12">
+                                <input type="tel" class="form-control" id="phone" name="phone"
+                                       required placeholder="Télephone*">
+                            </div>
+                        </div>
+                        <h4 class="kl-choice">Vous êtes intéressé(e) par</h4>
+                        <div class="kl-check row">
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label">
+                                    <input type="checkbox" name="service_type[]" value="Référencement" class="form-check-input" >Référencement
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label">
+                                    <input type="checkbox" name="service_type[]" value="Développement"  class="form-check-input" >Développement
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label">
+                                    <input type="checkbox" name="service_type[]" value="Newsletter"  class="form-check-input" >Newsletter
+                                </label>
+                            </div>
+                        </div>
+                        <div class="kl-check row">
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label">
+                                    <input type="checkbox" name="service_type[]"  value="Réseaux sociaux" class="form-check-input" >Réseaux sociaux
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label">
+                                    <input type="checkbox" name="service_type[]" value="Application mobile"  class="form-check-input" >Application mobile
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label">
+                                    <input type="checkbox" name="service_type[]" value="Site vitrine" class="form-check-input" >Site vitrine
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12">
+                            <input type="file" name="url_file" class="form-control" id="fichier" />
+                        </div>
+                        <div class="form-group col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12">
+                            <textarea class="form-control"  id="message" name="message"
+                                      required placeholder="Votre message"></textarea>
+                        </div>
+
+                        <div class="form-group col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12">
+                            <small>
+                                <p>{{ 'contact.info.part1'|trans }}</p>
+                                <p>{{ 'contact.info.part2'|trans }}</p>
+                            </small>
+                        </div>
+                        <button type="submit" class="btn btn-primary submit">Envoyer</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    <!-- Bootstrap Validator -->
+    <script src="{{ asset('plugins/bootstrap-validator/bootstrapValidator.js') }}"></script>
+    {% if  app.request.get('_locale')=='fr' %}
+        <script src="{{ asset('plugins/bootstrap-validator/language/fr_FR.js') }}"></script>
+    {% elseif app.request.get('_locale')=='en' %}
+        <script src="{{ asset('plugins/bootstrap-validator/language/en_US.js') }}"></script>
+    {% endif %}
+
+    <!-- Validation formulaire -->
+    <script src="{{ asset('frontoffice/js/validation.contact.js') }}"></script>
+{% endblock %}

@@ -1,0 +1,134 @@
+{% spaceless %}
+    {% set aaData = {} %}
+    {% for service_client in values %}
+        {% set label_service = '' %}
+        {% if service_client.lvService %}
+            {% set label_service = service_client.lvService.srvLabel %}
+        {% endif %}
+
+        {% set nom_entreprise = '' %}
+        {% if service_client.lvUser %}
+            {% set nom_entreprise = service_client.lvUser.usrNomEntreprise %}
+        {% endif %}
+
+        {% set payment = 'Non payé' %}
+        {% if service_client.srvCltIsPayed %}
+            {% set lien_facture = service_client.factureUrl %}
+            {% set payment = 'Payé et facturé <a target="_blank" href=' ~ lien_facture ~ ' title="Voir">Voir</a>' %}
+        {% endif %}
+
+        {% set status = 'Analyse' %}
+        {% if service_client.srvCltStatusValidation == 1 %}
+            {% set status = 'Bon commande' %}
+        {% elseif service_client.srvCltStatusValidation == 2 %}
+            {% set status = 'Fichiers non conforme' %}
+        {% elseif service_client.srvCltStatusValidation == 3 %}
+            {% set status = 'Ajustement panier de commande' %}
+        {% elseif service_client.srvCltStatusValidation == 4 %}
+            {% set status = 'Développement' %}
+        {% elseif service_client.srvCltStatusValidation == 5 %}
+            {% set status = 'Tests' %}
+        {% elseif service_client.srvCltStatusValidation == 6 %}
+            {% set lien_livre = service_client.srvCltLienLivre %}
+            {% set status = 'Lien livré <a target="_blank" href=' ~ lien_livre ~ ' title="Voir">Voir</a>' %}
+        {% elseif service_client.srvCltStatusValidation == 7 %}
+            {% set lien_code_source = service_client.srvCltLienCodeSource %}
+            {% set status = 'Finalisé
+                            <a target="_blank" href=' ~ lien_code_source ~ ' title="Voir code source">
+                                Voir code source
+                            </a>' %}
+        {% endif %}
+
+        {%
+            set value = [
+                nom_entreprise,
+                label_service,
+                '<span id="id-service-client-paiement-' ~ service_client.id ~ '">' ~ payment ~ '</span>',
+                service_client.srvCltDate|date('d/m/Y H:i'),
+                '<span id="id-service-client-' ~ service_client.id ~ '">' ~ status ~ '</span>',
+                '<a class="btn btn-default" title="Voir"
+                   href="' ~ path('service_client_detail', { 'id': service_client.id }) ~ '">
+                    <i class="fa fa-eye"></i>
+                </a>
+                <a class="btn btn-primary" title="Modifier"
+                   href="' ~ path('service_client_edit', { 'id': service_client.id }) ~ '">
+                    <i class="fa fa-edit"></i>
+                </a>
+                <a class="btn btn-danger remove-elt" title="Modifier"
+                   href="' ~ path('service_client_delete', { 'id': service_client.id }) ~ '">
+                    <i class="fa fa-trash"></i>
+                </a>
+                <span class="btn-group kl-status-service-client">
+                    <button type="button" class="btn btn-info">Statut</button>
+                    <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown">
+                        <span class="caret"></span>
+                        <span class="sr-only">Toggle Dropdown</span>
+                    </button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li>
+                            <a class="kl-service-client" href="javascript:void(0)"
+                                id-service-client="' ~ service_client.id ~ '");" id-status="1">
+                                Bon de commande
+                            </a>
+                        </li>
+                        <li>
+                            <a class="kl-service-client" href="javascript:void(0)"
+                                id-service-client="' ~ service_client.id ~ '");" id-status="0">
+                                Analyse
+                            </a>
+                        </li>
+                        <li>
+                            <a class="kl-service-client" href="javascript:void(0)"
+                                id-service-client="' ~ service_client.id ~ '");" id-status="3">
+                                Ajustement panier de commande
+                            </a>
+                        </li>
+                        <li>
+                            <a class="kl-cancel-service-client" href="javascript:void(0)"
+                                id-service-client="' ~ service_client.id ~ '");" id-status="2">
+                                Fichiers non conformes
+                            </a>
+                        </li>
+                        <li>
+                            <a class="kl-service-client" href="javascript:void(0)"
+                                id-service-client="' ~ service_client.id ~ '");" id-status="4">
+                                Développement
+                            </a>
+                        </li>
+                        <li>
+                            <a class="kl-service-client" href="javascript:void(0)"
+                                id-service-client="' ~ service_client.id ~ '");" id-status="5">
+                                Tests
+                            </a>
+                        </li>
+                        <li>
+                            <a class="kl-lien-livre-service-client" href="javascript:void(0)"
+                                id-service-client="' ~ service_client.id ~ '");" id-status="6">
+                                Lien livré
+                            </a>
+                        </li>
+                        <li>
+                            <a class="kl-finalise-service-client" href="javascript:void(0)"
+                                id-service-client="' ~ service_client.id ~ '");" id-status="7">
+                                Finalisé
+                            </a>
+                        </li>
+                    </ul>
+                </span>
+                <span id="id-service-client-send-email-' ~ service_client.id ~ '"></span>
+                <a class="btn btn-success kl-send-email-connexion" title="Envoyer email l\'accès espace membre"
+                    href="javascript:void(0)" id-service-client="' ~ service_client.id ~ '");">
+                    <i class="fa fa-envelope"></i>
+                </a>
+                <a class="btn btn-primary kl-send-email-paiement" title="Envoyer email la confirmation paiement"
+                    href="javascript:void(0)" id-service-client="' ~ service_client.id ~ '");">
+                    <i class="fa fa-money"></i>
+                </a>'
+            ]
+        %}
+        {% set aaData = aaData|merge({ (loop.index0): value }) %}
+    {% endfor %}
+{% endspaceless %}
+
+{% set data_json = data|merge({ 'aaData': aaData} ) %}
+{{ data_json|json_encode|raw }}

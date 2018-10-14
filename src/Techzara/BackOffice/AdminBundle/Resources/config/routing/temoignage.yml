@@ -1,0 +1,29 @@
+temoignage_index:
+    path:     /
+    defaults: { _controller: "AdminBundle:DevTemoignage:index" }
+    methods:  GET
+
+temoignage_new:
+    path:     /new
+    defaults: { _controller: "AdminBundle:DevTemoignage:new" }
+    methods:  [GET, POST]
+
+temoignage_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AdminBundle:DevTemoignage:edit" }
+    methods:  [GET, POST]
+
+temoignage_update:
+    path:     /{id}/update
+    defaults: { _controller: "AdminBundle:DevTemoignage:update" }
+    methods:  [POST, PUT]
+
+temoignage_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AdminBundle:DevTemoignage:delete" }
+    methods:  [GET, DELETE]
+
+temoignage_delete_group:
+    path:     /delete-group
+    defaults: { _controller: "AdminBundle:DevTemoignage:deleteGroup" }
+    methods:  POST

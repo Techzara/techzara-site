@@ -1,0 +1,37 @@
+{% extends "UserBundle::layout.html.twig" %}
+
+{% block fos_user_content %}
+    {# S'il y a une erreur, on l'affiche dans un joli cadre #}
+    {% if error is defined %}
+        <div class="alert alert-danger">
+            {{ error.messageKey|trans(error.messageData, 'security') }}
+        </div>
+    {% endif %}
+
+    <form action="{{ path('fos_user_security_check') }}" method="post" id="login-form">
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" />
+
+        <div class="form-group has-feedback">
+            <input type="text" class="form-control" placeholder="Nom d'utilisateur"
+                   name="_username" value="" id="username"/>
+            <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+        </div>
+        <div class="form-group has-feedback">
+            <input type="password" class="form-control" placeholder="Mot de passe"
+                   name="_password" id="password"/>
+            <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+        </div>
+        <div class="form-group has-feedback">
+            <a href="{{ path('tz_resetting_password') }}">
+                Mot de passe oublié  ?
+            </a>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block btn-flat"
+                id="login-form-submit">
+            Connexion
+        </button>
+    </form>
+{% endblock %}
+
+	
+

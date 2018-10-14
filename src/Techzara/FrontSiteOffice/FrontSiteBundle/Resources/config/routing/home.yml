@@ -1,0 +1,29 @@
+home_site_index:
+    path:     /
+    defaults: { _controller: "FrontSiteBundle:DevHome:index" }
+    methods:  GET
+
+home_site_applications:
+    path:    /applications/
+    defaults: { _controller: "FrontSiteBundle:DevHome:application" }
+
+home_site_confiance:
+    path:     /ils-nous-font-confiance/
+    defaults: { _controller: "FrontSiteBundle:DevHome:confiance" }
+    methods:  GET
+
+home_site_site:
+    path:     /site/
+    defaults: { _controller: "FrontSiteBundle:DevHome:site" }
+    methods:  GET
+
+home_site_ccm:
+    path:     /comment-ca-marche/
+    defaults: { _controller: "FrontSiteBundle:DevHome:ccm" }
+    methods:  GET
+
+home_site_temoignage:
+    path:     /temoignages/
+    defaults: { _controller: "FrontSiteBundle:DevHome:temoignage" }
+    methods:  GET
+

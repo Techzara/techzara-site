@@ -1,0 +1,62 @@
+{% extends 'front_site_office/base_front.html.twig' %}
+
+{% block title %} Témoignages - Techzara {% endblock %}
+
+{% block body %}
+    <section class="tz-bnr-INFC wow pulse">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 offset-md-2 tz-noPadding">
+                    <ul class="tz-tem">
+                        <li class="tz-active">
+                            <a href="{{ path('home_site_confiance') }}"><span>Ils nous font confiance</span></a>
+                        </li>
+                        <li class="tz-disable">
+                            <a href="{{ path('home_site_temoignage') }}"><span>Témoignages</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="tz-title-img">
+        <div class="container">
+            <div class="row">
+                <img src="{{ asset('front_site_office/images/comunautes-6.jpg') }}" class="img-fluid" alt="lvx">
+            </div>
+        </div>
+    </section>
+    <section class="tz-carousel-tem">
+        <div class="container">
+            <div class="row">
+                <h1>TÉMOIGNAGES<span class="tz-line">&nbsp;</span></h1>
+                <div id="temoignage" class="carousel slide" data-ride="carousel">
+                    <ul class="carousel-indicators">
+                        <li data-target="#temoignage" data-slide-to="0" class="active"></li>
+                        <li data-target="#temoignage" data-slide-to="1"></li>
+                        <li data-target="#temoignage" data-slide-to="2"></li>
+                    </ul>
+                    <div class="carousel-inner">
+                        {% for key, temoignage in temoignages %}
+                            <div class="carousel-item {% if key == 0 %}active{% endif %}">
+                                <p>{{ temoignage.tmMessage|nl2br }}</p>
+                                <div class="tz-aut">
+                                    <p>
+                                        <span>{{ temoignage.tmNomPersonne }}</span>
+                                        {{ temoignage.tmPostePersonne }}
+                                    </p>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <a class="carousel-control-prev" href="#temoignage" data-slide="prev">
+                        <i class="fas fa-angle-left"></i>
+                    </a>
+                    <a class="carousel-control-next" href="#temoignage" data-slide="next">
+                        <i class="fas fa-angle-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

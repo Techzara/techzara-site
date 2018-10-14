@@ -1,0 +1,147 @@
+{% extends 'front_site_office/base_front.html.twig' %}
+
+{% block title %} Comment ça marche ? - Techzara {% endblock %}
+
+{% block body %}
+    <section class="tz-banner wow pulse"></section>
+
+    {% if cms.translate('fr').cmstContent|striptags != '' %}
+        {{ cms.translate('fr').cmstContent|raw }}
+    {% else %}
+        <section class="tz-bg-grey-head">
+            <div class="container-fluid tz-content-grey">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 tz-col-1">
+                        <h1>
+                            <strong>Comment</strong><br/>
+                            ça marche?
+                        </h1>
+                        <p>Regardez comment ça fonctionne ci-dessous</p>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 tz-col-2">
+                        <a href="{{ path('contact_site_send_mail') }}">
+                            <img src="{{ asset('front_site_office/images/audit_gratuit_bouton.jpg') }}" class="img-fluid">
+                        </a>
+                        <button type="button" class="btn btn-primary btn-lg tz-devis" onclick="javascript:location.href='http://techzara.fr/temoignages/'">Faire un devis</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="tz-specification">
+            <div class="container">
+                <div class="row tz-content">
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <h3>
+                            <span class="tz-number">1</span><br/>
+                            Cahier des<br/> charges
+                        </h3>
+                        <p>
+                            Parlez-nous de votre entreprise et dîtes-nous ce dont vous avez besoin en terme de design graphique, de technologies et d’architecture.<br>
+                            Prenez votre temps. Plus votre projet sera détaillé, plus les designers et les développeurs pourront vous proposer des solutions pertinentes.
+                        </p>
+                    </div>
+                    <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                        <img src="{{ asset('front_site_office/images/etape-01.jpg') }}" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="tz-design">
+            <div class="container">
+                <div class="row tz-content-design">
+                    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-12">
+                        <img src="{{ asset('front_site_office/images/etape-design.jpg') }}" class="img-fluid">
+                    </div>
+                    <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-12">
+                        <h3>
+                            <span class="tz-number">2</span><br/>
+                            Le design
+                        </h3>
+                        <p>
+                            Une fois le cahier des charges et l’estimation réalisés, nos designers soumettent des designs adaptés à votre identité de marque et à votre projet. Découvrez nos concepts et laissez-nous vos commentaires pour un résultat optimal.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="tz-development">
+            <div class="container">
+                <div class="row tz-content-development">
+                    <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-12 tz-col-3-1">
+                        <h3>
+                            <span class="tz-number">3</span><br/>
+                            Le développement
+                        </h3>
+                        <p>
+                            Une fois les planches validées, nous attaquons le développement du front-office et du back-office.<br>
+                            Nous effectuons des tests et des livraisons régulières des différents modules.
+                        </p>
+                    </div>
+                    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-12">
+                        <img src="{{ asset('front_site_office/images/seo-etape2.jpg') }}" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="tz-test">
+            <div class="container">
+                <div class="row tz-content-test">
+                    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-12">
+                        <img src="{{ asset('front_site_office/images/test02.jpg') }}" class="img-fluid">
+                    </div>
+                    <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-12">
+                        <h3>
+                            <span class="tz-number">4</span><br/>
+                            Les tests
+                        </h3>
+                        <p>
+                            Nous réalisons des tests d’intégration. Le but des tests d’intégrations est de vérifier la fonctionnalité, la performance et la fiabilité des principaux éléments de conception. Les erreurs peuvent être facilement suivies et corrigées.
+                        </p>
+                        <p>
+                            Nous faisons également des tests système de fonctionnement.<br>
+                            Cela comprend des tests du système, des tests fonctionnels, tests GUI, des tests de compatibilité inter-navigateur ainsi que des tests d’acceptation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="tz-livraison">
+            <div class="container">
+                <div class="row tz-content-livraison">
+                    <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-12">
+                        <h3>
+                            <span class="tz-number">5</span><br/>
+                            La livraison &amp;<br>
+                            la passation
+                        </h3>
+                        <p>
+                            Nous vous livrons vos accès et toutes les planches graphiques. Nous vous aiderons aussi pour la publication à différents App Stores comme iTunes, Google play Store et vous formerons à la prise en main de votre back-office pour pouvoir mettre à jour vos solutions par vous même.
+                        </p>
+                    </div>
+                    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-12">
+                        <img src="{{ asset('front_site_office/images/livraison.png') }}" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="tz-service">
+            <div class="container">
+                <div class="row tz-content-service">
+                    <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-12">
+                        <img src="{{ asset('front_site_office/images/call-support3.png') }}" class="img-fluid">
+                    </div>
+                    <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-12">
+                        <h3>
+                            <span class="tz-number">6</span><br/>
+                            Le service<br>
+                            après vente
+                        </h3>
+                        <p>
+                            La fin du cycle de vie du produit ne se termine pas avec l’arrêt de l’ordre de travail. Nous nous soucions de votre succès et de l’obtention du plus haut niveau de valeur pour votre produit, de sorte que nous restons avec vous pendant une période de 3 mois pour soutenir votre produit en cas de complications.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% endif %}
+{% endblock %}

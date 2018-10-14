@@ -1,0 +1,84 @@
+{% extends 'backoffice/base_admin.html.twig' %}
+
+{% form_theme form 'form/fields.html.twig' %}
+
+{% form_theme form.lvUsers _self %}
+{% form_theme form.lvTesters _self %}
+{%- block choice_widget_collapsed -%}
+    {%- if required and placeholder is none and not placeholder_in_choices and not multiple -%}
+        {% set required = false %}
+    {%- endif -%}
+    <span>
+        <select class="select2" data-placeholder="Choisir" style="width: 100%;" oninvalid="setErrorClass($(this));"
+                {{ block('widget_attributes') }}{% if multiple %} multiple="multiple"{% endif %}>
+            {%- if placeholder is not none -%}
+                <option value=""{% if required and value is empty %} selected="selected"{% endif %}>
+                    {{ placeholder != '' ? placeholder|trans({}, translation_domain) }}
+                </option>
+            {%- endif -%}
+            {%- if preferred_choices|length > 0 -%}
+                {% set options = preferred_choices %}
+                {{- block('choice_widget_options') -}}
+                {%- if choices|length > 0 and separator is not none -%}
+                    <option disabled="disabled">{{ separator }}</option>
+                {%- endif -%}
+            {%- endif -%}
+            {%- set options = choices -%}
+            {{- block('choice_widget_options') -}}
+        </select>
+    </span>
+{%- endblock choice_widget_collapsed -%}
+
+{% block title %}{{ parent() }} Ajout Attribution service {% endblock %}
+
+{% set menu_user_service_client        = true %}
+{% set menu_user_service_client_create = true %}
+
+{% block body %}
+    {% for flashMessage in app.session.flashbag.get('success') %}
+        <div class="callout callout-success">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+    {% for flashMessage in app.session.flashbag.get('error') %}
+        <div class="callout callout-danger">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+    
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-primary">
+                {{ form_start(form) }}
+                    <div class="box-header">
+                        <h3 class="box-title">Créer une attribution service</h3>
+                    </div>
+                    
+                    <div class="box-body">
+                        {{ form_row(form.lvServiceClient) }}
+                        {{ form_row(form.lvUsers) }}
+                        {{ form_row(form.lvTesters) }}
+                        <hr>
+                        {{ form_row(form.usrSrvCltDateDebut) }}
+                        {{ form_row(form.usrSrvCltDateFinalisation) }}
+                        {{ form_row(form.usrSrvCltEstimation) }}
+                    </div>
+
+                    <div class="box-footer">
+                        <input type="submit" class="btn btn-primary" value="Enregistrer" name="new_user_service_client"/>
+                        <a href="{{ path('user_service_client_index') }}"
+                           class="btn btn-default pull-left btn-mini-rectif" >
+                            Retour à la liste
+                        </a>
+                    </div>                    
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    <script src="{{ asset('backoffice/js/edit.attribution.service.js') }}" type="text/javascript"></script>
+{% endblock %}

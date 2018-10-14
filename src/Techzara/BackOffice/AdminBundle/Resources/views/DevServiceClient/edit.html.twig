@@ -1,0 +1,128 @@
+{% extends 'backoffice/base_admin.html.twig' %}
+
+{% form_theme edit_form 'form/fields.html.twig' %}
+
+{% form_theme edit_form.lvServiceOptions _self %}
+{%- block choice_widget_collapsed -%}
+    {%- if required and placeholder is none and not placeholder_in_choices and not multiple -%}
+        {% set required = false %}
+    {%- endif -%}
+    <span>
+        <select class="select2" data-placeholder="Choisir" style="width: 100%;" oninvalid="setErrorClass($(this));"
+                {{ block('widget_attributes') }}{% if multiple %} multiple="multiple"{% endif %}>
+            {%- if placeholder is not none -%}
+                <option value=""{% if required and value is empty %} selected="selected"{% endif %}>
+                    {{ placeholder != '' ? placeholder|trans({}, translation_domain) }}
+                </option>
+            {%- endif -%}
+            {%- if preferred_choices|length > 0 -%}
+                {% set options = preferred_choices %}
+                {{- block('choice_widget_options') -}}
+                {%- if choices|length > 0 and separator is not none -%}
+                    <option disabled="disabled">{{ separator }}</option>
+                {%- endif -%}
+            {%- endif -%}
+            {%- set options = choices -%}
+            {{- block('choice_widget_options') -}}
+        </select>
+    </span>
+{%- endblock choice_widget_collapsed -%}
+
+{% block title %}{{ parent() }} Modification Service client {% endblock %}
+
+{% set menu_service_client        = true %}
+{% set menu_service_client_create = true %}
+
+{% block body %}
+    {% for flashMessage in app.session.flashbag.get('success') %}
+        <div class="callout callout-success">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+    {% for flashMessage in app.session.flashbag.get('error') %}
+        <div class="callout callout-danger">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-primary">
+                {{ form_start(edit_form, { 'attr': {'id': 'id-form-service-client', 'enctype': 'multipart/form-data'} }) }}
+                    <div class="box-header">
+                        <h3 class="box-title">Editer un service client</h3>
+                    </div>
+
+                    <div class="box-body">
+                        {{ form_row(edit_form.srvCltPrix) }}
+                        <hr>
+                        {{ form_row(edit_form.lvUser) }}
+                        {{ form_row(edit_form.lvService) }}
+                        <div class="row">
+                            <div class="col-sm-6 col-md-6 col-lg-4">
+                                <span id="id-loading-service-option"></span>
+                            </div>
+                        </div>
+                        {{ form_row(edit_form.lvServiceOptions) }}
+                        <hr>
+                        {{ form_row(edit_form.srvCltNbrPage) }}
+                        {{ form_row(edit_form.srvCltNbrPageDecline) }}
+                        {{ form_row(edit_form.srvCltDesc) }}
+                        {{ form_row(edit_form.srvCltProjectLink) }}
+                        <div class="row">
+                            <div class="col-sm-6 col-md-6 col-lg-4">
+                                <label for="tz_piece_jointe">Pièce jointe</label>
+                                <input multiple class="inputfile" id="id-lv-piece-jointe"
+                                       name="tz_piece_jointe[]" type="file">
+                                {% for service_client_jointe in service_client_jointes %}
+                                    {% if service_client_jointe %}
+                                        <div class="blc-image">
+                                            <span class="delete-image pull-left">
+                                                <a href="javascript:void(0);" id="file-{{ service_client_jointe.id }}"
+                                                   onClick="deleteFile({{ service_client_jointe.id }}, $(this));"
+                                                   class="btn_effacer"
+                                                   ajax-url="{{ path('service_client_delete_file_ajax') }}">
+                                                    <span>
+                                                        <i class="fa fa-times" aria-hidden="true"></i>
+                                                    </span>
+                                                </a>
+                                            </span>
+                                            <a href="{{ service_client_jointe.srvCltJtPath }}" title="Téléchargez"
+                                               target="_blank">
+                                                {{ service_client_jointe.srvCltJtPath[15:] }}
+                                            </a>
+                                            <br>
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <hr>
+                        {{ form_row(edit_form.srvCltDateLivraison) }}
+                    </div>
+
+                    <div class="box-footer">
+                        <input type="submit" class="btn btn-primary" value="Modifier" name="update_service_client"/>
+                        <a href="{{ path('service_client_list_not_validated') }}"
+                           class="btn btn-default pull-left btn-mini-rectif" >
+                            Retour à la liste
+                        </a>
+                    </div>
+                {{ form_end(edit_form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <!-- Delete file -->
+    <script src="{{ asset('backoffice/js/delete.file.js') }}" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        var _url_list_service_option_ajax = "{{ path('service_client_list_service_option_ajax') }}";
+        var _url_prix_commande_ajax = "{{ path('service_client_prix_commande_ajax') }}";
+    </script>
+    <script type="text/javascript" src="{{ asset('backoffice/js/edit.service.client.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('plugins/multifile/jquery.MultiFile.min.js') }}"></script>
+{% endblock %}

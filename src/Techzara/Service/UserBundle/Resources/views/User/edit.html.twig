@@ -1,0 +1,80 @@
+{% extends 'backoffice/base_admin.html.twig' %}
+
+{% form_theme edit_form 'form/custom_fields.html.twig' %}
+
+{% block title %}{{ parent() }} Modification Utilisateur {% endblock %}
+
+{% set menu_user        = true %}
+{% set menu_user_create = true %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-primary">
+                {{ form_start(edit_form) }}
+                    <div class="box-header">
+                        <h3 class="box-title">Editer un utilisateur</h3>
+                    </div>
+
+                    <div class="box-body">
+                        {{ form_row(edit_form.usrNomEntreprise) }}
+                        {{ form_row(edit_form.usrLastname) }}
+                        {{ form_row(edit_form.usrFirstname) }}
+                        {{ form_row(edit_form.usrAddress) }}
+                        {{ form_row(edit_form.email) }}
+                        {{ form_row(edit_form.usrPhone) }}
+                        {{ form_row(edit_form.usrPhoto) }}
+                        <div class="row">
+                            <div class="form-group">
+                                {% if user.usrPhoto %}
+                                    <div class="col-md-2 col-lg-2 col-xs-2 blc-image">
+                                        <span class="delete-image pull-right">
+                                            <a href="javascript:void(0);" id="file-{{ user.id }}"
+                                               onClick="deleteFile({{ user.id }}, $(this));" class="btn_effacer"
+                                               ajax-url="{{ path('user_delete_image_ajax') }}">
+                                                <span>
+                                                    <i class="fa fa-times" aria-hidden="true"></i>
+                                                </span>
+                                            </a>
+                                        </span>
+                                        <div class="image-container-block">
+                                            <img class="img-vignette img-responsive" src="{{ user.usrPhoto }}" />
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                        <div class="{% if not is_granted('ROLE_ADMIN') %}hidden{% endif %}">
+                            {{ form_row(edit_form.tzRole) }}
+                        </div>
+                        {{ form_row(edit_form.enabled) }}
+                        <hr>
+                        {{ form_row(edit_form.username) }}
+                        {{ form_row(edit_form.plainPassword.first) }}
+                        {{ form_row(edit_form.plainPassword.second) }}
+                    </div>
+                    <div class="box-footer">
+                        <input type="submit" class="btn btn-primary" value="Modifier" name="update_user"/>
+                        <a href="{{ path('user_index') }}"
+                           class="btn btn-default pull-left btn-mini-rectif" >
+                            Retour à la liste
+                        </a>
+                    </div>
+                {{ form_end(edit_form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <!-- Delete file -->
+    <script src="{{ asset('backoffice/js/delete.file.js') }}" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            // Enlever l'obligation du champ mot de passe
+            $('#tz_userbundle_user_plainPassword_first, #tz_userbundle_user_plainPassword_second').removeAttr('required');
+        });
+    </script>
+{% endblock %}

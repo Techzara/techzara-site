@@ -1,0 +1,287 @@
+{% extends 'front_site_office/base_front.html.twig' %}
+
+{% block title %} Techzara - Madagascar {% endblock %}
+
+{% block body %}
+    <section>
+        <div class="features-3">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="phone-container owl-carousel">
+                        <img src="{{ asset('front_site_office/images/techzara/techzara-bg.jpg') }}" />
+                        <img src="{{ asset('front_site_office/images/techzara/techzara-bg.jpg') }}" />
+                        <img src="{{ asset('front_site_office/images/techzara/techzara-bg.jpg') }}" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+
+                    <div class="info info-horizontal">
+                        <div class="icon icon-primary">
+                            <i class="fab fa-linux"></i>
+                        </div>
+                        <div class="description">
+                            <h4 class="info-title">Partage</h4>
+                            <p>Tout les samedi  matin ,  échange d'expériences entre les membres.</p>
+                        </div>
+                    </div>
+
+                    <div class="info info-horizontal">
+                        <div class="icon icon-primary">
+                            <i class="fab fa-windows"></i>
+                        </div>
+                        <div class="description">
+                            <h4 class="info-title">Conférence</h4>
+                            <p>Intervention des personnes ayant  une forte expérience dans une entreprise..</p>
+                        </div>
+                    </div>
+
+                    <div class="info info-horizontal">
+                        <div class="icon icon-primary">
+                            <i class="fab fa-apple"></i>
+                        </div>
+                        <div class="description">
+                            <h4 class="info-title">Evenements</h4>
+                            <p>Pour mettre en valeur la créativité et les savoir-faire des participants..</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    {#{% if cms.translate('fr').cmstContent|striptags != '' %}#}
+        {#{{ cms.translate('fr').cmstContent|raw }}#}
+    {#{% else %}#}
+        <section id="apropos" class="tz-services tz-section-with-title">
+            <div class="about-team team-1">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h2 class="title">Nous sommes une association</h2>
+                        <h5 class="description">Techzara est une association des jeunes passionées dans le dommaine de la nouvelle
+                            téchnologie de l'informatique , pour objectif de partager des éxperiences entre les jeunes.
+                        </h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="card card-profile card-plain">
+                            <div class="card-avatar">
+                                <a href="#pablo">
+                                    <img class="img" src="{{ asset('front_site_office/images/techzara/admin/julien.jpg') }}" />
+                                </a>
+                            </div>
+
+                            <div class="content">
+                                <h4 class="card-title">RAJERISON Julien</h4>
+                                <h6 class="category text-muted"> Fondateur </h6>
+
+                                <p class="card-description">
+                                    Je crée Techzara pour objectif de partager avec les autres mon petite connaissance dans le monde
+                                    de la Nouvelle Téchnologie de l'informatique.
+                                </p>
+                                <div class="footer">
+                                    <a href="#pablo" class="btn btn-just-icon btn-simple btn-twitter"><i class="fab fa-twitter-square"></i></a>
+                                    <a href="https://web.facebook.com/julkwel" class="btn btn-just-icon btn-simple btn-facebook"><i class="fab fa-facebook-square"></i></a>
+                                    <a href="#pablo" class="btn btn-just-icon btn-simple btn-google"><i class="fab fa-google-plus-square"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card card-profile card-plain">
+                            <div class="card-avatar">
+                                <a href="#pablo">
+                                    <img class="img" src="{{ asset('front_site_office/images/techzara/admin/solofo.jpg') }}" style="width: 200px" />
+                                </a>
+                            </div>
+
+                            <div class="content">
+                                <h4 class="card-title">RALITERA Solofo</h4>
+                                <h6 class="category text-muted">Co-fondateur</h6>
+
+                                <p class="card-description">
+                                    J'aimerai bien d'integrer au Techzara pour avoir un esprit de partage avec les jeunes Malagasy,
+                                    pour augmenter leur niveau dans leur dommaine.
+                                </p>
+                                <div class="footer">
+                                    <a href="#pablo" class="btn btn-just-icon btn-simple btn-twitter"><i class="fab fa-twitter-square"></i></a>
+                                    <a href="https://web.facebook.com/sloufpower" class="btn btn-just-icon btn-simple btn-facebook"><i class="fab fa-facebook-square"></i></a>
+                                    <a href="#pablo" class="btn btn-just-icon btn-simple btn-google"><i class="fab fa-google-plus-square"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card card-profile card-plain">
+                            <div class="card-avatar">
+                                <a href="#pablo">
+                                    <img class="img" src="{{ asset('front_site_office/images/techzara/admin/nyantso.jpg') }}" />
+                                </a>
+                            </div>
+
+                            <div class="content">
+                                <h4 class="card-title">NY Antso</h4>
+                                <h6 class="category text-muted">Résponsable logistique</h6>
+
+                                <p class="card-description">
+                                    Je suis fiere d'etre administrateur au Techzara , parce-que j'aimerais bien aussi
+                                    d'une outils pour ameliorer les niveaux des jeunes Malagasy.
+                                </p>
+                                <div class="footer">
+                                    <a href="#pablo" class="btn btn-just-icon btn-simple btn-twitter"><i class="fab fa-twitter-square"></i></a>
+                                    <a href="https://web.facebook.com/nyantso.rak" class="btn btn-just-icon btn-simple btn-facebook"><i class="fab fa-facebook-square"></i></a>
+                                    <a href="#pablo" class="btn btn-just-icon btn-simple btn-google"><i class="fab fa-google-plus-square"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card card-profile card-plain">
+                            <div class="card-avatar">
+                                <a href="#pablo">
+                                    <img class="img" src="{{ asset('front_site_office/images/techzara/admin/vatosoa.jpg') }}"  style="width: 200px" />
+                                </a>
+                            </div>
+
+                            <div class="content">
+                                <h4 class="card-title">Vatosoa Rinamihanta</h4>
+                                <h6 class="category text-muted">Responsable Tresorie</h6>
+
+                                <p class="card-description">
+                                    Je suis membres Techzara depuis le debut,
+                                    j'aimerai prouver que les femmes aussi a une grande place pour évoluer la Technologie
+                                </p>
+                                <div class="footer">
+                                    <a href="#pablo" class="btn btn-just-icon btn-simple btn-twitter"><i class="fab fa-twitter-square"></i></a>
+                                    <a href="https://web.facebook.com/profile.php?id=100010707872533" class="btn btn-just-icon btn-simple btn-facebook"><i class="fab fa-facebook-square"></i></a>
+                                    <a href="#pablo" class="btn btn-just-icon btn-simple btn-google"><i class="fab fa-google-plus-square"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="about-services features-2">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h2 class="title">Notre activité</h2>
+                        <h5 class="description">Notre activité consiste en atelier pour creer des applications et de partager
+                            les différents nouveauté de la Téchnologie.
+                        </h5>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="info info-horizontal">
+                            <div class="icon icon-rose">
+                                <i class="fas fa-share"></i>
+                            </div>
+                            <div class="description">
+                                <h4 class="info-title">1. Partage</h4>
+                                <p>Atelier tous le samedi matin de 08 - 12H pour partager des éxperiences entre les membres </p>
+                                <a href="#pablo">Voir plus ...</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="info info-horizontal">
+                            <div class="icon icon-rose">
+                                <i class="fas fa-object-group"></i>
+                            </div>
+                            <div class="description">
+                                <h4 class="info-title">2. Formation</h4>
+                                <p>Formation de 3 mois pour ameliorer le niveau des étudiants</p>
+                                <a href="#pablo">Voir plus ...</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="info info-horizontal">
+                            <div class="icon icon-rose">
+                                <i class="fab fa-app-store-ios"></i>
+                            </div>
+                            <div class="description">
+                                <h4 class="info-title">3. Projets</h4>
+                                <p>Techzara a créer des différents projets pour objectif d'augmenter notre éxperience  .
+                                </p>
+                                <a href="#pablo">Voir plus ...</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div id="event" class="tab-content">
+                <div class="tab-pane active work" id="work">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="title text-center">Prochains activité</h1>
+                            <div class="row collections">
+                                <div class="col-md-6">
+                                    <div class="card card-background" style="background-image: url('{{ asset('front_site_office/images/techzara/card1.jpg') }}')">
+                                        <a href="#pablo"></a>
+                                        <div class="content">
+                                            <label class="label label-primary">Samedi 20 Octobre 2018</label>
+                                            <a href="#pablo">
+                                                <h2>08H - 12H</h2>
+                                                <h2 class="card-title">Ariary Net</h2>
+                                                <p>Présentation de l'API de l'ariary Net</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card card-background" style="background-image: url('{{ asset('front_site_office/images/techzara/techzara-bg.jpg') }}')">
+                                        <a href="#pablo"></a>
+                                        <div class="content">
+                                            <label class="label label-primary">Samedi 20 Octobre 2018</label>
+                                            <a href="#pablo">
+                                                <h2> 14H - 17H </h2>
+                                                <h2 class="card-title">Pratique</h2>
+                                                <p>Atelier électronique avec l'équipes de la maison 2.0 </p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card card-background" style="background-image: url('{{ asset('front_site_office/images/techzara/card1.jpg') }}')">
+                                        <a href="#pablo"></a>
+                                        <div class="content">
+                                            <label class="label label-primary">Samedi 28 Octobre 2018</label>
+                                            <a href="#pablo">
+                                                <h2> 08H - 12H </h2>
+                                                <h2 class="card-title">Réseaux</h2>
+                                                <p>Base d'adressage IP</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card card-background" style="background-image: url('{{ asset('front_site_office/images/techzara/techzara-bg.jpg') }}')">
+                                        <a href="#pablo"></a>
+                                        <div class="content">
+                                            <label class="label label-primary">Samedi 04 Novembre 2018</label>
+                                            <a href="#pablo">
+                                                <h2> 08H - 12H </h2>
+                                                <h2 class="card-title">Jeux Vidéo</h2>
+                                                <p>Présentation du jeux vidéo </p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+{% endblock %}
+
+
+
+

@@ -1,0 +1,120 @@
+{% extends 'backoffice/base_admin.html.twig' %}
+
+{% block title %}{{ parent() }} Liste des emails abonnés {% endblock %}
+
+{% set menu_email_newsletter      = true %}
+{% set menu_email_newsletter_list = true %}
+
+{% block body %}
+    {% for flashMessage in app.session.flashbag.get('success') %}
+        <div class="callout callout-success">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+    {% for flashMessage in app.session.flashbag.get('error') %}
+        <div class="callout callout-danger">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <div class="list-count">
+                        <span class="title-count-text"> TOTAL: </span><span class="title-count"></span>
+                    </div>
+                </div>
+
+                {# Bouton création #}
+                <div class="row add-btn-top-list">
+                    <a href="{{ path('email_newsletter_new') }}" onclick=";">
+                        <button class="btn btn-primary">
+                            <i class="fa fa-plus"></i>
+                            Créer un email abonné
+                        </button>
+                    </a>
+                </div>
+
+                <form action="{{ path('email_newsletter_delete_group') }}" method="POST" class="form-search">
+                    <div class="box-body table-responsive">
+                        <table id="list-email-newsletter" class="table table-bordered table-striped table-condensed">
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th>Email</th>
+                                    <th>Abonné</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for email_newsletter in email_newsletters %}
+                                    <tr>
+                                        <td>
+                                            <input type="checkbox" value="{{ email_newsletter.id }}" name="delete[]" />
+                                        </td>
+                                        <td>{{ email_newsletter.nwsEmail }}</td>
+                                        <td>
+                                            {% if email_newsletter.nwsSubscribed %}
+                                                Oui
+                                            {% else %}
+                                                Non
+                                            {% endif %}
+                                        </td>
+                                        <td>
+                                            <a class="btn btn-primary" title="Modifier"
+                                               href="{{ path('email_newsletter_edit', { 'id': email_newsletter.id }) }}">
+                                                <i class="fa fa-edit"></i>
+                                            </a>
+                                            <a class="btn btn-danger remove-elt" title="Supprimer"
+                                               href="{{ path('email_newsletter_delete', { 'id': email_newsletter.id }) }}">
+                                                <i class="fa fa-trash"></i>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+
+                        {# Bouton suppression #}
+                        <a href="#">
+                            <button type="submit" name="_group_delete" class="btn btn-danger delete-btn">
+                                <i class="fa fa-trash"></i>
+                                Supprimer la sélection
+                            </button>
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    <script type="text/javascript">
+        $(function () {
+            $('#list-email-newsletter').DataTable(
+                {
+                    "bProcessing": true,
+                    "bFilter": true,
+                    "oLanguage": {
+                        "sProcessing": "Chargement...",
+                        "oPaginate": {
+                            "sPrevious": "Précédent", // This is the link to the previous page
+                            "sNext": "Suivant", // This is the link to the next page
+                        },
+                        "sSearch": "Filtrer: ",
+                        "sLengthMenu": "Afficher _MENU_ enregistrement par page",
+                        "sEmptyTable": "Aucun email newsletter trouvé",
+                        "sInfo": "Voir _TOTAL_ de _PAGE_ pour _PAGES_ entrées",
+                    },
+                    "footerCallback": function ( row, data, start, end, display ) {
+                        $('.title-count').html(display.length);
+                    }
+                }
+            );
+        });
+    </script>
+{% endblock %}

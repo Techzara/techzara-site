@@ -1,0 +1,86 @@
+
+@media (max-width: 1200px) {
+	.col-md-7.offset-md-2.kl-noPadding{    -webkit-box-flex: 0;  -ms-flex: 0 0 58.333333%;  flex: auto;  max-width: initial;
+		width: 100%;  margin-left: 0;  }
+	ul{padding-left: 0 !important;}
+	.kl-tem {  width: auto;  margin-left: auto;  margin-right: auto;  text-align: center;  }
+	.kl-tem li {  float: none;  display: inline-block;  vertical-align: top;  }
+	.kl-bg-difference h2{width: 100%;}
+
+}
+@media (max-width: 1292px) {
+	.navbar-collapse.collapse.kl-desk{ margin-right:35px;}
+}
+@media screen and (min-width: 993px){
+	.navbar-collapse.collapse.kl-desk{display: block !important;}
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+	.kl-noPadding {  width: 100%;  margin-left: 0;  max-width: 100%; flex: auto;  }
+}
+
+@media screen and (max-width: 1199px){
+	.kl-desk ul li a.nav-link{ padding: 38px 10px !important; font-size:14px;}
+	.navbar-collapse.collapse.kl-desk{ margin-right:5px;}
+}
+
+@media screen and (max-width: 1090px){
+	.navbar-collapse.collapse.kl-desk{ margin-right:35px;}
+	.kl-desk ul li a.nav-link{ padding: 38px 10px !important; font-size:13px;}
+}
+
+@media screen and (max-width: 992px){
+	.kl-logo.float-left{ float:none !important; width:100%; text-align:center;}
+	.mobile-sticky, .nav-mobile{ display:block !important; }
+	.kl-service-box{ min-height: 257px !important;}
+	.kl-nav-isotope li{ margin-bottom: 15px;}
+	.kl-bg-difference h2 span{display: block;}
+	header .kl-specific-nav{ display:none !important;}
+	#cometengage{display: none !important;}
+}
+@media screen and (max-width: 820px){
+	.kl-icon-box{ width:65px; height:65px; padding-top: 22px; left: 0px;}
+	.kl-icon-box i{ font-size:23px;}
+}
+@media screen and (max-width: 768px){
+	.kl-icon-box{ left: -40px;}
+	.kl-box-site{ width:50%;}
+	#id-footer{ background:#242424; padding-bottom:55px;}
+	#id-footer .col-md-4, #id-footer .col-md-3, #id-footer .col-md-2{ margin-bottom:25px;}
+	.kl-section-img{width:100%!important;}
+}
+@media screen and (max-width: 767px){
+	.kl-bg-difference{ height:661px;}
+	.kl-tem li:last-child > a {  margin-left: 0;  margin-top: 23px;  }
+	.kl-tem {  margin-top: 181px;  }
+	.kl-specification h3, .kl-design h3, .kl-development h3, .kl-test h3, .kl-livraison h3, .kl-service h3{font-size: 40px;}
+	.kl-col-1, .kl-col-2{padding-left: 0 !important;}
+	.kl-contact-col2{padding-left: 15px !important;}
+	.kl-pdg-footer-widget{ padding-left:15px !important;}
+}
+@media screen and (min-width: 768px) and (max-width: 771px){
+	.info-mail{margin-right: 0 !important;}
+}
+@media screen and (max-width: 636px){
+	.kl-icon-box{ left: 45%; bottom:-40px; top:inherit;}
+	.kl-service-box-list .col-md-5{ margin-bottom:80px; min-height:inherit !important; height: auto !important; padding:15px;}
+	.tp-caption h1, .tp-caption h1 span{font-size: 31px;}
+}
+@media screen and (max-width: 560px){
+	.kl-box-site{ width:100%;}
+}
+@media screen and (max-width: 481px){
+	.kl-list-difference ol li{ float:none; width:100%;}
+	.kl-icon-box{ left:40%;}
+}
+@media screen and (max-width: 400px){
+	.tp-caption h1, .tp-caption h1 span{font-size:22px;}
+}
+
+@media screen and (min-width: 1000px) {
+	.kl-logo-resp { margin-top: -55px!important; }
+}
+@media screen and (max-width: 999px) {
+	.kl-logo-resp { margin-top: -19px!important; }
+}
+.kl-image-client img{ width: 22%; }

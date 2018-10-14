@@ -1,0 +1,59 @@
+{% set current_route = app.request.attributes.get('_route') %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{% block title %}{% endblock %}</title>
+        {% block stylesheets %}
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,700|Maven+Pro:400,500,700,900">
+            <link rel="stylesheet" type="text/css" href="{{ asset('front_site_office/css/bootstrap.min.css') }}" />
+            <link rel="stylesheet" type="text/css" href="{{ asset('front_site_office/css/material-kit.css') }}" />
+            <link rel="stylesheet" type="text/css" href="{{ asset('front_site_office/css/responsive.css') }}" />
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" />
+            <link rel="stylesheet" type="text/css" href="{{ asset('front_site_office/css/custom.css') }}" />
+            <link rel="stylesheet" type="text/css" href="{{ asset('front_site_office/js/owl/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css') }}" />
+        {% endblock %}
+        <link rel="shortcut icon" href="{{ asset('front_site_office/images/techzara/icon.jpg') }}"/>
+    </head>
+
+    <body id="{% if current_route == 'home_site_index' %}id-home{% endif %}" class="tz-front-site">
+        <!-- Google Tag Manager (noscript) -->
+
+        {#<div class="se-pre-con"></div>#}
+        <div class="wrapper">
+
+            <!-- Header -->
+            {{ include("front_site_office/base_front_header.html.twig") }}
+            {{ include('@FrontSite/DevHome/head.html.twig') }}
+            <div class="container">
+                <!-- Main content -->
+                {% block body %}{% endblock %}
+            </div>
+
+            <!-- Footer -->
+            {{ render(controller('FrontSiteBundle:DevFooter:show')) }}
+        </div>
+
+        {% block javascripts %}
+            <script type="text/javascript" src="{{ asset('front_site_office/js/jquery.min.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('front_site_office/js/bootstrap.min.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('front_site_office/js/material.min.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('front_site_office/js/material-kit.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('front_site_office/js/custom.js') }}"></script>
+            <script type="text/javascript" src="{{ asset('front_site_office/js/owl/OwlCarousel2-2.3.4/dist/owl.carousel.min.js') }}"></script>
+            <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+            {#<script type="text/javascript">#}
+                {#$(document).ready(function(){#}
+                    {#RevolutionSlider.initRSfullScreenOffset();#}
+                {#});#}
+            {#</script>#}
+            <!--[if lt IE 9]>
+            <script src="{{ asset('front_site_office/js/ie9/respond.js') }}"></script>
+            <script src="{{ asset('front_site_office/js/ie9/html5shiv.js') }}"></script>
+            <script src="{{ asset('front_site_office/js/ie9/placeholder-IE-fixes.js') }}"></script>
+            <![endif]-->
+        {% endblock %}
+    </body>
+</html>

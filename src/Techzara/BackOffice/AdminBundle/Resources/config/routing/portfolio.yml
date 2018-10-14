@@ -1,0 +1,29 @@
+portfolio_index:
+    path:     /
+    defaults: { _controller: "AdminBundle:DevPortfolio:index" }
+    methods:  GET
+
+portfolio_new:
+    path:     /new
+    defaults: { _controller: "AdminBundle:DevPortfolio:new" }
+    methods:  [GET, POST]
+
+portfolio_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AdminBundle:DevPortfolio:edit" }
+    methods:  [GET, POST]
+
+portfolio_update:
+    path:     /{id}/update
+    defaults: { _controller: "AdminBundle:DevPortfolio:update" }
+    methods:  [POST, PUT]
+
+portfolio_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AdminBundle:DevPortfolio:delete" }
+    methods:  [GET, DELETE]
+
+portfolio_delete_group:
+    path:     /delete-group
+    defaults: { _controller: "AdminBundle:DevPortfolio:deleteGroup" }
+    methods:  POST

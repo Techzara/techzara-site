@@ -1,0 +1,13 @@
+nav {border-radius: 0px!important;}
+.navbar-brand {color: white!important;}
+.features-3 .phone-container { max-width: 100%; margin: 0 auto;}
+.label.label-primary {
+    background-color: #00343a!important;
+    color: white!important;
+}
+a h2 ,a p{color: white!important;}
+.bg-dark{background: #52abe3!important;}
+.navbar-dark .navbar-nav .nav-link {
+    color: white!important;
+    font-weight: bold;
+}

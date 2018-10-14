@@ -1,0 +1,35 @@
+{% extends 'backoffice/base_admin.html.twig' %}
+
+{% form_theme edit_form 'form/custom_fields.html.twig' %}
+
+{% block title %}{{ parent() }} Modification Email abonné {% endblock %}
+
+{% set menu_email_newsletter        = true %}
+{% set menu_email_newsletter_create = true %}
+
+{% block body %}
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-primary">
+                {{ form_start(edit_form) }}
+                    <div class="box-header">
+                        <h3 class="box-title">Editer un email abonné</h3>
+                    </div>
+
+                    <div class="box-body">
+                        {{ form_row(edit_form.nwsEmail) }}
+                        {{ form_row(edit_form.nwsSubscribed) }}
+                    </div>
+
+                    <div class="box-footer">
+                        <input type="submit" class="btn btn-primary" value="Modifier" name="update_email_newsletter"/>
+                        <a href="{{ path('email_newsletter_index') }}"
+                           class="btn btn-default pull-left btn-mini-rectif" >
+                            Retour à la liste
+                        </a>
+                    </div>
+                {{ form_end(edit_form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

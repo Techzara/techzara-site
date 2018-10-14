@@ -1,0 +1,37 @@
+{% extends 'front_site_office/base_front.html.twig' %}
+
+{% block title %} Ils nous font confiance - Techzara {% endblock %}
+
+{% block body %}
+    <section class="tz-bnr-INFC wow pulse">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7 offset-md-2 tz-noPadding">
+                    <ul class="tz-tem">
+                        <li class="tz-disable">
+                            <a href="{{ path('home_site_confiance') }}"><span>Ils nous font confiance</span></a>
+                        </li>
+                        <li class="tz-active">
+                            <a href="{{ path('home_site_temoignage') }}"><span>Témoignages</span></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% if cms.translate('fr').cmstContent|striptags != '' %}
+        {{ cms.translate('fr').cmstContent|raw }}
+    {% else %}
+        <section class="tz-bg-grey">
+            <div class="container">
+                <div class="row">
+                    <div class="tz-client-logo">
+                        <img src="{{ asset('front_site_office/images/clients-logo-3.fw_.png') }}"
+                             class="img-fluid" alt="client">
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% endif %}
+{% endblock %}

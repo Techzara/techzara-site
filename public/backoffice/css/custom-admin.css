@@ -1,0 +1,113 @@
+/* 
+    Created on : 27 déc. 2016, 09:44:32
+    Author     : Niaina
+*/
+
+.list-count {
+    font-size: 2.1em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.add-btn-top-list {
+    left: 25px;
+    position: relative;
+}
+
+.btn-mini-rectif{
+    margin-right: 5px;
+}
+
+.custom-checkbox-list {
+    margin-right: 20px;
+}
+
+.delete-btn-custom {
+    bottom: 40px;
+    position: relative;
+    right: 10px;
+}
+
+.checkbox-custom-style {
+    margin-left: 5px !important;
+}
+
+.logo-mini > img {
+    width: 45px;
+}
+
+.img-vignette {
+    max-width: 150px;
+}
+
+.hide {
+    display: none;
+}
+
+/* Personnalisation thème AdminLTE */
+.skin-blue .main-header .logo {
+    background-color: white;
+}
+
+.skin-blue .main-header .navbar {
+    background-color: #5db6d7;
+}
+
+.skin-blue .sidebar-menu > li:hover > a, .skin-blue .sidebar-menu > li.active > a {
+    border-left-color: #5db6d7;
+}
+
+.skin-blue .main-header li.user-header {
+    background-color: #5db6d7;
+}
+
+.skin-blue .main-header .logo:hover {
+    background-color: white;
+}
+.kl-number-right{
+    text-align: right;
+}
+.kl-oui-non{
+    text-align: center;
+}
+
+/* Autocomplete */
+.ui-autocomplete-loading {
+    background: white url("../../img/ui-anim_basic_16x16.gif") right center no-repeat;
+}
+
+/*Tableaux pour toutes les pages*/
+table{
+    margin: 0 auto;
+    clear: both;
+    border-collapse: collapse;
+    table-layout: fixed;
+    word-wrap:break-word;
+    /*word-break: break-all;*/
+}
+
+/*Tableau Dashboard groupes récents*/
+.kl-nom{
+    width: 80px;
+}
+.kl-adresse{
+    width: 100px;
+}
+.kl-ville{
+    width: 100px;
+}
+.kl-date-dispo{
+    width: 130px;
+}
+.kl-progression{
+    width: 100px;
+}
+
+.error-message {
+    color: red;
+}
+
+#id-loading, #id-loading-finalise, #id-loading-lien-livre {
+    position: relative;
+}
+.kl-status, .kl-status-service-client, .kl-send-email-connexion, .kl-send-email-paiement{margin-top: 20px;}

@@ -1,0 +1,48 @@
+{% extends 'backoffice/base_admin.html.twig' %}
+
+{% form_theme form 'form/fields.html.twig' %}
+
+{% block title %}{{ parent() }} Ajout Slide {% endblock %}
+
+{% set menu_slide        = true %}
+{% set menu_slide_create = true %}
+
+{% block body %}
+    {% for flashMessage in app.session.flashbag.get('success') %}
+        <div class="callout callout-success">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+    {% for flashMessage in app.session.flashbag.get('error') %}
+        <div class="callout callout-danger">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+    
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-primary">
+                {{ form_start(form) }}
+                    <div class="box-header">
+                        <h3 class="box-title">Créer un slide</h3>
+                    </div>
+                    
+                    <div class="box-body">
+                        {{ form_row(form.sldFirstTitle) }}
+                        {{ form_row(form.sldSecondTitle) }}
+                        {{ form_row(form.sldThirdTitle) }}
+                        {{ form_row(form.sldImageUrl) }}
+                    </div>
+
+                    <div class="box-footer">
+                        <input type="submit" class="btn btn-primary" value="Enregistrer" name="new_slide"/>
+                        <a href="{{ path('slide_index') }}"
+                           class="btn btn-default pull-left btn-mini-rectif" >
+                            Retour à la liste
+                        </a>
+                    </div>                    
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

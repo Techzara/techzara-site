@@ -1,0 +1,4 @@
+contact_site_send_mail:
+    path:      /contact
+    defaults: { _controller: "FrontSiteBundle:DevContact:sendMail" , _locale : fr}
+    methods:  [ GET, POST ]

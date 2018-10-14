@@ -1,0 +1,63 @@
+{% extends 'backoffice/base_admin.html.twig' %}
+
+{% form_theme edit_form 'form/fields.html.twig' %}
+
+{% block title %}{{ parent() }} Modification Contenu {% endblock %}
+
+{% set menu_message_newsletter      = true %}
+{% set menu_message_newsletter_list = true %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+    <!-- Summernote -->
+    <link rel="stylesheet" href="{{ asset('plugins/summernote/summernote.css') }}">
+{% endblock %}
+
+{% block body %}
+    {% for flashMessage in app.session.flashbag.get('success') %}
+        <div class="callout callout-success">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+    {% for flashMessage in app.session.flashbag.get('error') %}
+        <div class="callout callout-danger">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-primary">
+                {{ form_start(edit_form) }}
+                    <div class="box-header">
+                        <h3 class="box-title">Editer une contenu</h3>
+                    </div>
+
+                    <div class="box-body">
+                        {{ form_row(edit_form.translations) }}
+                    </div>
+
+                    <div class="box-footer">
+                        <input type="submit" class="btn btn-primary" value="Modifier" name="update_message_newsletter"/>
+                        <a href="{{ path('message_newsletter_index') }}"
+                           class="btn btn-default pull-left btn-mini-rectif" >
+                            Retour à la liste
+                        </a>
+                    </div>
+                {{ form_end(edit_form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    <!-- Summernote -->
+    <script src="{{ asset('plugins/summernote/summernote.min.js') }}"></script>
+    <script src="{{ asset('plugins/summernote/lang/summernote-fr-FR.js') }}"></script>
+    <script src="{{ asset('plugins/summernote/lang/summernote-es-ES.js') }}"></script>
+
+    <script src="{{ asset('backoffice/js/message_newsletter.js') }}"></script>
+{% endblock %}

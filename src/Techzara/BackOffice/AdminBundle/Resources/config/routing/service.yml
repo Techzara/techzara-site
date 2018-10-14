@@ -1,0 +1,29 @@
+service_index:
+    path:     /
+    defaults: { _controller: "AdminBundle:DevService:index" }
+    methods:  GET
+
+service_new:
+    path:     /new
+    defaults: { _controller: "AdminBundle:DevService:new" }
+    methods:  [GET, POST]
+
+service_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AdminBundle:DevService:edit" }
+    methods:  [GET, POST]
+
+service_update:
+    path:     /{id}/update
+    defaults: { _controller: "AdminBundle:DevService:update" }
+    methods:  [POST, PUT]
+
+service_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AdminBundle:DevService:delete" }
+    methods:  [GET, DELETE]
+
+service_delete_group:
+    path:     /delete-group
+    defaults: { _controller: "AdminBundle:DevService:deleteGroup" }
+    methods:  POST

@@ -1,0 +1,75 @@
+{% set _locale = app.request.locale %}
+
+{% extends 'front_site_office/base_front.html.twig' %}
+
+{% block title %} Techzara W3C - Plan du site {% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('front_site_office/css/sitemap.css') }}" />
+{% endblock %}
+
+{% block body %}
+    <section class="kl-sitemap">
+        <div class="container">
+            <div class="row">
+                <ul class="sitemap">
+                    <li class="sitemap-root"><a href="{{ path('home_site_index') }}">Accueil</a></li>
+                    <li class="sitemap-main">
+                        <ul>
+                            <li>
+                                <a href="{{ path('home_site_ccm') }}">Comment ça marche?</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('home_site_site') }}">Sites</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('home_site_applications') }}">Applications</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('home_site_confiance') }}">Ils nous font confiance</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('contact_site_send_mail') }}">Contact</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="sitemap-aux">
+                        <ul>
+                            {% if cms_mention_legale %}
+                                <li>
+                                    <a href="{{ path('cms_front_show_site', {'_id' : cms_mention_legale.id, '_slug' : cms_mention_legale.translate(_locale).cmstSlug }) }}">
+                                        Mentions légales
+                                    </a>
+                                </li>
+                            {% endif %}
+                            {% if cms_cgu %}
+                                <li>
+                                    <a href="{{ path('cms_front_show_site', {'_id' : cms_cgu.id, '_slug' : cms_cgu.translate(_locale).cmstSlug }) }}">
+                                        conditions générales d'utilisation
+                                    </a>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="sitemap">
+                    <li class="sitemap-root"><a href="{{ path('home_site_index') }}">Nos services</a></li>
+                    <li class="sitemap-main">
+                        <ul>
+                            <li><a href="{{ path('home_site_site') }}?idref=sitevitrine">Site vitrine</a></li>
+                            <li><a id="id-e-commerce" href="{{ path('home_site_site') }}?idref=ecommerce">E-commerce</a></li>
+                            <li><a id="id-web-app" href="{{ path('home_site_site') }}?idref=webapp">WebApp</a></li>
+                            <li><a id="id-app-mobile" href="{{ path('home_site_applications') }}">Application mobile</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+
+
+

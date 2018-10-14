@@ -1,0 +1,4 @@
+employe_index:
+    path:     /
+    defaults: { _controller: "UserBundle:Employe:index" }
+    methods:  GET

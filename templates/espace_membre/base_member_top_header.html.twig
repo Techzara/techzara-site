@@ -1,0 +1,60 @@
+<section class="kl-header-member">
+    <div class="container">
+        <div class="row">
+            <nav class="navbar navbar-static-top">
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        {# Profil #}
+                        <li class="dropdown user user-menu">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                {% set photo_profil = app.user.usrPhoto %}
+                                {% if photo_profil is null %}
+                                    {% set photo_profil = asset('img/no-image-available-user.png') %}
+                                {% endif %}
+                                <img src="{{ photo_profil|imagine_filter('photo_user_profil_member_top') }}"
+                                     class="user-image img-circle" alt="{{ app.user.username }}">
+
+                                <span class="hidden-xs">
+                                    {% if app.user %}
+                                        Bienvenue <b>{{ app.user.username }} ({{ app.user.usrNomEntreprise }})</b>
+                                    {% endif %}
+                                </span>
+                                <i class="fa fa-angle-down"></i>
+                            </a>
+
+                            <ul class="dropdown-menu">
+                                <!-- User image -->
+                                <li class="user-header">
+                                    <img src="{{ photo_profil|imagine_filter('photo_user_profil_member_sub') }}"
+                                         class="img-circle" alt="User Image">
+                                    <p>
+                                        {% if app.user %}
+                                            {{ app.user.username }}<br>
+                                            <span>{{ app.user.usrNomEntreprise }}</span>
+                                        {% endif %}
+                                    </p>
+                                </li>
+
+                                <!-- Menu Footer-->
+                                <li class="user-footer">
+                                    <div class="pull-left">
+                                        <a href="{{ path('user_edit', { 'id': app.user.id }) }}"
+                                           class="btn kl-profile">
+                                            <i class="fa fa-user"></i> Profil
+                                        </a>
+                                    </div>
+                                    <div class="pull-right">
+                                        <a href="{{ path('fos_user_security_logout') }}"
+                                           class="btn kl-loggout">
+                                            <i class="fa fa-sign-out"></i> Deconnecter
+                                        </a>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+</section>

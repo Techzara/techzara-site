@@ -1,0 +1,68 @@
+security:
+    encoders:
+        FOS\UserBundle\Model\UserInterface: bcrypt
+
+    role_hierarchy:
+        ROLE_INTEGRATEUR: ROLE_USER
+        ROLE_SUPERVISEUR: ROLE_USER
+        ROLE_TESTEUR: ROLE_USER
+        ROLE_CLIENT: ROLE_USER
+        ROLE_ADMIN_SITE: ROLE_USER
+        ROLE_ADMIN: ROLE_USER
+        ROLE_SUPERADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+
+    providers:
+        fos_userbundle:
+            id: fos_user.user_provider.username_email
+
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        main:
+            pattern: ^/
+            provider: fos_userbundle
+            anonymous: true
+            form_login:
+                provider: fos_userbundle
+                success_handler: lv.handler.login_success_handler
+                csrf_token_generator: security.csrf.token_manager
+                login_path: /login
+                check_path: /login_check
+                always_use_default_target_path: false
+                default_target_path: /admin/
+            logout:
+                path: /logout
+                target: /
+            remember_me:
+                secret:   secret
+                lifetime: 604800 # 1 week in seconds
+                path: /
+
+    access_control:
+        - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
+
+        - { path: ^/admin/user/new, role: [ROLE_SUPERADMIN, ROLE_ADMIN] }
+        - { path: ^/admin/role/*, role: ROLE_ADMIN }
+        - { path: ^/admin/cms/*, role: [ROLE_ADMIN, ROLE_ADMIN_SITE] }
+        - { path: ^/admin/portfolio/*, role: ROLE_ADMIN_SITE }
+        - { path: ^/admin/portfolio-type/*, role: ROLE_ADMIN_SITE }
+        - { path: ^/admin/temoignage/*, role: ROLE_ADMIN_SITE }
+        - { path: ^/admin/faq/*, role: ROLE_ADMIN }
+        - { path: ^/admin/service-type/*, role: ROLE_ADMIN }
+        - { path: ^/admin/service-client/list, role: [ROLE_ADMIN, ROLE_CLIENT] }
+        - { path: ^/admin/service-client/update-status-project-ajax, role: [ROLE_ADMIN, ROLE_INTEGRATEUR, ROLE_TESTEUR] }
+        - { path: ^/admin/service-client/detail/*, role: [ROLE_ADMIN, ROLE_CLIENT] }
+        - { path: ^/admin/facture/*, role: ROLE_ADMIN }
+        - { path: ^/admin/user-service-client/new, role: ROLE_ADMIN }
+        - { path: ^/admin/user-service-client, role: [ROLE_ADMIN, ROLE_INTEGRATEUR, ROLE_TESTEUR] }
+        - { path: ^/admin/user-service-client/detail/*, role: [ROLE_ADMIN, ROLE_INTEGRATEUR, ROLE_TESTEUR] }
+        - { path: ^/admin/service/*, role: ROLE_ADMIN }
+        - { path: ^/admin/service-option-type/*, role: ROLE_ADMIN }
+        - { path: ^/admin/service-option/*, role: ROLE_ADMIN }
+        - { path: ^/admin/email-newsletter/*, role: ROLE_ADMIN }
+
+        - { path: ^/admin, role: ROLE_USER }

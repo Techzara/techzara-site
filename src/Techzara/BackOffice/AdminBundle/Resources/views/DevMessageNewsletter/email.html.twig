@@ -1,0 +1,40 @@
+{% extends 'email/layout_email.email.twig' %}
+
+{% block body_html_content %}
+    {% set _locale = app.request.locale %}
+
+	<table cellpadding="0" cellspacing="0" border="0" width="600" class="kl-w480">
+		<tr>
+			<td height="60"></td>
+		</tr>
+		<tr>
+			<td style="text-align:left; font-size:18px; color:#5b5a5d;">
+				<p>{{ 'email.bonjour'|trans }} chèr(e) abonné(e),</p>
+				<p>{{ content|raw }}</p>
+				<p>
+					<a href="{{ unsubscriber_url }}" title="Désabonner">Désabonner</a>
+				</p>
+				<p>{{ 'email.merci'|trans }}</p>
+			</td>
+		</tr>
+		<tr>
+			<td height="60"></td>
+		</tr>
+		<tr>
+			<td>
+				<p style="text-align:left; font-size:18px; color:#5b5a5d;">{{ 'email.merci'|trans }}</p>
+			</td>
+		</tr>
+	</table>
+	<table cellpadding="0" cellspacing="0" border="0" width="600" class="kl-w480">
+		<tr>
+			<td height="37"></td>
+		</tr>
+		<tr>
+			<td style="text-align:center;"><img src="http://techzara.fr/images-email/final.jpg" alt="" /></td>
+		</tr>
+		<tr>
+			<td height="100"></td>
+		</tr>
+	</table>
+{% endblock %}
