@@ -1,0 +1,6 @@
+{% extends '@SonataAdmin/Core/user_block.html.twig' %}
+
+{% block user_block %}
+    {% include '@KoffI18nForm/Util/localeSwitcher.html.twig' only %}
+    {{ parent() }}
+{% endblock %}

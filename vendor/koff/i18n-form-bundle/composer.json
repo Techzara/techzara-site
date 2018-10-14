@@ -1,0 +1,68 @@
+{
+    "name": "koff/i18n-form-bundle",
+    "type": "symfony-bundle",
+    "description": "Translate your doctrine objects easily with some helps",
+    "keywords": [
+        "symfony2",
+        "doctrine2",
+        "i18n",
+        "internationalization",
+        "translation",
+        "translatable",
+        "form",
+        "knplabs"
+    ],
+    "homepage": "https://github.com/sadikoff/i18n-form-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "David ALLIX",
+            "homepage": "http://a2lix.fr"
+        },
+        {
+            "name": "Sadicov Vladimir",
+            "homepage": "http://xtech.su"
+        }
+    ],
+    "require": {
+        "php": "^7.0.8",
+        "doctrine/doctrine-bundle": "^1.6.10",
+        "doctrine/orm": "^2.5",
+        "symfony/config": "~3.4|~4.0",
+        "symfony/dependency-injection": "~3.4|~4.0",
+        "symfony/form": "~3.4|~4.0",
+        "symfony/http-kernel": "~3.4|~4.0",
+        "symfony/twig-bundle": "~3.4|~4.0"
+    },
+    "require-dev": {
+        "symfony/validator": "^3.4|^4.0",
+        "symfony/phpunit-bridge": "^3.4|^4.0",
+        "symfony/yaml": "^3.4|^4.0",
+        "friendsofphp/php-cs-fixer": "^2.8"
+    },
+    "suggest": {
+        "knplabs/doctrine-behaviors": "For Knp strategy",
+        "stof/doctrine-extensions-bundle": "For Atlantic18/DoctrineExtensions"
+    },
+    "config": {
+        "preferred-install": {
+            "*": "dist"
+        },
+        "sort-packages": true
+    },
+    "autoload": {
+        "psr-4": {
+            "Koff\\Bundle\\I18nFormBundle\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Koff\\Bundle\\I18nFormBundle\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "4.x-dev"
+        }
+    }
+}
