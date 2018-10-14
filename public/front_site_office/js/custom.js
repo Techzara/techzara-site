@@ -21,5 +21,6 @@ $('a[href=\"' + hash + '\"]').closest('li').addClass('active');
         items:1
     });
     $('.tz-select-insc option[value="2"]').attr("selected",true);
+    $('.tz-select-insc').parent().parent().css("display","none");
     $('.inputfile').parent().parent().addClass('btn btn-primary tz-btn-primary')
 });
