@@ -1,0 +1,8 @@
+membres_liste:
+  path:     /
+  defaults: { _controller: "FrontSiteBundle:DevMembres:index" }
+
+membres_new:
+  path:     /new
+  defaults: { _controller: "FrontSiteBundle:DevMembres:new" }
+  methods: [GET,POST]

@@ -150,3 +150,8 @@ services:
         class: App\Techzara\Service\MetierManagerBundle\Metier\DevSitemap\ServiceMetierDevSitemap
         arguments: [ "@doctrine.orm.entity_manager","@service_container" ]
         public: true
+
+    lv.manager.membres:
+        class: App\Techzara\Service\MetierManagerBundle\Metier\DevHome\HomeManager
+        arguments: [ "@doctrine.orm.entity_manager","@service_container" ]
+        public: true

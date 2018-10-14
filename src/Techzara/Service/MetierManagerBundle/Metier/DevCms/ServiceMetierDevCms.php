@@ -54,26 +54,17 @@ class ServiceMetierDevCms
                 CmsName::ID_CMS_CGV,
                 CmsName::ID_CMS_MENTIONS_LEGALES,
                 CmsName::ID_CMS_FAQ,
-                CmsName::ID_CMS_MENTIONS_LEGALES_W3C,
-                CmsName::ID_CMS_CGU_W3C,
-                CmsName::ID_CMS_CGU
+                CmsName::ID_CMS_ACCUEIL,
+                CmsName::ID_CMS_CCM,
+                CmsName::ID_CMS_SITE,
+                CmsName::ID_CMS_APPLICATION,
+                CmsName::ID_CMS_CONFIANCE,
+                CmsName::ID_CMS_CONTACT_FOOTER,
+                CmsName::ID_CMS_ABOUT_US_FOOTER,
+                CmsName::ID_CMS_CONTACT
             )
         );
 
-        // Rôle admin site
-        if ($_user_role == RoleName::ID_ROLE_ADMIN_SITE)
-            $_array_type = array(
-                'id' => array(
-                    CmsName::ID_CMS_ACCUEIL,
-                    CmsName::ID_CMS_CCM,
-                    CmsName::ID_CMS_SITE,
-                    CmsName::ID_CMS_APPLICATION,
-                    CmsName::ID_CMS_CONFIANCE,
-                    CmsName::ID_CMS_CONTACT_FOOTER,
-                    CmsName::ID_CMS_ABOUT_US_FOOTER,
-                    CmsName::ID_CMS_CONTACT
-                )
-            );
 
         return $this->getRepository()->findBy($_array_type, array('id' => 'DESC'));
     }

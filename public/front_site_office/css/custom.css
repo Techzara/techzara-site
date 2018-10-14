@@ -6,8 +6,20 @@ nav {border-radius: 0px!important;}
     color: white!important;
 }
 a h2 ,a p{color: white!important;}
-.bg-dark{background: #52abe3!important;}
+.bg-dark{background: #0d2840!important;}
 .navbar-dark .navbar-nav .nav-link {
     color: white!important;
     font-weight: bold;
 }
+.card .card-image {height: 200px!important;
+    width: 200px!important;
+
+    margin-left: 23%!important;
+    border-radius: 50%!important;}
+.tz-inscription { background: #59075f!important;
+    padding: 49px;}
+.form-group .checkbox label, .form-group .radio label, .form-group label {color: white!important;}
+.tz-content-form {padding-top: 2%!important;}
+footer{ background: #002740!important;color: white!important;}
+.tz-btn-primary {background-color: #0d2840!important;
+    color: #FFFFFF!important;}

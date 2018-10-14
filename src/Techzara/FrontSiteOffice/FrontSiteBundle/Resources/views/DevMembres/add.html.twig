@@ -1,0 +1,39 @@
+{% extends 'front_site_office/base_front.html.twig' %}
+
+{% form_theme form 'form/custom_fields.html.twig' %}
+
+{% block title %}{{ parent() }} Ajout Utilisateur {% endblock %}
+
+{% block body %}
+    <br><br>
+        <div class="col-md-12 tz-inscription">
+            <div class="container tz-content-form">
+                <h3 class="text-center text-white">Inscription</h3>
+                {{ form_start(form) }}
+                    {{ form_row(form.usrNomEntreprise,{'attr':{'class':'hello'}}) }}
+                    {{ form_row(form.usrLastname) }}
+                    {{ form_row(form.usrFirstname) }}
+                    {{ form_row(form.usrAddress) }}
+                    {{ form_row(form.email) }}
+                    {{ form_row(form.usrPhone) }}
+                    {{ form_row(form.usrPhoto) }}
+                    {{ form_row(form.tzRole,{'attr':{'disabled':'disabled','class':'tz-select-insc'}}) }}
+                    <div class="hide">
+                        {{ form_row(form.enabled) }}
+                    </div>
+                    <hr>
+                    {{ form_row(form.username) }}
+                    {{ form_row(form.plainPassword.first) }}
+                    {{ form_row(form.plainPassword.second) }}
+
+                <div class="container text-right">
+                    <a href="{{ path('membres_liste') }}"
+                       class="btn btn-default pull-left btn-mini-rectif" >
+                        Retour à la liste
+                    </a>
+                    <input type="submit" class="btn btn-primary" value="Enregistrer" name="new_user"/>
+                </div>
+                {{ form_end(form) }}
+            </div>
+        </div>
+{% endblock %}

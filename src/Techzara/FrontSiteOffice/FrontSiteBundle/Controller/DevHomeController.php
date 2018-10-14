@@ -5,6 +5,7 @@ namespace App\Techzara\FrontSiteOffice\FrontSiteBundle\Controller;
 use App\Techzara\Service\MetierManagerBundle\Utils\CmsName;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use App\Techzara\Service\MetierManagerBundle\Utils\ServiceName;
+use App\Techzara\Service\MetierManagerBundle\Metier\DevHome\HomeManager;
 
 /**
  * Class DevHomeController
@@ -22,17 +23,23 @@ class DevHomeController extends Controller
         $_slide_manager          = $this->get(ServiceName::SRV_METIER_SLIDE);
         $_portfolio_manager      = $this->get(ServiceName::SRV_METIER_PORTFOLIO);
         $_portfolio_type_manager = $this->get(ServiceName::SRV_METIER_PORTFOLIO_TYPE);
+        $_membres_liste          = $this->get(ServiceName::SRV_METIER_MEMBRES);
 
         $_cms             = $_cms_manager->getDevCmsById(CmsName::ID_CMS_ACCUEIL);
         $_slides          = $_slide_manager->getAllDevSlide();
         $_portfolios      = $_portfolio_manager->getAllDevPortfolio();
         $_portfolio_types = $_portfolio_type_manager->getAllDevPortfolioType();
+        $_membres         = $_membres_liste->getAllUser();
+//        dump($_membres);
+//        die();
+
 
         return $this->render('FrontSiteBundle:DevHome:index.html.twig', array(
             'cms'             => $_cms,
             'slides'          => $_slides,
             'portfolios'      => $_portfolios,
-            'portfolio_types' => $_portfolio_types
+            'portfolio_types' => $_portfolio_types,
+            'users'           => $_membres
         ));
     }
 

@@ -3,54 +3,56 @@
 {% block title %} Techzara - Madagascar {% endblock %}
 
 {% block body %}
-    <section>
-        <div class="features-3">
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="phone-container owl-carousel">
-                        <img src="{{ asset('front_site_office/images/techzara/techzara-bg.jpg') }}" />
-                        <img src="{{ asset('front_site_office/images/techzara/techzara-bg.jpg') }}" />
-                        <img src="{{ asset('front_site_office/images/techzara/techzara-bg.jpg') }}" />
-                    </div>
-                </div>
-                <div class="col-md-6">
-
-                    <div class="info info-horizontal">
-                        <div class="icon icon-primary">
-                            <i class="fab fa-linux"></i>
-                        </div>
-                        <div class="description">
-                            <h4 class="info-title">Partage</h4>
-                            <p>Tout les samedi  matin ,  échange d'expériences entre les membres.</p>
+    {{ include('@FrontSite/DevHome/head.html.twig') }}
+    <div class="container">
+        <section>
+            <div class="features-3">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="phone-container owl-carousel">
+                            <img src="{{ asset('front_site_office/images/techzara/techzara-bg.jpg') }}" />
+                            <img src="{{ asset('front_site_office/images/techzara/techzara-bg.jpg') }}" />
+                            <img src="{{ asset('front_site_office/images/techzara/techzara-bg.jpg') }}" />
                         </div>
                     </div>
+                    <div class="col-md-6">
 
-                    <div class="info info-horizontal">
-                        <div class="icon icon-primary">
-                            <i class="fab fa-windows"></i>
+                        <div class="info info-horizontal">
+                            <div class="icon icon-primary">
+                                <i class="fab fa-linux"></i>
+                            </div>
+                            <div class="description">
+                                <h4 class="info-title">Partage</h4>
+                                <p>Tout les samedi  matin ,  échange d'expériences entre les membres.</p>
+                            </div>
                         </div>
-                        <div class="description">
-                            <h4 class="info-title">Conférence</h4>
-                            <p>Intervention des personnes ayant  une forte expérience dans une entreprise..</p>
-                        </div>
-                    </div>
 
-                    <div class="info info-horizontal">
-                        <div class="icon icon-primary">
-                            <i class="fab fa-apple"></i>
+                        <div class="info info-horizontal">
+                            <div class="icon icon-primary">
+                                <i class="fab fa-windows"></i>
+                            </div>
+                            <div class="description">
+                                <h4 class="info-title">Conférence</h4>
+                                <p>Intervention des personnes ayant  une forte expérience dans une entreprise..</p>
+                            </div>
                         </div>
-                        <div class="description">
-                            <h4 class="info-title">Evenements</h4>
-                            <p>Pour mettre en valeur la créativité et les savoir-faire des participants..</p>
+
+                        <div class="info info-horizontal">
+                            <div class="icon icon-primary">
+                                <i class="fab fa-apple"></i>
+                            </div>
+                            <div class="description">
+                                <h4 class="info-title">Evenements</h4>
+                                <p>Pour mettre en valeur la créativité et les savoir-faire des participants..</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    {#{% if cms.translate('fr').cmstContent|striptags != '' %}#}
+        </section>
+        {#{% if cms.translate('fr').cmstContent|striptags != '' %}#}
         {#{{ cms.translate('fr').cmstContent|raw }}#}
-    {#{% else %}#}
+        {#{% else %}#}
         <section id="apropos" class="tz-services tz-section-with-title">
             <div class="about-team team-1">
                 <div class="row">
@@ -280,6 +282,8 @@
                 </div>
             </div>
         </section>
+    </div>
+
 {% endblock %}
 
 

@@ -26,40 +26,54 @@ class UserType extends AbstractType
 
         $builder
             ->add('usrLastname', TextType::class, array(
-                'label'    => "Nom",
-                'attr'     => array('placeholder' => 'Nom'),
+                'label'       => 'Nom',
+                'attr'     => array(
+                    'placeholder' => 'Entrer votre nom',
+                    'class'       => 'form-control'),
                 'required' => true
             ))
 
             ->add('usrNomEntreprise', TextType::class, array(
-                'label'    => "Nom entreprise",
-                'attr'     => array('placeholder' => 'Nom entreprise'),
+                'label'       => 'Ecole ou entreprise',
+                'attr'     => array(
+                    'placeholder' => 'Entrer votre école ou votre société de travail',
+                    'class'       => 'form-control'
+                ),
                 'required' => true
             ))
 
             ->add('usrFirstname', TextType::class, array(
-                'label'    => "Prénom",
-                'attr'     => array('placeholder' => 'Prénom'),
+                'label'       => 'Prénom',
+                'attr'     => array(
+                    'placeholder' => 'Entrer votre prénom',
+                    'class'       => 'form-control'),
                 'required' => true
             ))
 
             ->add('usrAddress', TextType::class, array(
-                'label'    => "Adresse",
-                'attr'     => array('placeholder' => 'Adresse'),
+                'label'       => 'Adresse',
+                'attr'     => array(
+                    'placeholder' => 'Entrer votre adresse domicile',
+                    'class'       => 'form-control'),
                 'required' => false
             ))
 
             ->add('usrPhone', TextType::class, array(
-                'label'    => "Téléphone",
-                'attr'     => array('placeholder' => 'Téléphone'),
-                'required' => false
+                'label'       => 'Téléphone',
+                'attr'     => array(
+                    'placeholder' => 'Entrer votre numéro téléphone',
+                    'class'       => 'form-control',
+                    'patter'      =>    '^\+(?:[0-9]●?){6,14}[0-9]$'
+                ),
+                'required' => true
             ))
 
             ->add('email', EmailType::class, array(
-                'label'    => "Adresse email",
+                'label'       => 'Email',
                 'attr'     => array(
                     'pattern'     => "[^@]+@[^@]+\.[a-zA-Z]{2,}",
-                    'placeholder' => 'Adresse email'
+                    'placeholder' => 'Entrer votre adresse e-mail',
+                    'class'       => 'form-control',
                 ),
                 'required' => true
             ))
@@ -67,7 +81,7 @@ class UserType extends AbstractType
             ->add('usrPhoto', FileType::class, array(
                 'label'    => 'Photo de profil',
                 'mapped'   => false,
-                'attr'     => array('accept' => 'image/*'),
+                'attr'     => array('accept' => 'image/*','type' => 'file',),
                 'required' => false
             ))
 
@@ -77,13 +91,16 @@ class UserType extends AbstractType
             ))
 
             ->add('username', TextType::class, array(
-                'label'    => "Nom d'utilisateur",
-                'attr'     => array('placeholder' => "Nom d'utilisateur"),
+                'label'       => 'Nom utilisateur',
+                'attr'     => array(
+                    'placeholder' => "Nom d'utilisateur",
+                    'class'       => 'form-control',
+                    ),
                 'required' => true
             ))
 
             ->add('tzRole', EntityType::class, array(
-                'label'         => 'Rôle',
+                'label'       => 'Role',
                 'class'         => 'App\Techzara\Service\MetierManagerBundle\Entity\DevRole',
                 'query_builder' => function (EntityRepository $_er) {
                     $_query_builder = $_er->createQueryBuilder('r');
@@ -101,7 +118,8 @@ class UserType extends AbstractType
                 'choice_label'  => 'rlName',
                 'multiple'      => false,
                 'expanded'      => false,
-                'required'      => true
+                'required'      => true,
+                'data'          => 1,
             ))
 
             ->add('plainPassword',RepeatedType::class, array(
@@ -111,13 +129,13 @@ class UserType extends AbstractType
                     'label' => 'form.password',
                     'attr'  => array(
                         'minleght'    => 6,
-                        'placeholder' => 'Mot de passe'
+                        'placeholder' => 'Entrer votre mot de passe'
                     )
                 ),
                 'second_options'  => array(
                     'label' => 'form.password_confirmation',
                     'attr'  => array(
-                        'placeholder' => 'Confirmation mot de passe'
+                        'placeholder' => 'Confirmer votre mot de passe'
                     )
                 ),
                 'invalid_message' => 'fos_user.password.mismatch',

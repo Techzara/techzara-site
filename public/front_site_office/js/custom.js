@@ -20,4 +20,6 @@ $('a[href=\"' + hash + '\"]').closest('li').addClass('active');
         // dotsContainer: '#customDots',
         items:1
     });
+    $('.tz-select-insc option[value="2"]').attr("selected",true);
+    $('.inputfile').parent().parent().addClass('btn btn-primary tz-btn-primary')
 });

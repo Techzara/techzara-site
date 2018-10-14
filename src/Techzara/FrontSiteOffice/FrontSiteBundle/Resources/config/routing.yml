@@ -19,3 +19,7 @@ tz_cms_site:
 tz_sitemap_site:
     resource: "@FrontSiteBundle/Resources/config/routing/sitemap.yml"
     prefix:   /
+
+tz_membres_liste:
+  resource: "@FrontSiteBundle/Resources/config/routing/membres.yml"
+  prefix:     /membres

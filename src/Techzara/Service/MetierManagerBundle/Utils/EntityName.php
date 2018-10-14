@@ -8,6 +8,7 @@ namespace App\Techzara\Service\MetierManagerBundle\Utils;
  */
 class EntityName
 {
+    const MEMBRES = 'MetierManagerBundle:DevHome';
     const USER = 'UserBundle:User';
     const LV_USER_ROLE = 'MetierManagerBundle:DevRole';
     const LV_CMS = 'MetierManagerBundle:DevCms';

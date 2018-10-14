@@ -1,6 +1,13 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: julien
+ * Date: 10/14/18
+ * Time: 7:40 PM
+ */
 
-namespace App\Techzara\Service\UserBundle\Manager;
+namespace App\Techzara\Service\MetierManagerBundle\Metier\DevHome;
+
 
 use App\Techzara\Service\UserBundle\Entity\User;
 use Doctrine\ORM\EntityManager;
@@ -10,7 +17,9 @@ use App\Techzara\Service\MetierManagerBundle\Utils\RoleName;
 use Symfony\Component\DependencyInjection\Container;
 use FOS\UserBundle\Model\UserInterface;
 
-class UserManager
+
+
+class HomeManager
 {
     private $_entity_manager;
     private $_container;
@@ -47,20 +56,17 @@ class UserManager
     public function getAllUser()
     {
         // Récupérer l'utilisateur connecté
-        $_user_connected = $this->_container->get('security.token_storage')->getToken()->getUser();
-        $_id_user        = $_user_connected->getId();
-        $_user_role      = $_user_connected->getTzRole()->getId();
 
+        // Rôle superadmin
         // Rôle superadmin
         $_array_type = array(
             'tzRole' => array(
                 RoleName::ID_ROLE_SUPERADMIN,
-                RoleName::ID_ROLE_ADMIN,
                 RoleName::ID_ROLE_MEMBRES,
+                RoleName::ID_ROLE_ADMIN,
                 RoleName::ID_ROLE_PARTENAIRES,
             )
         );
-
         return $this->getRepository()->findBy($_array_type, array('id' => 'DESC'));
     }
 
@@ -359,4 +365,5 @@ class UserManager
 
         return $_rand ;
     }
+
 }

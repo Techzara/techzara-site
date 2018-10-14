@@ -1,0 +1,39 @@
+{% extends 'front_site_office/base_front.html.twig' %}
+
+{% block title %} Membres - Techzara {% endblock %}
+
+{% block body %}
+
+    <div class="container tz-container">
+        <br> <br> <br> <br> <br>
+        <div>
+            <a href="{{ path('membres_new') }}" class="btn btn-info">
+                <i class="fas fa-plus-circle"></i> Inscrivez vous
+            </a>
+        </div>
+        <div class="row">
+            {% for user in membres %}
+                <div class="col-md-4">
+                    <div class="card card-profile">
+                        <div class="card-image">
+                            <a href="#">
+                                <img class="img" src="{{ user.usrPhoto }}" />
+                            </a>
+                        </div>
+
+                        <div class="content">
+                            <h4 class="card-title">{{ user.usrFirstname }}</h4>
+                            <h4 class="card-title">{{ user.usrLastname }}</h4>
+
+                            <div class="footer">
+                                <a href="#pablo" class="btn btn-just-icon btn-simple btn-twitter"><i class="fab fa-twitter-square"></i></a>
+                                <a href="https://web.facebook.com/julkwel" class="btn btn-just-icon btn-simple btn-facebook"><i class="fab fa-facebook-square"></i></a>
+                                <a href="#pablo" class="btn btn-just-icon btn-simple btn-google"><i class="fab fa-google-plus-square"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
