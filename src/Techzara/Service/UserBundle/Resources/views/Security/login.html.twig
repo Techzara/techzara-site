@@ -7,7 +7,9 @@
             {{ error.messageKey|trans(error.messageData, 'security') }}
         </div>
     {% endif %}
-
+    <div class="tz-logo-content">
+        <img src="{{ asset('front_site_office/images/techzara/techzara-logo.jpg') }}" style="width: 200px" height="80px" alt="">
+    </div>
     <form action="{{ path('fos_user_security_check') }}" method="post" id="login-form">
         <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" />
 
@@ -21,11 +23,11 @@
                    name="_password" id="password"/>
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
         </div>
-        <div class="form-group has-feedback">
-            <a href="{{ path('tz_resetting_password') }}">
-                Mot de passe oublié  ?
-            </a>
-        </div>
+        {#<div class="form-group has-feedback">#}
+            {#<a href="{{ path('tz_resetting_password') }}">#}
+                {#Mot de passe oublié  ?#}
+            {#</a>#}
+        {#</div>#}
         <button type="submit" class="btn btn-primary btn-block btn-flat"
                 id="login-form-submit">
             Connexion
