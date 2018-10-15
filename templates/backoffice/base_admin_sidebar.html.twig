@@ -38,20 +38,20 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="treeview {% if menu_employe_list is defined %}{{ active }}{% endif %}">
-                            <a href="#">
-                                <i class="fa fa-user"></i>
-                                <span>Employe</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li class="{% if menu_employe_list is defined %}{{ active }}{% endif %}">
-                                    <a href="{{ path('employe_index') }}"><i class="fa fa-circle-o"></i> Liste</a>
-                                </li>
-                            </ul>
-                        </li>
+                        {#<li class="treeview {% if menu_employe_list is defined %}{{ active }}{% endif %}">#}
+                            {#<a href="#">#}
+                                {#<i class="fa fa-user"></i>#}
+                                {#<span>Employe</span>#}
+                                {#<span class="pull-right-container">#}
+                                    {#<i class="fa fa-angle-left pull-right"></i>#}
+                                {#</span>#}
+                            {#</a>#}
+                            {#<ul class="treeview-menu">#}
+                                {#<li class="{% if menu_employe_list is defined %}{{ active }}{% endif %}">#}
+                                    {#<a href="{{ path('employe_index') }}"><i class="fa fa-circle-o"></i> Liste</a>#}
+                                {#</li>#}
+                            {#</ul>#}
+                        {#</li>#}
 
                         {% if is_granted('ROLE_SUPERADMIN') %}
                             {# Rôle #}
