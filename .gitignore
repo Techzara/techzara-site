@@ -4,7 +4,6 @@
 /public/bundles/
 /var/
 ###< symfony/framework-bundle ###
-/vendor/
 ###> symfony/webpack-encore-pack ###
 /node_modules/
 /public/build/
