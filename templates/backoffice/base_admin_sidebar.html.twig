@@ -113,211 +113,211 @@
                 </li>
 
                 {# Service #}
-                <li class="treeview {% if menu_service_type is defined or menu_service is defined %}{{ active }}{% endif %}">
-                    <a href="#">
-                        <i class="fa fa-hand-lizard-o"></i>
-                        <span>Service</span>
-                        <span class="pull-right-container">
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                    </a>
-                    <ul class="treeview-menu">
+                {#<li class="treeview {% if menu_service_type is defined or menu_service is defined %}{{ active }}{% endif %}">#}
+                    {#<a href="#">#}
+                        {#<i class="fa fa-hand-lizard-o"></i>#}
+                        {#<span>Service</span>#}
+                        {#<span class="pull-right-container">#}
+                            {#<i class="fa fa-angle-left pull-right"></i>#}
+                        {#</span>#}
+                    {#</a>#}
+                    {#<ul class="treeview-menu">#}
                         {# Type #}
-                        <li class="treeview {% if menu_service_type is defined %}{{ active }}{% endif %}">
-                            <a href="#">
-                                <i class="fa fa-server"></i>
-                                <span>Type</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li class="{% if menu_service_type_list is defined %}{{ active }}{% endif %}">
-                                    <a href="{{ path('service_type_index') }}"><i class="fa fa-circle-o"></i> Liste</a>
-                                </li>
-                                <li class="{% if menu_service_type_create is defined %}{{ active }}{% endif %}">
-                                    <a href="{{ path('service_type_new') }}"><i class="fa fa-circle-o"></i> Créer</a>
-                                </li>
-                            </ul>
-                        </li>
+                        {#<li class="treeview {% if menu_service_type is defined %}{{ active }}{% endif %}">#}
+                            {#<a href="#">#}
+                                {#<i class="fa fa-server"></i>#}
+                                {#<span>Type</span>#}
+                                {#<span class="pull-right-container">#}
+                                    {#<i class="fa fa-angle-left pull-right"></i>#}
+                                {#</span>#}
+                            {#</a>#}
+                            {#<ul class="treeview-menu">#}
+                                {#<li class="{% if menu_service_type_list is defined %}{{ active }}{% endif %}">#}
+                                    {#<a href="{{ path('service_type_index') }}"><i class="fa fa-circle-o"></i> Liste</a>#}
+                                {#</li>#}
+                                {#<li class="{% if menu_service_type_create is defined %}{{ active }}{% endif %}">#}
+                                    {#<a href="{{ path('service_type_new') }}"><i class="fa fa-circle-o"></i> Créer</a>#}
+                                {#</li>#}
+                            {#</ul>#}
+                        {#</li>#}
 
                         {# Service #}
-                        <li class="treeview {% if menu_service is defined %}{{ active }}{% endif %}">
-                            <a href="#">
-                                <i class="fa fa-hand-lizard-o"></i>
-                                <span>Service</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li class="{% if menu_service_list is defined %}{{ active }}{% endif %}">
-                                    <a href="{{ path('service_index') }}"><i class="fa fa-circle-o"></i> Liste</a>
-                                </li>
-                                <li class="{% if menu_service_create is defined %}{{ active }}{% endif %}">
-                                    <a href="{{ path('service_new') }}"><i class="fa fa-circle-o"></i> Créer</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
+                        {#<li class="treeview {% if menu_service is defined %}{{ active }}{% endif %}">#}
+                            {#<a href="#">#}
+                                {#<i class="fa fa-hand-lizard-o"></i>#}
+                                {#<span>Service</span>#}
+                                {#<span class="pull-right-container">#}
+                                    {#<i class="fa fa-angle-left pull-right"></i>#}
+                                {#</span>#}
+                            {#</a>#}
+                            {#<ul class="treeview-menu">#}
+                                {#<li class="{% if menu_service_list is defined %}{{ active }}{% endif %}">#}
+                                    {#<a href="{{ path('service_index') }}"><i class="fa fa-circle-o"></i> Liste</a>#}
+                                {#</li>#}
+                                {#<li class="{% if menu_service_create is defined %}{{ active }}{% endif %}">#}
+                                    {#<a href="{{ path('service_new') }}"><i class="fa fa-circle-o"></i> Créer</a>#}
+                                {#</li>#}
+                            {#</ul>#}
+                        {#</li>#}
+                    {#</ul>#}
+                {#</li>#}
 
                 {# Option service #}
-                <li class="treeview {% if menu_service_option_type is defined or menu_service_option is defined %}{{ active }}{% endif %}">
-                    <a href="#">
-                        <i class="fa fa-microchip"></i>
-                        <span>Option service</span>
-                        <span class="pull-right-container">
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                    </a>
-                    <ul class="treeview-menu">
+                {#<li class="treeview {% if menu_service_option_type is defined or menu_service_option is defined %}{{ active }}{% endif %}">#}
+                    {#<a href="#">#}
+                        {#<i class="fa fa-microchip"></i>#}
+                        {#<span>Option service</span>#}
+                        {#<span class="pull-right-container">#}
+                            {#<i class="fa fa-angle-left pull-right"></i>#}
+                        {#</span>#}
+                    {#</a>#}
+                    {#<ul class="treeview-menu">#}
                         {# Type #}
-                        <li class="treeview {% if menu_service_option_type is defined %}{{ active }}{% endif %}">
-                            <a href="#">
-                                <i class="fa fa-server"></i>
-                                <span>Type</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li class="{% if menu_service_option_type_list is defined %}{{ active }}{% endif %}">
-                                    <a href="{{ path('service_option_type_index') }}">
-                                        <i class="fa fa-circle-o"></i> Liste
-                                    </a>
-                                </li>
-                                <li class="{% if menu_service_option_type_create is defined %}{{ active }}{% endif %}">
-                                    <a href="{{ path('service_option_type_new') }}">
-                                        <i class="fa fa-circle-o"></i> Créer
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
+                        {#<li class="treeview {% if menu_service_option_type is defined %}{{ active }}{% endif %}">#}
+                            {#<a href="#">#}
+                                {#<i class="fa fa-server"></i>#}
+                                {#<span>Type</span>#}
+                                {#<span class="pull-right-container">#}
+                                    {#<i class="fa fa-angle-left pull-right"></i>#}
+                                {#</span>#}
+                            {#</a>#}
+                            {#<ul class="treeview-menu">#}
+                                {#<li class="{% if menu_service_option_type_list is defined %}{{ active }}{% endif %}">#}
+                                    {#<a href="{{ path('service_option_type_index') }}">#}
+                                        {#<i class="fa fa-circle-o"></i> Liste#}
+                                    {#</a>#}
+                                {#</li>#}
+                                {#<li class="{% if menu_service_option_type_create is defined %}{{ active }}{% endif %}">#}
+                                    {#<a href="{{ path('service_option_type_new') }}">#}
+                                        {#<i class="fa fa-circle-o"></i> Créer#}
+                                    {#</a>#}
+                                {#</li>#}
+                            {#</ul>#}
+                        {#</li>#}
 
                         {# Option service #}
-                        <li class="treeview {% if menu_service_option is defined %}{{ active }}{% endif %}">
-                            <a href="#">
-                                <i class="fa fa-microchip"></i>
-                                <span>Option service</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li class="{% if menu_service_option_list is defined %}{{ active }}{% endif %}">
-                                    <a href="{{ path('service_option_index') }}">
-                                        <i class="fa fa-circle-o"></i> Liste
-                                    </a>
-                                </li>
-                                <li class="{% if menu_service_option_create is defined %}{{ active }}{% endif %}">
-                                    <a href="{{ path('service_option_new') }}">
-                                        <i class="fa fa-circle-o"></i> Créer
-                                    </a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
+                        {#<li class="treeview {% if menu_service_option is defined %}{{ active }}{% endif %}">#}
+                            {#<a href="#">#}
+                                {#<i class="fa fa-microchip"></i>#}
+                                {#<span>Option service</span>#}
+                                {#<span class="pull-right-container">#}
+                                    {#<i class="fa fa-angle-left pull-right"></i>#}
+                                {#</span>#}
+                            {#</a>#}
+                            {#<ul class="treeview-menu">#}
+                                {#<li class="{% if menu_service_option_list is defined %}{{ active }}{% endif %}">#}
+                                    {#<a href="{{ path('service_option_index') }}">#}
+                                        {#<i class="fa fa-circle-o"></i> Liste#}
+                                    {#</a>#}
+                                {#</li>#}
+                                {#<li class="{% if menu_service_option_create is defined %}{{ active }}{% endif %}">#}
+                                    {#<a href="{{ path('service_option_new') }}">#}
+                                        {#<i class="fa fa-circle-o"></i> Créer#}
+                                    {#</a>#}
+                                {#</li>#}
+                            {#</ul>#}
+                        {#</li>#}
+                    {#</ul>#}
+                {#</li>#}
 
                 {# Service client #}
-                {% if is_granted('ROLE_ADMIN') %}
-                    <li class="treeview {% if menu_service_client is defined %}{{ active }}{% endif %}">
-                        <a href="#">
-                            <i class="fa fa-desktop"></i>
-                            <span>Service client</span>
-                            <span class="pull-right-container">
-                                <i class="fa fa-angle-left pull-right"></i>
-                            </span>
-                        </a>
-                        <ul class="treeview-menu">
-                            {% if is_granted('ROLE_SUPERADMIN') %}
-                                <li class="{% if menu_service_client_create is defined %}{{ active }}{% endif %}">
-                                    <a href="{{ path('service_client_new') }}">
-                                        <i class="fa fa-circle-o"></i> Ajouter commande
-                                    </a>
-                                </li>
-                                <li class="{% if menu_service_client_list_not_validated is defined %}{{ active }}{% endif %}">
-                                    <a href="{{ path('service_client_list_not_validated') }}">
-                                        <i class="fa fa-circle-o"></i> Voir liste à valider
-                                    </a>
-                                </li>
-                            {% endif %}
-                            <li class="{% if menu_service_client_list_validated is defined %}{{ active }}{% endif %}">
-                                <a href="{{ path('service_client_list_validated') }}">
-                                    <i class="fa fa-circle-o"></i> Voir liste validé
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                {% endif %}
+                {#{% if is_granted('ROLE_ADMIN') %}#}
+                    {#<li class="treeview {% if menu_service_client is defined %}{{ active }}{% endif %}">#}
+                        {#<a href="#">#}
+                            {#<i class="fa fa-desktop"></i>#}
+                            {#<span>Service client</span>#}
+                            {#<span class="pull-right-container">#}
+                                {#<i class="fa fa-angle-left pull-right"></i>#}
+                            {#</span>#}
+                        {#</a>#}
+                        {#<ul class="treeview-menu">#}
+                            {#{% if is_granted('ROLE_SUPERADMIN') %}#}
+                                {#<li class="{% if menu_service_client_create is defined %}{{ active }}{% endif %}">#}
+                                    {#<a href="{{ path('service_client_new') }}">#}
+                                        {#<i class="fa fa-circle-o"></i> Ajouter commande#}
+                                    {#</a>#}
+                                {#</li>#}
+                                {#<li class="{% if menu_service_client_list_not_validated is defined %}{{ active }}{% endif %}">#}
+                                    {#<a href="{{ path('service_client_list_not_validated') }}">#}
+                                        {#<i class="fa fa-circle-o"></i> Voir liste à valider#}
+                                    {#</a>#}
+                                {#</li>#}
+                            {#{% endif %}#}
+                            {#<li class="{% if menu_service_client_list_validated is defined %}{{ active }}{% endif %}">#}
+                                {#<a href="{{ path('service_client_list_validated') }}">#}
+                                    {#<i class="fa fa-circle-o"></i> Voir liste validé#}
+                                {#</a>#}
+                            {#</li>#}
+                        {#</ul>#}
+                    {#</li>#}
+                {#{% endif %}#}
 
                 {# Facture client #}
-                <li class="treeview {% if menu_facture is defined %}{{ active }}{% endif %}">
-                    <a href="{{ path('facture_index') }}">
-                        <i class="fa fa-file-text"></i>
-                        <span>Facture client</span>
-                        <span class="pull-right-container">
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                    </a>
-                </li>
+                {#<li class="treeview {% if menu_facture is defined %}{{ active }}{% endif %}">#}
+                    {#<a href="{{ path('facture_index') }}">#}
+                        {#<i class="fa fa-file-text"></i>#}
+                        {#<span>Facture client</span>#}
+                        {#<span class="pull-right-container">#}
+                            {#<i class="fa fa-angle-left pull-right"></i>#}
+                        {#</span>#}
+                    {#</a>#}
+                {#</li>#}
 
                 {# Attribution service #}
-                <li class="treeview {% if menu_user_service_client is defined %}{{ active }}{% endif %}">
-                    <a href="#">
-                        <i class="fa fa-calendar"></i>
-                        <span>Attribution service</span>
-                        <span class="pull-right-container">
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li class="{% if menu_user_service_client_list is defined %}{{ active }}{% endif %}">
-                            <a href="{{ path('user_service_client_index') }}"><i class="fa fa-circle-o"></i> Liste</a>
-                        </li>
-                        <li class="{% if menu_user_service_client_create is defined %}{{ active }}{% endif %}">
-                            <a href="{{ path('user_service_client_new') }}"><i class="fa fa-circle-o"></i> Créer</a>
-                        </li>
-                    </ul>
-                </li>
+                {#<li class="treeview {% if menu_user_service_client is defined %}{{ active }}{% endif %}">#}
+                    {#<a href="#">#}
+                        {#<i class="fa fa-calendar"></i>#}
+                        {#<span>Attribution service</span>#}
+                        {#<span class="pull-right-container">#}
+                            {#<i class="fa fa-angle-left pull-right"></i>#}
+                        {#</span>#}
+                    {#</a>#}
+                    {#<ul class="treeview-menu">#}
+                        {#<li class="{% if menu_user_service_client_list is defined %}{{ active }}{% endif %}">#}
+                            {#<a href="{{ path('user_service_client_index') }}"><i class="fa fa-circle-o"></i> Liste</a>#}
+                        {#</li>#}
+                        {#<li class="{% if menu_user_service_client_create is defined %}{{ active }}{% endif %}">#}
+                            {#<a href="{{ path('user_service_client_new') }}"><i class="fa fa-circle-o"></i> Créer</a>#}
+                        {#</li>#}
+                    {#</ul>#}
+                {#</li>#}
 
                 {# Email newsletter #}
-                <li class="treeview {% if menu_email_newsletter is defined or menu_message_newsletter is defined %}{{ active }}{% endif %}">
-                    <a href="#">
-                        <i class="fa fa-newspaper-o"></i>
-                        <span>Newsletter</span>
-                        <span class="pull-right-container">
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                    </a>
-                    <ul class="treeview-menu">
-                        <li class="{% if menu_email_newsletter is defined %}{{ active }}{% endif %}">
-                            <a href="{{ path('email_newsletter_index') }}">
-                                <i class="fa fa-circle-o"></i> Email abonné
-                            </a>
-                        </li>
-                        <li class="{% if menu_message_newsletter is defined %}{{ active }}{% endif %}">
-                            <a href="{{ path('message_newsletter_index') }}">
-                                <i class="fa fa-circle-o"></i> Newsletter
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-            {% endif %}
+                {#<li class="treeview {% if menu_email_newsletter is defined or menu_message_newsletter is defined %}{{ active }}{% endif %}">#}
+                    {#<a href="#">#}
+                        {#<i class="fa fa-newspaper-o"></i>#}
+                        {#<span>Newsletter</span>#}
+                        {#<span class="pull-right-container">#}
+                            {#<i class="fa fa-angle-left pull-right"></i>#}
+                        {#</span>#}
+                    {#</a>#}
+                    {#<ul class="treeview-menu">#}
+                        {#<li class="{% if menu_email_newsletter is defined %}{{ active }}{% endif %}">#}
+                            {#<a href="{{ path('email_newsletter_index') }}">#}
+                                {#<i class="fa fa-circle-o"></i> Email abonné#}
+                            {#</a>#}
+                        {#</li>#}
+                        {#<li class="{% if menu_message_newsletter is defined %}{{ active }}{% endif %}">#}
+                            {#<a href="{{ path('message_newsletter_index') }}">#}
+                                {#<i class="fa fa-circle-o"></i> Newsletter#}
+                            {#</a>#}
+                        {#</li>#}
+                    {#</ul>#}
+                {#</li>#}
+            {#{% endif %}#}
 
-            {% if is_granted('ROLE_CLIENT') %}
+            {#{% if is_granted('ROLE_ADMIN') %}#}
                 {# Service client #}
-                <li class="treeview {% if menu_service_client is defined %}{{ active }}{% endif %}">
-                    <a href="{{ path('service_client_list') }}">
-                        <i class="fa fa-file-text"></i>
-                        <span>Mes services</span>
-                        <span class="pull-right-container">
-                            <i class="fa fa-angle-left pull-right"></i>
-                        </span>
-                    </a>
-                </li>
-            {% endif %}
+                {#<li class="treeview {% if menu_service_client is defined %}{{ active }}{% endif %}">#}
+                    {#<a href="{{ path('service_client_list') }}">#}
+                        {#<i class="fa fa-file-text"></i>#}
+                        {#<span>Mes services</span>#}
+                        {#<span class="pull-right-container">#}
+                            {#<i class="fa fa-angle-left pull-right"></i>#}
+                        {#</span>#}
+                    {#</a>#}
+                {#</li>#}
+            {#{% endif %}#}
 
             {% if is_granted('ROLE_INTEGRATEUR') or is_granted('ROLE_TESTEUR') %}
                 {# Attribution service #}
