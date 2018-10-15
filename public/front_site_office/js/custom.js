@@ -16,7 +16,7 @@ $('a[href=\"' + hash + '\"]').closest('li').addClass('active');
         paginationSpeed : 400,
         singleItem: true,
         pagination: true,
-        // navContainer: '#customNav',
+        navContainer: '#customNav',
         // dotsContainer: '#customDots',
         items:1
     });
