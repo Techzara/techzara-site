@@ -188,7 +188,6 @@ class UserController extends Controller
             'method'    => 'PUT',
             'user_role' => $_user_role
         ));
-
         return $_form;
     }
 
