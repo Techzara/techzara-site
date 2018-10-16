@@ -13,7 +13,7 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  * @ORM\Table(name="tz_user", uniqueConstraints={@ORM\UniqueConstraint(name="username_canonical_UNIQUE", columns={"username_canonical"}), @ORM\UniqueConstraint(name="email_canonical_UNIQUE", columns={"email_canonical"}), @ORM\UniqueConstraint(name="confirmation_token_UNIQUE", columns={"confirmation_token"})})
  * @UniqueEntity(fields="username", message="Nom d'utilisateur déjà existant")
  * @UniqueEntity(fields="email", message="Email déjà existant")
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="UserRepository")
  */
 class User extends BaseUser
 {
@@ -67,6 +67,13 @@ class User extends BaseUser
      * @ORM\Column(name="usr_phone", type="string", length=45, nullable=true)
      */
     private $usrPhone;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="usr_social", type="string", length=45, nullable=true)
+     */
+    private $social_count;
 
     /**
      * @var string
@@ -348,4 +355,22 @@ class User extends BaseUser
     {
         return $this->usrNomEntreprise . ' (' . $this->email . ')';
     }
+
+    /**
+     * @return string
+     */
+    public function getSocialCount()
+    {
+        return $this->social_count;
+    }
+
+    /**
+     * @param string $social_count
+     */
+    public function setSocialCount($social_count)
+    {
+        $this->social_count = $social_count;
+    }
+
+
 }

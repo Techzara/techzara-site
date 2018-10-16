@@ -42,6 +42,16 @@ class UserType extends AbstractType
                 'required' => true
             ))
 
+            ->add('socialCount', TextType::class, array(
+                'label'       => 'lien compte facebook',
+                'attr'     => array(
+                    'placeholder' => 'Entrer votre lien compte facebook',
+                    'pattern'     => '(http:\/\/|https:\/\/)?(www.)?([a-zA-Z0-9]+).[a-zA-Z0-9]*.[a-z]{3}.?([a-z]+)?',
+                    'class'       => 'form-control'
+                ),
+                'required' => true
+            ))
+
             ->add('usrFirstname', TextType::class, array(
                 'label'       => 'Prénom',
                 'attr'     => array(

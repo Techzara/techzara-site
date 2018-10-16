@@ -23,15 +23,18 @@
                             <img src="{{ photo_profil }}"
                                  class="user-image" alt="{{ user.username }}">
                         </div>
-
                         <div class="content">
                             <h4 class="card-title">{{ user.usrFirstname }}</h4>
                             <h4 class="card-title">{{ user.usrLastname }}</h4>
 
                             <div class="footer">
-                                <a href="#pablo" class="btn btn-just-icon btn-simple btn-twitter"><i class="fab fa-twitter-square"></i></a>
-                                <a href="https://web.facebook.com/julkwel" class="btn btn-just-icon btn-simple btn-facebook"><i class="fab fa-facebook-square"></i></a>
-                                <a href="#pablo" class="btn btn-just-icon btn-simple btn-google"><i class="fab fa-google-plus-square"></i></a>
+                                <a href="#" class="btn btn-just-icon btn-simple btn-twitter"><i class="fab fa-twitter-square"></i></a>
+                                {% set facebook     = user.socialCount %}
+                                {% if facebook is null %}
+                                    {% set facebook = 'https://www.facebook.com' %}
+                                {% endif %}
+                                <a href="{{ facebook }}" target="_blank" class="btn btn-just-icon btn-simple btn-facebook"><i class="fab fa-facebook-square"></i></a>
+                                <a href="#" class="btn btn-just-icon btn-simple btn-google"><i class="fab fa-google-plus-square"></i></a>
                             </div>
                         </div>
                     </div>
