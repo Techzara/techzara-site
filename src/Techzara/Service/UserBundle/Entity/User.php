@@ -71,7 +71,7 @@ class User extends BaseUser
     /**
      * @var string
      *
-     * @ORM\Column(name="usr_social", type="string", length=45, nullable=true)
+     * @ORM\Column(name="usr_social", type="string", length=255, nullable=true)
      */
     private $social_count;
 
