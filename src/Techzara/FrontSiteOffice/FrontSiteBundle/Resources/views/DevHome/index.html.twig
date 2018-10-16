@@ -78,7 +78,11 @@
                             <div class="card card-profile card-plain">
                                 <div class="card-avatar">
                                     <a href="#pablo">
-                                        <img class="img" src="{{ user.usrPhoto }}"  style="width: 200px" />
+                                        {% set photo_profil = user.usrPhoto %}
+                                        {% if photo_profil is null %}
+                                            {% set photo_profil = asset('front_site_office/images/techzara/icon.jpg') %}
+                                        {% endif %}
+                                        <img class="img" src="{{ photo_profil }}"  style="width: 200px" />
                                     </a>
                                 </div>
 
