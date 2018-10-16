@@ -22,3 +22,5 @@ a h2 ,a p{color: white!important;}
 footer{ background: #002740!important;color: white!important;}
 .tz-btn-primary {background-color: #0d2840!important;
     color: #FFFFFF!important;}
+#customNav{position: relative!important;text-align: center!important;}
+.tz-btn-slide {margin: 5px!important;}

@@ -23,4 +23,6 @@ $('a[href=\"' + hash + '\"]').closest('li').addClass('active');
     $('.tz-select-insc option[value="2"]').attr("selected",true);
     $('.tz-select-insc').parent().parent().css("display","none");
     $('.inputfile').parent().parent().addClass('btn btn-primary tz-btn-primary')
+    $('.owl-prev').addClass('btn btn-primary tz-btn-slide');
+    $('.owl-next').addClass('btn btn-primary tz-btn-slide');
 });
