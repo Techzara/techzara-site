@@ -73,142 +73,46 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-3">
-                        <div class="card card-profile card-plain">
-                            <div class="card-avatar">
-                                <a href="#pablo">
-                                    <img class="img" src="{{ asset('front_site_office/images/techzara/admin/julien.jpg') }}" />
-                                </a>
-                            </div>
+                    {% for user in users %}
+                        <div class="col-md-3">
+                            <div class="card card-profile card-plain">
+                                <div class="card-avatar">
+                                    <a href="#pablo">
+                                        <img class="img" src="{{ user.usrPhoto }}"  style="width: 200px" />
+                                    </a>
+                                </div>
 
-                            <div class="content">
-                                <h4 class="card-title">RAJERISON Julien</h4>
-                                <h6 class="category text-muted"> Fondateur </h6>
+                                <div class="content">
+                                    <h4 class="card-title">{{ user.usrFullName }}</h4>
+                                    <h6 class="category text-muted">
+                                        {% set tache = user.tache %}
+                                        {% if tache is null %}
+                                            {% set tache = 'Résponsable' %}
+                                        {% endif %}
+                                        {{ tache }}
+                                    </h6>
 
-                                <p class="card-description">
-                                    J'ai créé TechZara dans le but de partager mes connaissances dans le domaine de la Nouvelle Technologie de l'Informatique.
-                                </p>
-                                <div class="footer">
-                                    <a href="#pablo" class="btn btn-just-icon btn-simple btn-twitter"><i class="fab fa-twitter-square"></i></a>
-                                    <a href="https://web.facebook.com/julkwel" class="btn btn-just-icon btn-simple btn-facebook"><i class="fab fa-facebook-square"></i></a>
-                                    <a href="#pablo" class="btn btn-just-icon btn-simple btn-google"><i class="fab fa-google-plus-square"></i></a>
+                                    <p class="card-description">
+                                        {% set quotes = user.quotes %}
+                                        {% if quotes is null %}
+                                            {% set quotes = 'Résponsable au niveau Techzara' %}
+                                        {% endif %}
+                                        {{ quotes }}
+                                    </p>
+                                    <div class="footer">
+                                        <a href="#pablo" class="btn btn-just-icon btn-simple btn-twitter"><i class="fab fa-twitter-square"></i></a>
+                                        {% set facebook = user.socialCount %}
+                                        {% if facebook is null %}
+                                            {% set facebook = 'https://www.facebook.com' %}
+                                        {% endif %}
+                                        <a href="{{ facebook }}" target="_blank" class="btn btn-just-icon btn-simple btn-facebook"><i class="fab fa-facebook-square"></i></a>
+                                        <a href="#pablo" class="btn btn-just-icon btn-simple btn-google"><i class="fab fa-google-plus-square"></i></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card card-profile card-plain">
-                            <div class="card-avatar">
-                                <a href="#pablo">
-                                    <img class="img" src="{{ asset('front_site_office/images/techzara/admin/solofo.jpg') }}" style="width: 200px" />
-                                </a>
-                            </div>
-
-                            <div class="content">
-                                <h4 class="card-title">RALITERA Solofo</h4>
-                                <h6 class="category text-muted">Co-fondateur</h6>
-
-                                <p class="card-description">
-                                    J'aimerais inculquer l'esprit de partage aux jeunes Malagasy afin d'augmenter leur niveau dans leur domaine..
-                                </p>
-                                <div class="footer">
-                                    <a href="#pablo" class="btn btn-just-icon btn-simple btn-twitter"><i class="fab fa-twitter-square"></i></a>
-                                    <a href="https://web.facebook.com/sloufpower" class="btn btn-just-icon btn-simple btn-facebook"><i class="fab fa-facebook-square"></i></a>
-                                    <a href="#pablo" class="btn btn-just-icon btn-simple btn-google"><i class="fab fa-google-plus-square"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card card-profile card-plain">
-                            <div class="card-avatar">
-                                <a href="#pablo">
-                                    <img class="img" src="{{ asset('front_site_office/images/techzara/admin/nyantso.jpg') }}" />
-                                </a>
-                            </div>
-
-                            <div class="content">
-                                <h4 class="card-title">NY Antso</h4>
-                                <h6 class="category text-muted">Résponsable logistique</h6>
-
-                                <p class="card-description">
-                                    Je suis fiere d'etre administrateur au Techzara , parce-que j'aimerais bien aussi
-                                    d'une outils pour ameliorer les niveaux des jeunes Malagasy.
-                                </p>
-                                <div class="footer">
-                                    <a href="#pablo" class="btn btn-just-icon btn-simple btn-twitter"><i class="fab fa-twitter-square"></i></a>
-                                    <a href="https://web.facebook.com/nyantso.rak" class="btn btn-just-icon btn-simple btn-facebook"><i class="fab fa-facebook-square"></i></a>
-                                    <a href="#pablo" class="btn btn-just-icon btn-simple btn-google"><i class="fab fa-google-plus-square"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card card-profile card-plain">
-                            <div class="card-avatar">
-                                <a href="#pablo">
-                                    <img class="img" src="{{ asset('front_site_office/images/techzara/admin/vatosoa.jpg') }}"  style="width: 200px" />
-                                </a>
-                            </div>
-
-                            <div class="content">
-                                <h4 class="card-title">Vatosoa Rinamihanta</h4>
-                                <h6 class="category text-muted">Responsable Tresorie</h6>
-
-                                <p class="card-description">
-                                    Je suis membre de Techzara depuis le debut. Je veux montrer que les femmes aussi ont une grande place dans l'innovation et l'évolution Technologique.
-                                </p>
-                                <div class="footer">
-                                    <a href="#pablo" class="btn btn-just-icon btn-simple btn-twitter"><i class="fab fa-twitter-square"></i></a>
-                                    <a href="https://web.facebook.com/profile.php?id=100010707872533" class="btn btn-just-icon btn-simple btn-facebook"><i class="fab fa-facebook-square"></i></a>
-                                    <a href="#pablo" class="btn btn-just-icon btn-simple btn-google"><i class="fab fa-google-plus-square"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
-            </div>
-            <div class="container">
-                {% for user in users %}
-                    <div></div>
-                    <div class="col-md-3">
-                        <div class="card card-profile card-plain">
-                            <div class="card-avatar">
-                                <a href="#pablo">
-                                    <img class="img" src="{{ user.usrPhoto }}"  style="width: 200px" />
-                                </a>
-                            </div>
-
-                            <div class="content">
-                                <h4 class="card-title">{{ user.usrFullName }}</h4>
-                                <h6 class="category text-muted">
-                                    {% set tache = user.tache %}
-                                    {% if tache is null %}
-                                        {% set tache = 'Résponsable' %}
-                                    {% endif %}
-                                    {{ tache }}
-                                </h6>
-
-                                <p class="card-description">
-                                    {% set quotes = user.quotes %}
-                                    {% if quotes is null %}
-                                        {% set quotes = 'Résponsable au niveau Techzara' %}
-                                    {% endif %}
-                                    {{ quotes }}
-                                </p>
-                                <div class="footer">
-                                    <a href="#pablo" class="btn btn-just-icon btn-simple btn-twitter"><i class="fab fa-twitter-square"></i></a>
-                                    {% set facebook = user.socialCount %}
-                                    {% if facebook is null %}
-                                        {% set facebook = 'https://www.facebook.com' %}
-                                    {% endif %}
-                                    <a href="{{ facebook }}" target="_blank" class="btn btn-just-icon btn-simple btn-facebook"><i class="fab fa-facebook-square"></i></a>
-                                    <a href="#pablo" class="btn btn-just-icon btn-simple btn-google"><i class="fab fa-google-plus-square"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                {% endfor %}
             </div>
             <div class="about-services features-2">
                 <div class="row">
