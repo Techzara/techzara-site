@@ -46,7 +46,6 @@ class UserType extends AbstractType
                 'label'       => 'lien compte facebook',
                 'attr'     => array(
                     'placeholder' => 'Entrer votre lien compte facebook',
-                    'pattern'     => '(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)',
                     'class'       => 'form-control'
                 ),
                 'required' => false
