@@ -82,7 +82,7 @@
                                         {% if photo_profil is null %}
                                             {% set photo_profil = asset('front_site_office/images/techzara/icon.jpg') %}
                                         {% endif %}
-                                        <img class="img" src="{{ photo_profil }}"  style="width: 200px" />
+                                        <img class="img" src="{{ photo_profil }}"  alt="{{ user.username }}"  style="width: 200px" />
                                     </a>
                                 </div>
 
