@@ -123,6 +123,13 @@ class User extends BaseUser
      */
     private $tache;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="admin_testimonial", type="string", length=255, nullable=true)
+     */
+    private $quotes;
+
 
     /**
      * Constructor
@@ -371,6 +378,40 @@ class User extends BaseUser
     {
         $this->social_count = $social_count;
     }
+
+    /**
+     * @return string
+     */
+    public function getQuotes()
+    {
+        return $this->quotes;
+    }
+
+    /**
+     * @param string $quotes
+     */
+    public function setQuotes($quotes)
+    {
+        $this->quotes = $quotes;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTache()
+    {
+        return $this->tache;
+    }
+
+    /**
+     * @param string $tache
+     */
+    public function setTache($tache)
+    {
+        $this->tache = $tache;
+    }
+
+
 
 
 }

@@ -15,10 +15,10 @@ class RoleName
     const ROLE_ADMINISTRATEUR           = 'ROLE_ADMIN';
 
     // Identifiant rôle
-    const ID_ROLE_SUPERADMIN  = 1;
-    const ID_ROLE_ADMIN       = 2;
-    const ID_ROLE_PARTENAIRES = 3;
-    const ID_ROLE_MEMBRES     = 4;
+    const ID_ROLE_SUPERADMIN  = 0;
+    const ID_ROLE_ADMIN       = 1;
+    const ID_ROLE_PARTENAIRES = 2;
+    const ID_ROLE_MEMBRES     = 3;
 
     static $ROLE_TYPE = array(
         'Superadmin'      => 'ROLE_SUPERADMIN',

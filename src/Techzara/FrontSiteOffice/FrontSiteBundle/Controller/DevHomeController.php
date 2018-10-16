@@ -3,6 +3,7 @@
 namespace App\Techzara\FrontSiteOffice\FrontSiteBundle\Controller;
 
 use App\Techzara\Service\MetierManagerBundle\Utils\CmsName;
+use App\Techzara\Service\MetierManagerBundle\Utils\RoleName;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use App\Techzara\Service\MetierManagerBundle\Utils\ServiceName;
 use App\Techzara\Service\MetierManagerBundle\Metier\DevHome\HomeManager;
@@ -29,9 +30,7 @@ class DevHomeController extends Controller
         $_slides          = $_slide_manager->getAllDevSlide();
         $_portfolios      = $_portfolio_manager->getAllDevPortfolio();
         $_portfolio_types = $_portfolio_type_manager->getAllDevPortfolioType();
-        $_membres         = $_membres_liste->getAllUser();
-//        dump($_membres);
-//        die();
+        $_admin         = $_membres_liste->getAdmin();
 
 
         return $this->render('FrontSiteBundle:DevHome:index.html.twig', array(
@@ -39,7 +38,7 @@ class DevHomeController extends Controller
             'slides'          => $_slides,
             'portfolios'      => $_portfolios,
             'portfolio_types' => $_portfolio_types,
-            'users'           => $_membres
+            'users'           => $_admin
         ));
     }
 

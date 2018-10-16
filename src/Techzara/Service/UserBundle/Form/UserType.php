@@ -46,10 +46,28 @@ class UserType extends AbstractType
                 'label'       => 'lien compte facebook',
                 'attr'     => array(
                     'placeholder' => 'Entrer votre lien compte facebook',
-                    'pattern'     => '(http:\/\/|https:\/\/)?(www.)?([a-zA-Z0-9]+).[a-zA-Z0-9]*.[a-z]{3}.?([a-z]+)?',
+                    'pattern'     => '(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)',
                     'class'       => 'form-control'
                 ),
-                'required' => true
+                'required' => false
+            ))
+
+            ->add('tache', TextType::class, array(
+                'label'       => 'Tache',
+                'attr'     => array(
+                    'placeholder' => 'Entrer votre résponsabilité',
+                    'class'       => 'form-control tz-tache'
+                ),
+                'required' => false
+            ))
+
+            ->add('quotes', TextType::class, array(
+                'label'       => 'Inserer un voeux',
+                'attr'     => array(
+                    'placeholder' => 'Entrer votre voeux',
+                    'class'       => 'form-control tz-voeux'
+                ),
+                'required' => false
             ))
 
             ->add('usrFirstname', TextType::class, array(

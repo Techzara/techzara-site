@@ -70,6 +70,17 @@ class HomeManager
         return $this->getRepository()->findBy($_array_type, array('id' => 'DESC'));
     }
 
+    public function getAdmin()
+    {
+
+        $_array_type = array(
+            'tzRole' => array(
+                RoleName::ID_ROLE_SUPERADMIN,
+                RoleName::ID_ROLE_ADMIN,
+            )
+        );
+        return $this->getRepository()->findBy($_array_type, array('id' => 'DESC'));
+    }
     /**
      * Récuperer tout les utilisateurs par ordre
      * @param array $_order

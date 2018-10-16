@@ -25,4 +25,5 @@ $('a[href=\"' + hash + '\"]').closest('li').addClass('active');
     $('.inputfile').parent().parent().addClass('btn btn-primary tz-btn-primary')
     $('.owl-prev').addClass('btn btn-primary tz-btn-slide');
     $('.owl-next').addClass('btn btn-primary tz-btn-slide');
+    $('.tz-tache,.tz-voeux').parent().css("display","none");
 });
