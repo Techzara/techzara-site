@@ -16,9 +16,12 @@
                 <div class="col-md-4">
                     <div class="card card-profile">
                         <div class="card-image">
-                            <a href="#">
-                                <img class="img" src="{{ user.usrPhoto }}" />
-                            </a>
+                            {% set photo_profil = user.usrPhoto %}
+                            {% if photo_profil is null %}
+                                {% set photo_profil = asset('front_site_office/images/techzara/icon.jpg') %}
+                            {% endif %}
+                            <img src="{{ photo_profil }}"
+                                 class="user-image" alt="{{ user.username }}">
                         </div>
 
                         <div class="content">
