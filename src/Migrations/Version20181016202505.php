@@ -8,14 +8,14 @@ use Doctrine\DBAL\Schema\Schema;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-class Version20181016141024 extends AbstractMigration
+class Version20181016202505 extends AbstractMigration
 {
     public function up(Schema $schema)
     {
         // this up() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE tz_user CHANGE usr_social usr_social VARCHAR(255) DEFAULT NULL');
+        $this->addSql('CREATE TABLE tz_article (id INT AUTO_INCREMENT NOT NULL, art_title VARCHAR(100) DEFAULT NULL, art_author VARCHAR(100) DEFAULT NULL, art_photo VARCHAR(255) DEFAULT NULL, art_content LONGTEXT DEFAULT NULL, art_date DATETIME DEFAULT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE = InnoDB');
     }
 
     public function down(Schema $schema)
@@ -23,6 +23,6 @@ class Version20181016141024 extends AbstractMigration
         // this down() migration is auto-generated, please modify it to your needs
         $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
 
-        $this->addSql('ALTER TABLE tz_user CHANGE usr_social usr_social VARCHAR(45) DEFAULT NULL COLLATE utf8_unicode_ci');
+        $this->addSql('DROP TABLE tz_article');
     }
 }

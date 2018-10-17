@@ -8,10 +8,12 @@ namespace App\Techzara\Service\MetierManagerBundle\Utils;
  */
 class ServiceName
 {
+    const SRV_METIER_ARTICLE = 'lv.manager.article';
     const SRV_METIER_MEMBRES = 'lv.manager.membres';
     const SRV_METIER_USER = 'lv.manager.user';
     const SRV_METIER_USER_ROLE = 'lv.manager.user.role';
     const SRV_METIER_USER_UPLOAD = 'lv.manager.user.upload';
+    const SRV_METIER_ARTICLE_UPLOAD = 'lv.manager.article.upload';
     const SRV_METIER_CMS = 'lv.manager.cms';
     const SRV_METIER_CONTACT = 'lv.manager.contact';
     const SRV_METIER_CONTACT_SITE = 'lv.manager.contact.site';

@@ -1,0 +1,26 @@
+{% extends 'front_site_office/base_front.html.twig' %}
+
+{% block body %}
+    <div class="container">
+        {% for article in articles %}
+            <div class="section section-text">
+                <div class="row">
+                    <div class="section col-md-12">
+                        <div class="tz-img-content">
+                            <img class="img-rounded img-responsive img-raised" alt="Raised Image" src="{{  article ? article.artphoto }}">
+                        </div>
+                    </div>
+                    <div class="col-md-8 col-md-offset-2">
+                        <h3 class="title">{{ article ? article.title }} :</h3>
+                        <p>
+                            {{ article.content }}
+                        </p>
+                        <p>
+                            {{  article ? article.author }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

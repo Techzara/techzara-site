@@ -14,4 +14,5 @@ class PathName
     const UPLOAD_SLIDE = '/upload/slide/';
     const UPLOAD_PORTFOLIO = '/upload/portfolio/';
     const UPLOAD_FACTURE = '/reporting/generated/facture/';
+    const UPLOAD_ARTICLE = '/upload/article/';
 }

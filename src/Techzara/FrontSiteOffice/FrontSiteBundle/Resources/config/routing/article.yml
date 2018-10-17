@@ -1,0 +1,3 @@
+article_liste:
+  path:     /
+  defaults: { _controller: "FrontSiteBundle:DevArticle:index" }

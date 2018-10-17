@@ -73,3 +73,7 @@ tz_temoignage:
 dev_news:
     resource: "@AdminBundle/Resources/config/routing/news.yml"
     prefix:   /news
+
+tz_article:
+    resource: "@AdminBundle/Resources/config/routing/article.yml"
+    prefix:   /article

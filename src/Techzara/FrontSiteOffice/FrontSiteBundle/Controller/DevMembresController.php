@@ -67,14 +67,10 @@ class DevMembresController extends Controller
      */
     private function createCreateForm(User $_user)
     {
-        // Récupérer l'utilisateur connecté
-//        $_user_connected = $this->container->get('security.token_storage')->getToken()->getUser();
-//        $_user_role      = $_user_connected->getTzRole()->getId();
 
         $_form = $this->createForm(UserType::class, $_user, array(
             'action'    => $this->generateUrl('membres_new'),
             'method'    => 'POST',
-//            'user_role' => $_user_role
         ));
 
         return $_form;
