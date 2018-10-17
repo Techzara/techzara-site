@@ -1,4 +1,0 @@
-cms_front_show_site:
-    path:     /{_id}/{_slug}
-    defaults: { _controller: "FrontSiteBundle:DevCms:show" }
-    methods:  GET

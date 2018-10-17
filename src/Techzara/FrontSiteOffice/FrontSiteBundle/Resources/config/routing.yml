@@ -2,24 +2,6 @@ tz_home_site:
     resource: "@FrontSiteBundle/Resources/config/routing/home.yml"
     prefix:   /
 
-tz_home_contact_site:
-    resource: "@FrontSiteBundle/Resources/config/routing/contact.yml"
-    prefix:   /
-
-tz_cookies_site:
-    resource: "@FrontSiteBundle/Resources/config/routing/cookies.yml"
-    prefix:   /
-
-tz_cms_site:
-    resource: "@FrontSiteBundle/Resources/config/routing/cms_site.yml"
-    prefix:   /{_locale}/content
-    requirements:
-      _locale: fr|en
-
-tz_sitemap_site:
-    resource: "@FrontSiteBundle/Resources/config/routing/sitemap.yml"
-    prefix:   /
-
 tz_membres_liste:
   resource: "@FrontSiteBundle/Resources/config/routing/membres.yml"
   prefix:     /membres

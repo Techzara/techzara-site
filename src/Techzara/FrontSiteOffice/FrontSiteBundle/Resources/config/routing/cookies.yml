@@ -1,4 +1,0 @@
-cookies_site_index:
-    path:    /information-cookies/
-    defaults: { _controller: "FrontSiteBundle:DevCookies:index" }
-

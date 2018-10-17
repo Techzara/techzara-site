@@ -1,9 +1,0 @@
-sitemap_site_index:
-    path:     /plan-du-site
-    defaults: { _controller: "FrontSiteBundle:DevSitemap:index" }
-    methods:  GET
-
-sitemap_generate:
-    path:     /sitemap.xml
-    defaults: { _controller: "FrontSiteBundle:DevSitemap:generateSitemap" }
-    methods:  GET
