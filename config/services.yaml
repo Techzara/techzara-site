@@ -30,44 +30,44 @@ services:
         resource: '../src/*'
         exclude: '../src/{Migrations}'
 
-    lv.manager.user.role:
-        class: App\Techzara\Service\MetierManagerBundle\Metier\DevRole\ServiceMetierDevRole
+    tz.manager.user.role:
+        class: App\Techzara\Service\MetierManagerBundle\Metier\TzRole\ServiceMetierTzRole
         arguments: [ "@doctrine.orm.entity_manager","@service_container" ]
         public: true
 
-    lv.manager.email.newsletter:
-        class: App\Techzara\Service\MetierManagerBundle\Metier\DevEmailNewsletter\ServiceMetierEmailNewsletter
+    tz.manager.email.newsletter:
+        class: App\Techzara\Service\MetierManagerBundle\Metier\TzEmailNewsletter\ServiceMetierEmailNewsletter
         arguments: [ "@doctrine.orm.entity_manager","@service_container" ]
         public: true
 
-    lv.manager.message.newsletter:
-        class: App\Techzara\Service\MetierManagerBundle\Metier\DevMessageNewsletter\ServiceMetierMessageNewsletter
+    tz.manager.message.newsletter:
+        class: App\Techzara\Service\MetierManagerBundle\Metier\TzMessageNewsletter\ServiceMetierMessageNewsletter
         arguments: [ "@doctrine.orm.entity_manager","@service_container" ]
         public: true
 
-    lv.twig.file.exists:
+    tz.twig.file.exists:
         class: App\Techzara\Service\MetierManagerBundle\Twig\Extension\FileExistsExtension
         arguments: ['@service_container']
         tags:
             - { name: twig.extension }
 
-    lv.manager.membres:
-        class: App\Techzara\Service\MetierManagerBundle\Metier\DevHome\HomeManager
+    tz.manager.membres:
+        class: App\Techzara\Service\MetierManagerBundle\Metier\TzHome\HomeManager
         arguments: [ "@doctrine.orm.entity_manager","@service_container" ]
         public: true
 
 
-    lv.manager.article:
-      class: App\Techzara\Service\MetierManagerBundle\Metier\DevArticle\ServiceMetierDevArticle
+    tz.manager.article:
+      class: App\Techzara\Service\MetierManagerBundle\Metier\TzArticle\ServiceMetierTzArticle
       arguments: [ "@doctrine.orm.entity_manager","@service_container" ]
       public: true
 
-    lv.manager.article.upload:
-      class: App\Techzara\Service\MetierManagerBundle\Metier\DevArticle\ArtUploadManager
+    tz.manager.article.upload:
+      class: App\Techzara\Service\MetierManagerBundle\Metier\TzArticle\ArtUploadManager
       arguments: ['@doctrine.orm.entity_manager','%kernel.root_dir%']
       public: true
 
-    lv.manager.activite:
-      class: App\Techzara\Service\MetierManagerBundle\Metier\DevActivite\ServiceMetierDevActivite
+    tz.manager.activite:
+      class: App\Techzara\Service\MetierManagerBundle\Metier\TzActivite\ServiceMetierTzActivite
       arguments: [ "@doctrine.orm.entity_manager","@service_container" ]
       public: true

@@ -1,29 +1,29 @@
 role_index:
     path:     /
-    defaults: { _controller: "AdminBundle:DevRole:index" }
+    defaults: { _controller: "AdminBundle:TzRole:index" }
     methods:  GET
 
 role_new:
     path:     /new
-    defaults: { _controller: "AdminBundle:DevRole:new" }
+    defaults: { _controller: "AdminBundle:TzRole:new" }
     methods:  [GET, POST]
 
 role_edit:
     path:     /{id}/edit
-    defaults: { _controller: "AdminBundle:DevRole:edit" }
+    defaults: { _controller: "AdminBundle:TzRole:edit" }
     methods:  [GET, POST]
 
 role_update:
     path:     /{id}/update
-    defaults: { _controller: "AdminBundle:DevRole:update" }
+    defaults: { _controller: "AdminBundle:TzRole:update" }
     methods:  [POST, PUT]
 
 role_delete:
     path:     /{id}/delete
-    defaults: { _controller: "AdminBundle:DevRole:delete" }
+    defaults: { _controller: "AdminBundle:TzRole:delete" }
     methods:  [GET, DELETE]
 
 role_delete_group:
     path:     /delete-group
-    defaults: { _controller: "AdminBundle:DevRole:deleteGroup" }
+    defaults: { _controller: "AdminBundle:TzRole:deleteGroup" }
     methods:  POST

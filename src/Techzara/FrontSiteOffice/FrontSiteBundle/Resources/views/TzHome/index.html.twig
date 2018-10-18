@@ -1,0 +1,311 @@
+{% extends 'front_site_office/base_front.html.twig' %}
+
+{% block title %} Techzara - Madagascar {% endblock %}
+
+{% block body %}
+    {{ include('@FrontSite/TzHome/head.html.twig') }}
+    {#{{ include('@FrontSite/TzArticle/index.html.twig') }}#}
+    <div class="container">
+        <section>
+            <div class="features-3">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="phone-container owl-carousel">
+                            <img src="{{ asset('front_site_office/images/slide/s1.jpg') }}" />
+                            <img src="{{ asset('front_site_office/images/slide/s2.jpg') }}" />
+                            <img src="{{ asset('front_site_office/images/slide/s3.jpg') }}" />
+                            <img src="{{ asset('front_site_office/images/slide/s6.jpg') }}" />
+                            <img src="{{ asset('front_site_office/images/slide/s7.jpg') }}" />
+                            <img src="{{ asset('front_site_office/images/slide/s8.jpg') }}" />
+                            <img src="{{ asset('front_site_office/images/slide/s9.jpg') }}" />
+                            <img src="{{ asset('front_site_office/images/slide/s5.jpg') }}" />
+                            <img src="{{ asset('front_site_office/images/slide/s11.jpg') }}" />
+                            <img src="{{ asset('front_site_office/images/slide/s13.jpg') }}" />
+                            <img src="{{ asset('front_site_office/images/slide/s14.jpg') }}" />
+                        </div>
+                        <div id="customNav"></div>
+                    </div>
+                    <div class="col-md-6">
+
+                        <div class="info info-horizontal">
+                            <div class="icon icon-primary">
+                                <i class="fas fa-laptop"></i>
+                            </div>
+                            <div class="description">
+                                <h4 class="info-title">Mise en niveau</h4>
+                                <p>Amélioration des capacités  techniques pour les étudiants.</p>
+                            </div>
+                        </div>
+
+                        <div class="info info-horizontal">
+                            <div class="icon icon-primary">
+                                <i class="fas fa-user-circle"></i>
+                            </div>
+                            <div class="description">
+                                <h4 class="info-title">Partage entre les membres</h4>
+                                <p>Partage d'expérience entre les membres  pour améliorer  leur niveaux d'apprentissage. </p>
+                            </div>
+                        </div>
+
+                        <div class="info info-horizontal">
+                            <div class="icon icon-primary">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <div class="description">
+                                <h4 class="info-title">Promotion de la technologie</h4>
+                                <p>Promotion de la nouvelle Technologie au niveau des jeunes.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {#{% if cms.translate('fr').cmstContent|striptags != '' %}#}
+        {#{{ cms.translate('fr').cmstContent|raw }}#}
+        {#{% else %}#}
+        <section id="apropos" class="tz-services tz-section-with-title">
+            <div class="about-team team-1">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h2 class="title">Nous sommes une association</h2>
+                        <h5 class="description">Techzara est une association des jeunes passionées dans le dommaine de la nouvelle
+                            téchnologie de l'informatique , pour objectif de partager des éxperiences entre les jeunes.
+                        </h5>
+                    </div>
+                </div>
+                <div class="row">
+                    {% for user in users %}
+                        <div class="col-md-3">
+                            <div class="card card-profile card-plain">
+                                <div class="card-avatar">
+                                    <a href="#pablo">
+                                        {% set photo_profil = user.usrPhoto %}
+                                        {% if photo_profil is null %}
+                                            {% set photo_profil = asset('front_site_office/images/techzara/icon.jpg') %}
+                                        {% endif %}
+                                        <img class="img" src="{{ photo_profil }}"  style="width: 131px;height: 131px"  alt="{{ user.username }}"  />
+                                    </a>
+                                </div>
+
+                                <div class="content">
+                                    <h4 class="card-title">{{ user.usrFullName }}</h4>
+                                    <h6 class="category text-muted">
+                                        {% set tache = user.tache %}
+                                        {% if tache is null %}
+                                            {% set tache = 'Résponsable' %}
+                                        {% endif %}
+                                        {{ tache }}
+                                    </h6>
+
+                                    <p class="card-description">
+                                        {% set quotes = user.quotes %}
+                                        {% if quotes is null %}
+                                            {% set quotes = 'Résponsable au niveau Techzara' %}
+                                        {% endif %}
+                                        {{ quotes }}
+                                    </p>
+                                    <div class="footer">
+                                        <a href="#pablo" class="btn btn-just-icon btn-simple btn-twitter"><i class="fab fa-twitter-square"></i></a>
+                                        {% set facebook = user.socialCount %}
+                                        {% if facebook is null %}
+                                            {% set facebook = 'https://www.facebook.com' %}
+                                        {% endif %}
+                                        <a href="{{ facebook }}" target="_blank" class="btn btn-just-icon btn-simple btn-facebook"><i class="fab fa-facebook-square"></i></a>
+                                        <a href="#pablo" class="btn btn-just-icon btn-simple btn-google"><i class="fab fa-google-plus-square"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="about-services features-2">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h2 class="title">Notre activité</h2>
+                        <h5 class="description">Notre activité consiste en des ateliers de création d'applications et de partage d'expérience sur les différentes nouveautés du domaine de la Technologie.
+                        </h5>
+                    </div>
+                </div>
+                <div class="row">
+                {% set active_liste = activites %}
+                {% for activite in active_liste  %}
+                    <div class="col-md-4">
+                        <div class="card"   >
+                            <div class="content content-success">
+                                <h4 class="card-title">
+                                    <a href="#pablo">{{ activite.title }}</a>
+                                </h4>
+                                <p class="card-description">
+                                    {{ activite.desc }}
+                                </p>
+                                <div class="footer text-center">
+                                    <a href="#" class="btn btn-white btn-round">Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% else %}
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="info info-horizontal">
+                            <div class="icon icon-rose">
+                                <i class="fas fa-share"></i>
+                            </div>
+                            <div class="description">
+                                <h4 class="info-title">1. Partage</h4>
+                                <p>Atelier tous les samedis matin de 08 - 12H pour partager des éxperiences entre les membres </p>
+                                <a href="#pablo">Voir plus ...</a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="info info-horizontal">
+                            <div class="icon icon-rose">
+                                <i class="fas fa-object-group"></i>
+                            </div>
+                            <div class="description">
+                                <h4 class="info-title">2. Formation</h4>
+                                <p>Formation de 3 mois pour ameliorer le niveau des étudiants</p>
+                                <a href="#pablo">Voir plus ...</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="info info-horizontal">
+                            <div class="icon icon-rose">
+                                <i class="fab fa-app-store-ios"></i>
+                            </div>
+                            <div class="description">
+                                <h4 class="info-title">3. Projets</h4>
+                                <p>TechZara a créé différents projets dans le but d'augmenter notre expérience .
+                                </p>
+                                <a href="#pablo">Voir plus ...</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+        <section id="article">
+            <div class="row">
+                {% for article in articles %}
+                    <div class="col-md-4">
+                        <div class="card card-blog">
+                            <div class="card-image">
+                                <a href="{{ path('article_details', { 'id': article.id }) }}">
+                                    {% set photo_article = article.artphoto %}
+                                        {% if photo_article is null %}
+                                            {% set photo_article = asset('front_site_office/images/techzara/icon.jpg') %}
+                                        {% endif %}
+                                    <img class="img" src="{{ photo_article }}" />
+                                </a>
+                            </div>
+
+                            <div class="content">
+                                <h4 class="card-title">
+                                    <a href="{{ path('article_details', { 'id': article.id }) }}">{{ article.title }}</a>
+                                </h4>
+                                <a href="{{ path('article_details', { 'id': article.id }) }}" class="card-description">
+                                    {{ article.content|length > 50 ? article.content|slice(0, 50) ~ ' ... ' : article.content }}
+                                </a>
+                                <div class="footer">
+                                    <div class="author">
+                                        <a href="#">
+                                            <span>
+                                                {% set author = article.author %}
+                                                    {% if author is null %}
+                                                        {% set author = 'Techzara Admin'  %}
+                                                    {% endif %}
+                                                {{  author }}
+                                            </span>
+                                        </a>
+                                    </div>
+                                    <div class="stats">
+                                        {{ article.artDate|date('Y-m-d H:i:s') }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+
+        <section>
+            <div id="event" class="tab-content">
+                <div class="tab-pane active work" id="work">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1 class="title text-center">Prochaines activité</h1>
+                            <div class="row collections">
+                                <div class="col-md-6">
+                                    <div class="card card-background" style="background-image: url('{{ asset('front_site_office/images/techzara/card1.jpg') }}')">
+                                        <a href="#pablo"></a>
+                                        <div class="content">
+                                            <label class="label label-primary">Samedi 20 Octobre 2018</label>
+                                            <a href="#pablo">
+                                                <h2>08H - 12H</h2>
+                                                <h2 class="card-title">Ariary Net</h2>
+                                                <p>Présentation de l'API de l'ariary Net</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card card-background" style="background-image: url('{{ asset('front_site_office/images/techzara/techzara-bg.jpg') }}')">
+                                        <a href="#pablo"></a>
+                                        <div class="content">
+                                            <label class="label label-primary">Samedi 20 Octobre 2018</label>
+                                            <a href="#pablo">
+                                                <h2> 14H - 17H </h2>
+                                                <h2 class="card-title">Pratique</h2>
+                                                <p>Atelier électronique avec l'équipe de la maison 2.0 </p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card card-background" style="background-image: url('{{ asset('front_site_office/images/techzara/card1.jpg') }}')">
+                                        <a href="#pablo"></a>
+                                        <div class="content">
+                                            <label class="label label-primary">Samedi 28 Octobre 2018</label>
+                                            <a href="#pablo">
+                                                <h2> 08H - 12H </h2>
+                                                <h2 class="card-title">Réseaux</h2>
+                                                <p>Base d'adressage IP</p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card card-background" style="background-image: url('{{ asset('front_site_office/images/techzara/techzara-bg.jpg') }}')">
+                                        <a href="#pablo"></a>
+                                        <div class="content">
+                                            <label class="label label-primary">Samedi 04 Novembre 2018</label>
+                                            <a href="#pablo">
+                                                <h2> 08H - 12H </h2>
+                                                <h2 class="card-title">Jeux Vidéo</h2>
+                                                <p>Présentation du jeux vidéo </p>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+{% endblock %}
+
+
+
+

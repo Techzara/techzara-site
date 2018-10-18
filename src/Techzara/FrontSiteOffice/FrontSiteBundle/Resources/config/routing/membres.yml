@@ -1,8 +1,8 @@
 membres_liste:
   path:     /
-  defaults: { _controller: "FrontSiteBundle:DevMembres:index" }
+  defaults: { _controller: "FrontSiteBundle:TzMembres:index" }
 
 membres_new:
   path:     /new
-  defaults: { _controller: "FrontSiteBundle:DevMembres:new" }
+  defaults: { _controller: "FrontSiteBundle:TzMembres:new" }
   methods: [GET,POST]

@@ -1,39 +1,39 @@
 message_newsletter_index:
     path:     /
-    defaults: { _controller: "AdminBundle:DevMessageNewsletter:index" }
+    defaults: { _controller: "AdminBundle:TzMessageNewsletter:index" }
     methods:  GET
 
 message_newsletter_new:
     path:     /new
-    defaults: { _controller: "AdminBundle:DevMessageNewsletter:new" }
+    defaults: { _controller: "AdminBundle:TzMessageNewsletter:new" }
     methods:  [GET, POST]
 
 message_newsletter_send:
     path:     /{id}/send
-    defaults: { _controller: "AdminBundle:DevMessageNewsletter:send" }
+    defaults: { _controller: "AdminBundle:TzMessageNewsletter:send" }
     methods:  [GET, POST]
 
 message_newsletter_edit:
     path:     /{id}/edit
-    defaults: { _controller: "AdminBundle:DevMessageNewsletter:edit" }
+    defaults: { _controller: "AdminBundle:TzMessageNewsletter:edit" }
     methods:  [GET, POST]
 
 message_newsletter_update:
     path:     /{id}/update
-    defaults: { _controller: "AdminBundle:DevMessageNewsletter:update" }
+    defaults: { _controller: "AdminBundle:TzMessageNewsletter:update" }
     methods:  [POST, PUT]
 
 message_newsletter_sendupdate:
     path:     /{id}/send-update
-    defaults: { _controller: "AdminBundle:DevMessageNewsletter:sendUpdate" }
+    defaults: { _controller: "AdminBundle:TzMessageNewsletter:sendUpdate" }
     methods:  [POST, PUT]
 
 message_newsletter_delete:
     path:     /{id}/delete
-    defaults: { _controller: "AdminBundle:DevMessageNewsletter:delete" }
+    defaults: { _controller: "AdminBundle:TzMessageNewsletter:delete" }
     methods:  [ GET, DELETE ]
 
 message_newsletter_delete_group:
     path:     /delete-group
-    defaults: { _controller: "AdminBundle:DevMessageNewsletter:deleteGroup" }
+    defaults: { _controller: "AdminBundle:TzMessageNewsletter:deleteGroup" }
     methods:  POST

@@ -1,14 +1,14 @@
 services:
-    lv.manager.user:
+    tz.manager.user:
         class: App\Techzara\Service\UserBundle\Manager\UserManager
         arguments: [ "@doctrine.orm.entity_manager","@service_container" ]
         public: true
 
-    lv.manager.user.upload:
+    tz.manager.user.upload:
         class: App\Techzara\Service\UserBundle\Manager\UploadManager
         arguments: ['@doctrine.orm.entity_manager','%kernel.root_dir%']
         public: true
 
-    lv.handler.login_success_handler:
+    tz.handler.login_success_handler:
         class:  App\Techzara\Service\UserBundle\Redirection\AfterLoginRedirection
         arguments:  ['@router', '@security.authorization_checker', '@service_container']

@@ -8,11 +8,11 @@ namespace App\Techzara\Service\MetierManagerBundle\Utils;
  */
 class EntityName
 {
-    const ACTIVITE = 'MetierManagerBundle:DevActivite';
-    const ARTICLE = 'MetierManagerBundle:DevArticle';
-    const MEMBRES = 'MetierManagerBundle:DevHome';
+    const ACTIVITE = 'MetierManagerBundle:TzActivite';
+    const ARTICLE = 'MetierManagerBundle:TzArticle';
+    const MEMBRES = 'MetierManagerBundle:TzHome';
     const USER = 'UserBundle:User';
-    const LV_USER_ROLE = 'MetierManagerBundle:DevRole';
-    const LV_EMAIL_NEWSLETTER = 'MetierManagerBundle:DevEmailNewsletter';
-    const LV_MESSAGE_NEWSLETTER = 'MetierManagerBundle:DevMessageNewsletter';
+    const TZ_USER_ROLE = 'MetierManagerBundle:TzRole';
+    const TZ_EMAIL_NEWSLETTER = 'MetierManagerBundle:TzEmailNewsletter';
+    const TZ_MESSAGE_NEWSLETTER = 'MetierManagerBundle:TzMessageNewsletter';
 }

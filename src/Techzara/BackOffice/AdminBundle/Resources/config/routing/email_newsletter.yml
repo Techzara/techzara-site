@@ -1,29 +1,29 @@
 email_newsletter_index:
     path:     /
-    defaults: { _controller: "AdminBundle:DevEmailNewsletter:index" }
+    defaults: { _controller: "AdminBundle:TzEmailNewsletter:index" }
     methods:  GET
 
 email_newsletter_new:
     path:     /new
-    defaults: { _controller: "AdminBundle:DevEmailNewsletter:new" }
+    defaults: { _controller: "AdminBundle:TzEmailNewsletter:new" }
     methods:  [GET, POST]
 
 email_newsletter_edit:
     path:     /{id}/edit
-    defaults: { _controller: "AdminBundle:DevEmailNewsletter:edit" }
+    defaults: { _controller: "AdminBundle:TzEmailNewsletter:edit" }
     methods:  [GET, POST]
 
 email_newsletter_update:
     path:     /{id}/update
-    defaults: { _controller: "AdminBundle:DevEmailNewsletter:update" }
+    defaults: { _controller: "AdminBundle:TzEmailNewsletter:update" }
     methods:  [POST, PUT]
 
 email_newsletter_delete:
     path:     /{id}/delete
-    defaults: { _controller: "AdminBundle:DevEmailNewsletter:delete" }
+    defaults: { _controller: "AdminBundle:TzEmailNewsletter:delete" }
     methods:  [ GET, DELETE ]
 
 email_newsletter_delete_group:
     path:     /delete-group
-    defaults: { _controller: "AdminBundle:DevEmailNewsletter:deleteGroup" }
+    defaults: { _controller: "AdminBundle:TzEmailNewsletter:deleteGroup" }
     methods:  POST

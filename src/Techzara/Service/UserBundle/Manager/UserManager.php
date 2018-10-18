@@ -247,7 +247,7 @@ class UserManager
 
         $_is_user_admin = false;
         if ($_user) {
-            $_id_role = $_user[0]->getDevRole()->getId();
+            $_id_role = $_user[0]->getTzRole()->getId();
             if ($_id_role != RoleName::ID_ROLE_MEMBRES)
                 $_is_user_admin = true;
         }

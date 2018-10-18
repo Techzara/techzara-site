@@ -2,7 +2,7 @@
 
 namespace App\Techzara\Service\UserBundle\Entity;
 
-use App\Techzara\Service\MetierManagerBundle\Entity\DevRole;
+use App\Techzara\Service\MetierManagerBundle\Entity\TzRole;
 use Doctrine\ORM\Mapping as ORM;
 use FOS\UserBundle\Model\User as BaseUser;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
@@ -97,9 +97,9 @@ class User extends BaseUser
     private $usrNomEntreprise;
 
     /**
-     * @var DevRole
+     * @var TzRole
      *
-     * @ORM\ManyToOne(targetEntity="App\Techzara\Service\MetierManagerBundle\Entity\DevRole")
+     * @ORM\ManyToOne(targetEntity="App\Techzara\Service\MetierManagerBundle\Entity\TzRole")
      * @ORM\JoinColumns({
      *   @ORM\JoinColumn(name="tz_role_id", referencedColumnName="id")
      * })
@@ -206,7 +206,7 @@ class User extends BaseUser
     }
 
     /**
-     * @return DevRole
+     * @return TzRole
      */
     public function getTzRole()
     {
@@ -214,7 +214,7 @@ class User extends BaseUser
     }
 
     /**
-     * @param DevRole $tzRole
+     * @param TzRole $tzRole
      */
     public function setTzRole($tzRole)
     {

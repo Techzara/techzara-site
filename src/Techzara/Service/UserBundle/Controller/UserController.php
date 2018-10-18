@@ -298,7 +298,7 @@ class UserController extends Controller
 
             $_user_manager->setFlash($_status, $_message);
 
-            return $this->redirect($this->generateUrl('Dev_resetting_password'));
+            return $this->redirect($this->generateUrl('Tz_resetting_password'));
         }
 
         return $this->render('UserBundle:Security:resetting_password.html.twig');

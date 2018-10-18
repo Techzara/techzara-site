@@ -1,30 +1,30 @@
 activite_index:
   path:     /
-  defaults: { _controller: "AdminBundle:DevActivite:index" }
+  defaults: { _controller: "AdminBundle:TzActivite:index" }
   methods:  GET
 
 activite_new:
   path:     /new
-  defaults: { _controller: "AdminBundle:DevActivite:new" }
+  defaults: { _controller: "AdminBundle:TzActivite:new" }
   methods:  [GET, POST]
 
 activite_edit:
   path:     /{id}/edit
-  defaults: { _controller: "AdminBundle:DevActivite:edit" }
+  defaults: { _controller: "AdminBundle:TzActivite:edit" }
   methods:  [GET, POST]
 
 activite_update:
   path:     /{id}/update
-  defaults: { _controller: "AdminBundle:DevActivite:update" }
+  defaults: { _controller: "AdminBundle:TzActivite:update" }
   methods:  [POST, PUT]
 
 
 activite_delete:
   path:     /{id}/delete
-  defaults: { _controller: "AdminBundle:DevActivite:delete" }
+  defaults: { _controller: "AdminBundle:TzActivite:delete" }
   methods:  [GET, DELETE]
 
 activite_delete_group:
   path:     /delete-group
-  defaults: { _controller: "AdminBundle:DevActivite:deleteGroup" }
+  defaults: { _controller: "AdminBundle:TzActivite:deleteGroup" }
   methods:  POST

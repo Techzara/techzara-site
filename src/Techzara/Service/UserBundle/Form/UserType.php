@@ -129,7 +129,7 @@ class UserType extends AbstractType
 
             ->add('tzRole', EntityType::class, array(
                 'label'       => 'Role',
-                'class'         => 'App\Techzara\Service\MetierManagerBundle\Entity\DevRole',
+                'class'         => 'App\Techzara\Service\MetierManagerBundle\Entity\TzRole',
                 'query_builder' => function (EntityRepository $_er) {
                     $_query_builder = $_er->createQueryBuilder('r');
 

@@ -26,7 +26,7 @@ security:
             anonymous: true
             form_login:
                 provider: fos_userbundle
-                success_handler: lv.handler.login_success_handler
+                success_handler: tz.handler.login_success_handler
                 csrf_token_generator: security.csrf.token_manager
                 login_path: /login
                 check_path: /login_check
