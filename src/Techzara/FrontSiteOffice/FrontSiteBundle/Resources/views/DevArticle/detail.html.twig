@@ -1,0 +1,64 @@
+{% extends 'front_site_office/base_front.html.twig' %}
+
+{% block body %}
+    <br><br><br><br><br>
+    <div class="section section-gray">
+        <div class="container">
+            <div class="main main-raised main-product">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6">
+                        <div class="">
+                            <div class="" id="">
+                                {% set photo_art = article.artphoto  %}
+                                    {% if photo_art is null %}
+                                        {% set photo_art = asset('front_site_office/images/slide/s6.jpg') %}
+                                    {% endif %}
+                                <img src="{{ photo_art }}" alt="{{ article.title }}" width="100%" style="padding: 10px"/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-6">
+                        <h2 class="title"> {{ article.title }} </h2>
+                        <div id="acordeon">
+                            <div class="panel-group" id="accordion">
+                                <div class="panel panel-border panel-default">
+                                    <div class="panel-heading" role="tab" id="headingOne">
+                                        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            <h4 class="panel-title">
+                                                Description
+                                            </h4>
+                                        </a>
+                                    </div>
+
+                                    <div id="collapseOne" class="panel-collapse in collapse show">
+                                        <div class="panel-body">
+                                            <p style="word-break: break-all">{{ article.content }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row text-right" style="display: block">
+                            <a href="{{ path('home_site_index') }}" class="btn btn-rose btn-round">Retour</a>
+                        </div>
+                        <div class="footer">
+                            <div class="author">
+                                <a href="#">
+                                    <div class="stats">
+                                        {% set autor = article.author  %}
+                                            {% if autor is null %}
+                                                {% set autor = "Techzara Admin" %}
+                                            {% endif %}
+                                        {{ autor }} le
+                                        {{ article.artDate|date('Y-m-d H:i') }}
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

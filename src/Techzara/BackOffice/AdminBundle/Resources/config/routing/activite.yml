@@ -1,0 +1,30 @@
+activite_index:
+  path:     /
+  defaults: { _controller: "AdminBundle:DevActivite:index" }
+  methods:  GET
+
+activite_new:
+  path:     /new
+  defaults: { _controller: "AdminBundle:DevActivite:new" }
+  methods:  [GET, POST]
+
+activite_edit:
+  path:     /{id}/edit
+  defaults: { _controller: "AdminBundle:DevActivite:edit" }
+  methods:  [GET, POST]
+
+activite_update:
+  path:     /{id}/update
+  defaults: { _controller: "AdminBundle:DevActivite:update" }
+  methods:  [POST, PUT]
+
+
+activite_delete:
+  path:     /{id}/delete
+  defaults: { _controller: "AdminBundle:DevActivite:delete" }
+  methods:  [GET, DELETE]
+
+activite_delete_group:
+  path:     /delete-group
+  defaults: { _controller: "AdminBundle:DevActivite:deleteGroup" }
+  methods:  POST

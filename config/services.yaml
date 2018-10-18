@@ -146,11 +146,6 @@ services:
         arguments: [ "@doctrine.orm.entity_manager","@service_container" ]
         public: true
 
-    lv.manager.sitemap:
-        class: App\Techzara\Service\MetierManagerBundle\Metier\DevSitemap\ServiceMetierDevSitemap
-        arguments: [ "@doctrine.orm.entity_manager","@service_container" ]
-        public: true
-
     lv.manager.membres:
         class: App\Techzara\Service\MetierManagerBundle\Metier\DevHome\HomeManager
         arguments: [ "@doctrine.orm.entity_manager","@service_container" ]
@@ -162,8 +157,12 @@ services:
       arguments: [ "@doctrine.orm.entity_manager","@service_container" ]
       public: true
 
-
     lv.manager.article.upload:
       class: App\Techzara\Service\MetierManagerBundle\Metier\DevArticle\ArtUploadManager
       arguments: ['@doctrine.orm.entity_manager','%kernel.root_dir%']
+      public: true
+
+    lv.manager.activite:
+      class: App\Techzara\Service\MetierManagerBundle\Metier\DevActivite\ServiceMetierDevActivite
+      arguments: [ "@doctrine.orm.entity_manager","@service_container" ]
       public: true

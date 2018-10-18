@@ -66,3 +66,7 @@ tz_temoignage:
 tz_article:
     resource: "@AdminBundle/Resources/config/routing/article.yml"
     prefix:   /article
+
+tz_activite:
+  resource: "@AdminBundle/Resources/config/routing/activite.yml"
+  prefix:   /activite

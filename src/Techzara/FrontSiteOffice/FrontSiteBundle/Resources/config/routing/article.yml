@@ -1,3 +1,7 @@
 article_liste:
   path:     /
   defaults: { _controller: "FrontSiteBundle:DevArticle:index" }
+
+article_details:
+  path:     /article/{id}
+  defaults: { _controller: "FrontSiteBundle:DevArticle:showArticle" }

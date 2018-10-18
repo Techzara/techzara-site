@@ -9,6 +9,7 @@ namespace App\Techzara\Service\MetierManagerBundle\Utils;
 class ServiceName
 {
     const SRV_METIER_ARTICLE = 'lv.manager.article';
+    const SRV_METIER_ACTIVITE = 'lv.manager.activite';
     const SRV_METIER_MEMBRES = 'lv.manager.membres';
     const SRV_METIER_USER = 'lv.manager.user';
     const SRV_METIER_USER_ROLE = 'lv.manager.user.role';

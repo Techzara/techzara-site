@@ -8,6 +8,7 @@ namespace App\Techzara\Service\MetierManagerBundle\Utils;
  */
 class EntityName
 {
+    const ACTIVITE = 'MetierManagerBundle:DevActivite';
     const ARTICLE = 'MetierManagerBundle:DevArticle';
     const MEMBRES = 'MetierManagerBundle:DevHome';
     const USER = 'UserBundle:User';
