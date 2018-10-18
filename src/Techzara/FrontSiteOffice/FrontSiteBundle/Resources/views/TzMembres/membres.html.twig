@@ -34,7 +34,7 @@
                                     {% set facebook = 'https://www.facebook.com' %}
                                 {% endif %}
                                 <a href="{{ facebook }}" target="_blank" class="btn btn-just-icon btn-simple btn-facebook"><i class="fab fa-facebook-square"></i></a>
-                                <a href="#" class="btn btn-just-icon btn-simple btn-google"><i class="fab fa-google-plus-square"></i></a>
+                                <a href="{{ path('membres_show',{'id':user.id} ) }}" class="btn btn-just-icon btn-simple btn-google"><i class="fas fa-eye"></i></a>
                             </div>
                         </div>
                     </div>

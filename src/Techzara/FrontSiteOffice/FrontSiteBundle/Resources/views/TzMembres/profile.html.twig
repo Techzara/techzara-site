@@ -1,0 +1,82 @@
+{% extends 'front_site_office/base_front.html.twig' %}
+
+{% block title %} Membres - Techzara {% endblock %}
+
+{% block body %}
+<div class="main main-raised">
+    <div class="profile-content">
+        <div class="container">
+
+            <div class="row text-center">
+                <div class="col-md-12">
+                    <div class="profile">
+                        <div class="avatar text-center">
+                            {% set photo_de_profile = profile.usrPhoto %}
+                                {% if photo_de_profile is null %}
+                                    {% set photo_de_profile =  asset('front_site_office/images/techzara/icon.jpg') %}
+                                {% endif %}
+                                <img src="{{ photo_de_profile }}" alt="Circle Image" width="200px" height="200px" class="rounded-circle img-responsive img-raised">
+                        </div>
+                        <div class="name">
+                            <h3 class="title">{{ profile.usrFullname }}</h3>
+                            <h6>Membres Techzara</h6>
+                            <a href="#pablo" class="btn btn-just-icon btn-simple btn-dribbble">CV</a>
+                            {% set facebook = profile.socialCount %}
+                                {% if facebook is null %}
+                                    {% set facebook = 'https://www.facebook.com/' %}
+                            {% endif %}
+                            <a href="{{ facebook }}" class="btn btn-just-icon btn-simple btn-twitter"><i class="fab fa-facebook"></i></a>
+                            <a href="#pablo" class="btn btn-just-icon btn-simple btn-pinterest"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="description text-center">
+                {% set description = profile.quotes %}
+                {% if description is null %}
+                    {% set description = 'je suis passionné de nouvelles technologies' %}
+                {% endif %}
+                <p>{{ description }}</p>
+            </div>
+            <div class="row">
+                <div class="col-md-3"></div>
+                <div class="col-md-6 stats">
+                    <h4 class="title text-center">Qui suis je ?</h4>
+                    <ul class="list-unstyled">
+                        <li><span class="badge badge-primary">Javascript</span></li>
+                    </ul>
+                    <hr />
+                    <h4 class="title text-center">Diplome</h4>
+                    <ul class="list-unstyled">
+                        <li><span class="badge badge-primary">Javascript</span></li>
+                    </ul>
+                    <hr />
+                    <h4 class="title text-center">Stack</h4>
+                    <ul class="list-unstyled">
+                        <li><span class="badge badge-primary">Javascript</span></li>
+                    </ul>
+                    <hr />
+                    <h4 class="title text-center">Experiences</h4>
+                    <ul class="list-unstyled">
+                        <li><span class="badge badge-primary">Développeur</span></li>
+                        <h6>Déscription</h6>
+                        <p>Hello world tous le monde</p>
+                    </ul>
+                    <hr />
+                    <h4 class="title text-center">Activité</h4>
+                    <ul class="list-unstyled">
+                        <li><span class="badge badge-primary">Techzara</span></li>
+                    </ul>
+                    <div class="text-right" style="padding-bottom: 15px">{{ profile.usrLastname }}</div>
+                </div>
+                <div class="col-md-3"></div>
+                <div class="col-md-12 text-right" style="display: block">
+                    <a href="{{ path('membres_liste') }}" class="btn btn-rose btn-round">Retour</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

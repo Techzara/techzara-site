@@ -29,6 +29,14 @@ class TzMembresController extends Controller
         ));
     }
 
+    public function showAction(User $_user)
+    {
+        if (!$_user)
+            $this->createNotFoundException('Member not found');
+        return $this->render('FrontSiteBundle:TzMembres:profile.html.twig',array(
+            'profile' => $_user
+        ));
+    }
 
     /**
      * Création utilisateur
