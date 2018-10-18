@@ -107,16 +107,6 @@ class User extends BaseUser
     private $tzRole;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Techzara\Service\MetierManagerBundle\Entity\DevUserServiceClient", mappedBy="lvUsers", cascade={"persist", "remove"})
-     */
-    private $lvUserServiceClients;
-
-    /**
-     * @ORM\OneToMany(targetEntity="App\Techzara\Service\MetierManagerBundle\Entity\DevServiceClient", mappedBy="lvUser", cascade={"persist", "remove"})
-     */
-    private $lvServiceClients;
-
-    /**
      * @var string
      *
      * @ORM\Column(name="usr_tache", type="string", length=255, nullable=true)
@@ -319,38 +309,6 @@ class User extends BaseUser
     public function setUsrNomEntreprise($usrNomEntreprise)
     {
         $this->usrNomEntreprise = $usrNomEntreprise;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getLvUserServiceClients()
-    {
-        return $this->lvUserServiceClients;
-    }
-
-    /**
-     * @param mixed $lvUserServiceClients
-     */
-    public function setLvUserServiceClients($lvUserServiceClients)
-    {
-        $this->lvUserServiceClients = $lvUserServiceClients;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getLvServiceClients()
-    {
-        return $this->lvServiceClients;
-    }
-
-    /**
-     * @param mixed $lvServiceClients
-     */
-    public function setLvServiceClients($lvServiceClients)
-    {
-        $this->lvServiceClients = $lvServiceClients;
     }
 
     /**

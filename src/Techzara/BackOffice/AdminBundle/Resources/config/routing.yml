@@ -6,31 +6,6 @@ tz_role:
     resource: "@AdminBundle/Resources/config/routing/role.yml"
     prefix:   /role
 
-
-tz_faq:
-    resource: "@AdminBundle/Resources/config/routing/faq.yml"
-    prefix:   /faq
-
-tz_service_type:
-    resource: "@AdminBundle/Resources/config/routing/service_type.yml"
-    prefix:   /service-type
-
-tz_service:
-    resource: "@AdminBundle/Resources/config/routing/service.yml"
-    prefix:   /service
-
-tz_service_option_type:
-    resource: "@AdminBundle/Resources/config/routing/service_option_type.yml"
-    prefix:   /service-option-type
-
-tz_service_option:
-    resource: "@AdminBundle/Resources/config/routing/service_option.yml"
-    prefix:   /service-option
-
-tz_client:
-    resource: "@AdminBundle/Resources/config/routing/client.yml"
-    prefix:   /client
-
 tz_email_newsletter:
     resource: "@AdminBundle/Resources/config/routing/email_newsletter.yml"
     prefix:   /email-newsletter
@@ -38,30 +13,6 @@ tz_email_newsletter:
 tz_message_newsletter:
     resource: "@AdminBundle/Resources/config/routing/message_newsletter.yml"
     prefix:   /message-newsletter
-
-tz_service_client:
-    resource: "@AdminBundle/Resources/config/routing/service_client.yml"
-    prefix:   /service-client
-
-tz_user_service_client:
-    resource: "@AdminBundle/Resources/config/routing/user_service_client.yml"
-    prefix:   /user-service-client
-
-tz_slide:
-    resource: "@AdminBundle/Resources/config/routing/slide.yml"
-    prefix:   /slide
-
-tz_portfolio_type:
-    resource: "@AdminBundle/Resources/config/routing/portfolio_type.yml"
-    prefix:   /portfolio-type
-
-tz_portfolio:
-    resource: "@AdminBundle/Resources/config/routing/portfolio.yml"
-    prefix:   /portfolio
-
-tz_temoignage:
-    resource: "@AdminBundle/Resources/config/routing/temoignage.yml"
-    prefix:   /temoignage
 
 tz_article:
     resource: "@AdminBundle/Resources/config/routing/article.yml"

@@ -120,7 +120,6 @@ class UserManager
      */
     public function addUser($_user, $_form) {
         // Récupérer manager
-        $_service_client_manager = $this->_container->get(ServiceName::SRV_METIER_SERVICE_CLIENT);
 
         // Activer par défaut
         $_user->setEnabled(1);
@@ -135,11 +134,6 @@ class UserManager
         if ($_img_photo) {
             $_user_upload_manager = $this->_container->get(ServiceName::SRV_METIER_USER_UPLOAD);
             $_user_upload_manager->upload($_user, $_img_photo);
-        }
-
-        // Envoie email d'inscription au client
-        if ($_type->getId() == RoleName::ID_ROLE_MEMBRES) {
-            $_service_client_manager->sendEmailConnexionClient($_user);
         }
 
         $this->saveUser($_user, 'new');

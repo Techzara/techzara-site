@@ -137,7 +137,6 @@ class HomeManager
      */
     public function addUser($_user, $_form) {
         // Récupérer manager
-        $_service_client_manager = $this->_container->get(ServiceName::SRV_METIER_SERVICE_CLIENT);
 
         // Activer par défaut
         $_user->setEnabled(1);
@@ -156,7 +155,6 @@ class HomeManager
 
         // Envoie email d'inscription au client
         if ($_type->getId() == RoleName::ID_ROLE_MEMBRES) {
-            $_service_client_manager->sendEmailConnexionClient($_user);
         }
 
         $this->saveUser($_user, 'new');

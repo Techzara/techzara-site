@@ -52,28 +52,6 @@
                         {% endif %}
                     </ul>
                 </li>
-
-                    <ul class="treeview-menu">
-                        {# Page de FAQs #}
-                        <li class="treeview {% if menu_faq is defined %}{{ active }}{% endif %}">
-                            <a href="#">
-                                <i class="fa fa-sticky-note"></i>
-                                <span>FAQ</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li class="{% if menu_faq_list is defined %}{{ active }}{% endif %}">
-                                    <a href="{{ path('faq_index') }}"><i class="fa fa-circle-o"></i> Liste</a>
-                                </li>
-                                <li class="{% if menu_faq_create is defined %}{{ active }}{% endif %}">
-                                    <a href="{{ path('faq_new') }}"><i class="fa fa-circle-o"></i> Créer</a>
-                                </li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
                 <li>
                     <a href="{{ path('article_index') }}">
                         <i class="fa fa-image"></i>

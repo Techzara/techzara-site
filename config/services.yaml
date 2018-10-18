@@ -35,51 +35,6 @@ services:
         arguments: [ "@doctrine.orm.entity_manager","@service_container" ]
         public: true
 
-    lv.manager.cms:
-        class: App\Techzara\Service\MetierManagerBundle\Metier\DevCms\ServiceMetierDevCms
-        arguments: [ "@doctrine.orm.entity_manager","@service_container" ]
-        public: true
-
-    lv.manager.contact:
-        class: App\Techzara\Service\MetierManagerBundle\Metier\DevContact\ServiceMetierDevContact
-        arguments: [ "@doctrine.orm.entity_manager","@service_container" ]
-        public: true
-
-    lv.manager.contact.site:
-        class: App\Techzara\Service\MetierManagerBundle\Metier\DevContactSite\ServiceMetierDevContactSite
-        arguments: [ "@doctrine.orm.entity_manager","@service_container",'%kernel.root_dir%'  ]
-        public: true
-
-    lv.manager.contact.devis:
-        class: App\Techzara\Service\MetierManagerBundle\Metier\DevContactDevis\ServiceMetierDevContactDevis
-        arguments: [ "@doctrine.orm.entity_manager","@service_container",'%kernel.root_dir%' ]
-        public: true
-
-    lv.manager.service.type:
-        class: App\Techzara\Service\MetierManagerBundle\Metier\DevServiceType\ServiceMetierDevServiceType
-        arguments: [ "@doctrine.orm.entity_manager","@service_container" ]
-        public: true
-
-    lv.manager.service:
-        class: App\Techzara\Service\MetierManagerBundle\Metier\DevService\ServiceMetierDevService
-        arguments: [ "@doctrine.orm.entity_manager","@service_container" ]
-        public: true
-
-    lv.manager.service.option.type:
-        class: App\Techzara\Service\MetierManagerBundle\Metier\DevServiceOptionType\ServiceMetierDevServiceOptionType
-        arguments: [ "@doctrine.orm.entity_manager","@service_container" ]
-        public: true
-
-    lv.manager.service.option:
-        class: App\Techzara\Service\MetierManagerBundle\Metier\DevServiceOption\ServiceMetierDevServiceOption
-        arguments: [ "@doctrine.orm.entity_manager","@service_container" ]
-        public: true
-
-    lv.manager.client:
-        class: App\Techzara\Service\MetierManagerBundle\Metier\DevClient\ServiceMetierDevClient
-        arguments: [ "@doctrine.orm.entity_manager","@service_container" ]
-        public: true
-
     lv.manager.email.newsletter:
         class: App\Techzara\Service\MetierManagerBundle\Metier\DevEmailNewsletter\ServiceMetierEmailNewsletter
         arguments: [ "@doctrine.orm.entity_manager","@service_container" ]
@@ -90,61 +45,11 @@ services:
         arguments: [ "@doctrine.orm.entity_manager","@service_container" ]
         public: true
 
-    lv.manager.faq:
-        class: App\Techzara\Service\MetierManagerBundle\Metier\DevFaq\ServiceMetierDevFaq
-        arguments: [ "@doctrine.orm.entity_manager","@service_container" ]
-        public: true
-
-    lv.manager.order:
-        class: App\Techzara\Service\MetierManagerBundle\Metier\DevOrder\ServiceMetierDevOrder
-        arguments: [ "@doctrine.orm.entity_manager","@service_container" ]
-        public: true
-
-    lv.manager.service.client:
-        class: App\Techzara\Service\MetierManagerBundle\Metier\DevServiceClient\ServiceMetierDevServiceClient
-        arguments: [ "@doctrine.orm.entity_manager","@service_container", "@translator" ]
-        public: true
-
-    lv.manager.service.client.jointe:
-        class: App\Techzara\Service\MetierManagerBundle\Metier\DevServiceClientJointe\ServiceMetierDevServiceClientJointe
-        arguments: [ "@doctrine.orm.entity_manager","@service_container",'%kernel.root_dir%' ]
-        public: true
-
-    lv.manager.user.service.client:
-        class: App\Techzara\Service\MetierManagerBundle\Metier\DevUserServiceClient\ServiceMetierDevUserServiceClient
-        arguments: [ "@doctrine.orm.entity_manager","@service_container" ]
-        public: true
-
-    lv.manager.facture:
-        class: App\Techzara\Service\MetierManagerBundle\Metier\DevFacture\ServiceMetierDevFacture
-        arguments: [ "@doctrine.orm.entity_manager","@service_container","@translator" ]
-        public: true
-
     lv.twig.file.exists:
         class: App\Techzara\Service\MetierManagerBundle\Twig\Extension\FileExistsExtension
         arguments: ['@service_container']
         tags:
             - { name: twig.extension }
-
-    lv.manager.slide:
-        class: App\Techzara\Service\MetierManagerBundle\Metier\DevSlide\ServiceMetierDevSlide
-        arguments: [ "@doctrine.orm.entity_manager","@service_container",'%kernel.root_dir%' ]
-        public: true
-
-    lv.manager.portfolio.type:
-        class: App\Techzara\Service\MetierManagerBundle\Metier\DevPortfolioType\ServiceMetierDevPortfolioType
-        arguments: [ "@doctrine.orm.entity_manager","@service_container" ]
-        public: true
-
-    lv.manager.portfolio:
-        class: App\Techzara\Service\MetierManagerBundle\Metier\DevPortfolio\ServiceMetierDevPortfolio
-        arguments: [ "@doctrine.orm.entity_manager","@service_container",'%kernel.root_dir%' ]
-        public: true
-
-    lv.manager.temoignage:
-        class: App\Techzara\Service\MetierManagerBundle\Metier\DevTemoignage\ServiceMetierDevTemoignage
-        arguments: [ "@doctrine.orm.entity_manager","@service_container" ]
-        public: true
 
     lv.manager.membres:
         class: App\Techzara\Service\MetierManagerBundle\Metier\DevHome\HomeManager
