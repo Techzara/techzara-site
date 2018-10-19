@@ -91,12 +91,11 @@
         }
 
         $('.cv-convert').click(function () {
-            alert('eto');
             doc.fromHTML($('.tz-cv-content').html(), 15, 15, {
                 'width': 170,
                 'elementHandlers': specialElementHandlers
             });
-            doc.save('sample-file.pdf');
+            doc.save('{{ profile.usrFullname }}-techzara.pdf');
         });
 
 
