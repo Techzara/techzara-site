@@ -6,7 +6,6 @@
 <div class="main main-raised">
     <div class="profile-content">
         <div class="container">
-
             <div class="row text-center">
                 <div class="col-md-12">
                     <div class="profile">
@@ -20,7 +19,7 @@
                         <div class="name">
                             <h3 class="title">{{ profile.usrFullname }}</h3>
                             <h6>Membres Techzara</h6>
-                            <a href="#pablo" class="btn btn-just-icon btn-simple btn-dribbble">CV</a>
+                            <a href="javascript:void(0)" class="btn btn-just-icon cv-convert btn-simple btn-dribbble">CV</a>
                             {% set facebook = profile.socialCount %}
                                 {% if facebook is null %}
                                     {% set facebook = 'https://www.facebook.com/' %}
@@ -40,9 +39,10 @@
                 {% endif %}
                 <p>{{ description }}</p>
             </div>
-            <div class="row">
+            <div class="row tz-cv-content">
                 <div class="col-md-3"></div>
                 <div class="col-md-6 stats">
+                    <h1 class="text-center">{{ profile.usrFullname }}</h1>
                     <h4 class="title text-center">Qui suis je ?</h4>
                     <ul class="list-unstyled">
                         <li><span class="badge badge-primary">Javascript</span></li>
@@ -76,7 +76,39 @@
                     <a href="{{ path('membres_liste') }}" class="btn btn-rose btn-round">Retour</a>
                 </div>
             </div>
+            <div class="conttent"></div>
         </div>
     </div>
 </div>
+    <script src="{{ asset('front_site_office/js/pdfjs.js') }}"></script>
+    <script src="{{ asset('front_site_office/js/jquery.min.js') }}"></script>
+    <script>
+        var doc = new jsPDF();
+        let specialElementHandlers = {
+            '.conttent':function (element,rendered) {
+                return true
+            }
+        }
+
+        $('.cv-convert').click(function () {
+            alert('eto');
+            doc.fromHTML($('.tz-cv-content').html(), 15, 15, {
+                'width': 170,
+                'elementHandlers': specialElementHandlers
+            });
+            doc.save('sample-file.pdf');
+        });
+
+
+        /**
+         * Teste fonction
+         */
+        // const tasks = function* () {
+        //     const tasklist = [4,6,9,15];
+        //     for (let i = 0 ; i < tasklist.length;i++) {
+        //         yield tasklist[i];
+        //     }
+        // };
+        // console.log(tasks().next());
+    </script>
 {% endblock %}
