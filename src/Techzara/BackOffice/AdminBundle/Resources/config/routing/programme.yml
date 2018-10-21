@@ -1,0 +1,36 @@
+programme_liste:
+  path:     /
+  defaults: { _controller: "AdminBundle:TzProgramme:index" }
+  methods:  GET
+
+programme_new:
+  path:     /new
+  defaults: { _controller: "AdminBundle:TzProgramme:new" }
+  methods:  [GET, POST]
+
+programme_edit:
+  path:     /{id}/edit
+  defaults: { _controller: "AdminBundle:TzProgramme:edit" }
+  methods:  [GET, POST]
+
+programme_update:
+  path:     /{id}/update
+  defaults: { _controller: "AdminBundle:TzProgramme:update" }
+  methods:  [POST, PUT]
+
+
+programme_delete:
+  path:     /{id}/delete
+  defaults: { _controller: "AdminBundle:TzProgramme:delete" }
+  methods:  [GET, DELETE]
+
+programme_delete_group:
+  path:     /delete-group
+  defaults: { _controller: "AdminBundle:TzProgramme:deleteGroup" }
+  methods:  POST
+
+programme_delete_image_ajax:
+  path:     /delete-image
+  defaults: { _controller: "AdminBundle:TzProgramme:deleteImageAjax" }
+  methods:  POST
+

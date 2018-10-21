@@ -21,3 +21,7 @@ tz_article:
 tz_activite:
   resource: "@AdminBundle/Resources/config/routing/activite.yml"
   prefix:   /activite
+
+tz_programme:
+  resource: "@AdminBundle/Resources/config/routing/programme.yml"
+  prefix:   /programme

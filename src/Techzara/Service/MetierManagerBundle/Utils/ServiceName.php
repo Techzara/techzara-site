@@ -8,6 +8,8 @@ namespace App\Techzara\Service\MetierManagerBundle\Utils;
  */
 class ServiceName
 {
+    const SRV_METIER_PROGRAMME_UPLOAD = 'tz.manager.programme.upload';
+    const SRV_METIER_PROGRAMME = 'tz.manager.programme';
     const SRV_METIER_ARTICLE = 'tz.manager.article';
     const SRV_METIER_ACTIVITE = 'tz.manager.activite';
     const SRV_METIER_MEMBRES = 'tz.manager.membres';

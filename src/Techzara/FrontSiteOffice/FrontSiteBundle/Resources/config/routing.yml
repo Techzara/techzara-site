@@ -9,3 +9,7 @@ tz_membres_liste:
 tz_article:
   resource: "@FrontSiteBundle/Resources/config/routing/article.yml"
   prefix:     /article
+
+tz_programme:
+  resource: "@FrontSiteBundle/Resources/config/routing/programme.yml"
+  prefix:     /

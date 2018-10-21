@@ -1,0 +1,104 @@
+{% extends 'backoffice/base_admin.html.twig' %}
+
+{% form_theme edit_form 'form/custom_fields.html.twig' %}
+
+{% block title %}{{ parent() }} Modification Client {% endblock %}
+
+{% set menu_client        = true %}
+{% set menu_client_create = true %}
+
+{% block body %}
+    {% for flashMessage in app.session.flashbag.get('success') %}
+        <div class="callout callout-success">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+    {% for flashMessage in app.session.flashbag.get('error') %}
+        <div class="callout callout-danger">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="box box-primary">
+                {{ form_start(edit_form) }}
+                <div class="box-header">
+                    <h3 class="box-title">Editer un programme</h3>
+                </div>
+
+                <div class="box-body">
+                    {{ form_row(edit_form.title) }}
+                    {{ form_row(edit_form.tzProgrammeDescription) }}
+                    {{ form_row(edit_form.tzProgrammeIntervenants) }}
+                    {{ form_row(edit_form.tzProgrammeDateDebut)}}
+                    {{ form_row(edit_form.tzProgrammeDateFin) }}
+                    <div class="row">
+                        <div class="form-group">
+                            {{ form_row(edit_form.tzProgrammePhoto) }}
+                            {% if programmes.tzProgrammePhoto %}
+                                <div class="col-md-2 col-lg-2 col-xs-2 blc-image">
+                                        <span class="delete-image pull-right">
+                                            <a href="javascript:void(0);" id="file-{{ programmes.id }}"
+                                               onClick="deleteFile({{ programmes.id }}, $(this));" class="btn_effacer"
+                                               ajax-url="{{ path('programme_delete_image_ajax') }}">
+                                                <span>
+                                                    <i class="fa fa-times" aria-hidden="true"></i>
+                                                </span>
+                                            </a>
+                                        </span>
+                                    <div class="image-container-block">
+                                        <img class="img-vignette img-responsive" src="{{ programmes.tzProgrammePhoto }}" />
+                                    </div>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {{ form_row(edit_form.tzProgrammeLieu) }}
+                </div>
+
+                <div class="box-footer">
+                    <input type="submit" class="btn btn-primary" value="Modifier" name="update_article"/>
+                    <a href="{{ path('programme_liste') }}"
+                       class="btn btn-default pull-left btn-mini-rectif" >
+                        Retour à la liste
+                    </a>
+                </div>
+                {{ form_end(edit_form) }}
+            </div>
+        </div>
+    </div>
+    <script>
+        /**
+         * Suppression du fichier dans la base et dans le dossier
+         */
+        function deleteFile(_id_file, _this) {
+            // Récuperation url ajax
+            var _url_ajax = $("#file-" + _id_file).attr("ajax-url");
+
+            bootbox.confirm(
+                "Etes vous sur de vouloir supprimer ce fichier ?",
+                function(result) {
+                    if (result) {
+                        $.ajax({
+                            type: "POST",
+                            url: _url_ajax,
+                            data: { 'id': _id_file },
+                            cache: false,
+                            success: function(_response) {
+                                if (_response.success) {
+                                    _this.parents('.blc-image').remove();
+                                    bootbox.alert("Suppression avec succès !");
+                                } else {
+                                    if (_response.message) {
+                                        bootbox.alert(_response.message);
+                                    }
+                                }
+                            }
+                        });
+                    }
+                }
+            );
+        }
+    </script>
+{% endblock %}

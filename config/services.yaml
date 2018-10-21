@@ -71,3 +71,13 @@ services:
       class: App\Techzara\Service\MetierManagerBundle\Metier\TzActivite\ServiceMetierTzActivite
       arguments: [ "@doctrine.orm.entity_manager","@service_container" ]
       public: true
+
+    tz.manager.programme:
+      class:  App\Techzara\Service\MetierManagerBundle\Metier\TzProgramme\ServiceMetierTzProgramme
+      arguments: [ "@doctrine.orm.entity_manager","@service_container" ]
+      public: true
+
+    tz.manager.programme.upload:
+      class: App\Techzara\Service\MetierManagerBundle\Metier\TzProgramme\ProgrammeUploadManager
+      arguments: ['@doctrine.orm.entity_manager','%kernel.root_dir%']
+      public: true

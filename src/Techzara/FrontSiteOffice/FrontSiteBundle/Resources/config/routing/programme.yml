@@ -1,0 +1,4 @@
+programme_index:
+  path:     /
+  defaults: { _controller: "FrontSiteBundle:TzProgramme:index" }
+  methods:  GET

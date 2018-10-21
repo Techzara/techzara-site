@@ -83,7 +83,7 @@ class ServiceMetierTzActivite
 
 
     /**
-     * Modifier un utilisateur
+     * Modifier un activite
      * @param TzActivite $activite
      * @param Object $_form
      * @return boolean

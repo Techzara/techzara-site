@@ -239,7 +239,6 @@
                 {% endfor %}
             </div>
         </section>
-
         <section>
             <div id="event" class="tab-content">
                 <div class="tab-pane active work" id="work">
@@ -247,58 +246,21 @@
                         <div class="col-md-12">
                             <h1 class="title text-center">Prochaines activité</h1>
                             <div class="row collections">
-                                <div class="col-md-6">
-                                    <div class="card card-background" style="background-image: url('{{ asset('front_site_office/images/techzara/card1.jpg') }}')">
-                                        <a href="#pablo"></a>
-                                        <div class="content">
-                                            <label class="label label-primary">Samedi 20 Octobre 2018</label>
-                                            <a href="#pablo">
-                                                <h2>08H - 12H</h2>
-                                                <h2 class="card-title">Ariary Net</h2>
-                                                <p>Présentation de l'API de l'ariary Net</p>
-                                            </a>
+                                {% for programme in programmes %}
+                                    <div class="col-md-6">
+                                        <div class="card card-background" style="background-image: url('{{ asset('front_site_office/images/techzara/card1.jpg') }}')">
+                                            <a href="#pablo"></a>
+                                            <div class="content">
+                                                <label class="label label-primary">{{ programme.tzProgrammeIntervenants }}</label>
+                                                <a href="#pablo">
+                                                    <h2>{{  programme.tzProgrammeDateDebut|date('H') }} - {{  programme.tzProgrammeDateFin|date('H') }}</h2>
+                                                    <h2 class="card-title">{{ programme.tzProgrammeIntervenants }}</h2>
+                                                    <p>{{ programme.tzProgrammeDescription|length > 50 ? article.content|slice(0, 50) ~ ' ... ' : programme.tzProgrammeDescription }}</p>
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="card card-background" style="background-image: url('{{ asset('front_site_office/images/techzara/techzara-bg.jpg') }}')">
-                                        <a href="#pablo"></a>
-                                        <div class="content">
-                                            <label class="label label-primary">Samedi 20 Octobre 2018</label>
-                                            <a href="#pablo">
-                                                <h2> 14H - 17H </h2>
-                                                <h2 class="card-title">Pratique</h2>
-                                                <p>Atelier électronique avec l'équipe de la maison 2.0 </p>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="card card-background" style="background-image: url('{{ asset('front_site_office/images/techzara/card1.jpg') }}')">
-                                        <a href="#pablo"></a>
-                                        <div class="content">
-                                            <label class="label label-primary">Samedi 28 Octobre 2018</label>
-                                            <a href="#pablo">
-                                                <h2> 08H - 12H </h2>
-                                                <h2 class="card-title">Réseaux</h2>
-                                                <p>Base d'adressage IP</p>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="card card-background" style="background-image: url('{{ asset('front_site_office/images/techzara/techzara-bg.jpg') }}')">
-                                        <a href="#pablo"></a>
-                                        <div class="content">
-                                            <label class="label label-primary">Samedi 04 Novembre 2018</label>
-                                            <a href="#pablo">
-                                                <h2> 08H - 12H </h2>
-                                                <h2 class="card-title">Jeux Vidéo</h2>
-                                                <p>Présentation du jeux vidéo </p>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
+                                {% endfor %}
                             </div>
                         </div>
                     </div>
