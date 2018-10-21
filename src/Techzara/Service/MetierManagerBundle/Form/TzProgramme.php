@@ -41,7 +41,7 @@ class TzProgramme extends AbstractType
             ))
 
             ->add('tzProgrammeIntervenants', TextType::class, array(
-                'label'    => "Conténue de l'article",
+                'label'    => "Intérvenants",
                 'required' => true
             ))
 
