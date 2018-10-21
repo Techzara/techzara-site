@@ -30,6 +30,14 @@ class ServiceMetierTzProgramme
     }
 
     /**
+     * @return EntityManager
+     */
+    public function getEntityManager()
+    {
+        return $this->_entity_manager;
+    }
+
+    /**
      * Ajouter un message flash
      * @param string $_type
      * @param string $_message
@@ -39,18 +47,27 @@ class ServiceMetierTzProgramme
         return $this->_container->get('session')->getFlashBag()->add($_type, $_message);
     }
 
-
+    /**
+     * Récuperer le repository message newsletter
+     * @return array
+     */
     public function getRepository()
     {
         return $this->_entity_manager->getRepository(EntityName::PROGRAMME);
     }
 
-
+    /**
+     * @return mixed
+     */
     public function getAllProgramme()
     {
         return $this->getRepository()->findBy(array(), array('id' => 'ASC'));
     }
 
+    /**
+     * @param $_id
+     * @return null|object
+     */
     public function getAllProgrammeById($_id)
     {
         return $this->getRepository()->find($_id);
@@ -95,7 +112,7 @@ class ServiceMetierTzProgramme
 
 
     /**
-     * Modifier un utilisateur
+     * Modifier un programme
      * @param \App\Techzara\Service\MetierManagerBundle\Entity\TzProgramme $_programme
      * @param Object $_form
      * @return boolean

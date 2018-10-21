@@ -16,14 +16,13 @@ use Symfony\Component\HttpFoundation\Request;
 class TzProgrammeController extends Controller
 {
     /**
-     * @return \Symfony\Component\HttpFoundation\Response
+     * Afficher tout les emails
+     * @return render page
      */
     public function indexAction()
     {
         $_programme_manager = $this->get(ServiceName::SRV_METIER_PROGRAMME);
         $_programme_liste = $_programme_manager->getAllProgramme();
-//        dump($_programme_liste);
-//        die;
 
         return $this->render('@Admin/TzProgramme/index.html.twig',array(
             'programmes' => $_programme_liste,
@@ -32,7 +31,7 @@ class TzProgrammeController extends Controller
     }
 
     /**
-     * Création utilisateur
+     * Création programme
      * @param Request $_request requête
      * @return Render page
      */

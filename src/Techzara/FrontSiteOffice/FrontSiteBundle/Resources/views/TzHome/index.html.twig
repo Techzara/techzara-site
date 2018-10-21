@@ -255,7 +255,7 @@
                                                 <a href="#pablo">
                                                     <h2>{{  programme.tzProgrammeDateDebut|date('H') }} - {{  programme.tzProgrammeDateFin|date('H') }}</h2>
                                                     <h2 class="card-title">{{ programme.tzProgrammeIntervenants }}</h2>
-                                                    <p>{{ programme.tzProgrammeDescription|length > 50 ? article.content|slice(0, 50) ~ ' ... ' : programme.tzProgrammeDescription }}</p>
+                                                    <p>{{ programme.tzProgrammeDescription|length > 50 ? programme.tzProgrammeDescription|slice(0, 50) ~ ' ... ' : programme.tzProgrammeDescription }}</p>
                                                 </a>
                                             </div>
                                         </div>
