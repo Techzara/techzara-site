@@ -55,9 +55,9 @@ class TzProgramme extends AbstractType
             ->add('tzProgrammeDateDebut', DateTimeType::class, array(
                 'label'  => "Date programme début",
                 'widget' => 'single_text',
-                'format' => 'dd/MM/yyyy',
+                'format' => 'dd/MM/yyyy H:m',
                 'attr'   => array(
-                    'class'         => 'kl-datetimepicker--date-fin-saison datetimepicker',
+                    'class'         => 'datetimepicker',
                     'required'      => true,
                     'autocomplete'  => 'off'
                 )
@@ -67,9 +67,9 @@ class TzProgramme extends AbstractType
             ->add('tzProgrammeDateFin', DateTimeType::class, array(
                 'label'    => "Date fin du programme",
                 'widget' => 'single_text',
-                'format' => 'dd/MM/yyyy',
+                'format' => 'dd/MM/yyyy H:m',
                 'attr'   => array(
-                    'class'         => 'kl-datetimepicker--date-fin-saison datetimepicker',
+                    'class'         => 'datetimepicker',
                     'required'      => true,
                     'autocomplete'  => 'off'
                 )
