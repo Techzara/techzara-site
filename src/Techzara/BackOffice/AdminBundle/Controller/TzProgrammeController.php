@@ -52,7 +52,8 @@ class TzProgrammeController extends Controller
 
             return $this->redirect($this->generateUrl('programme_liste'));
         } else {
-            var_dump($_form->getErrors());
+            $string = (string) $_form->getErrors(true, false);
+            var_dump($string);
             die('misy erreur');
         }
 
