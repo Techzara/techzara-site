@@ -51,6 +51,9 @@ class TzProgrammeController extends Controller
             $_programme_manager->setFlash('success', "Programme ajouté");
 
             return $this->redirect($this->generateUrl('programme_liste'));
+        } else {
+            var_dump($_form->getErrors());
+            die('misy erreur');
         }
 
         return $this->render('AdminBundle:TzProgramme:add.html.twig', array(
