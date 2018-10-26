@@ -54,7 +54,7 @@ class TzProgrammeController extends Controller
         } else {
             $string = (string) $_form->getErrors(true, false);
             var_dump($string);
-            die('misy erreur');
+            var_dump('misy erreur');
         }
 
         return $this->render('AdminBundle:TzProgramme:add.html.twig', array(
