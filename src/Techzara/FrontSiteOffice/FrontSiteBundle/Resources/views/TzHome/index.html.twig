@@ -248,7 +248,11 @@
                             <div class="row collections">
                                 {% for programme in programmes %}
                                     <div class="col-md-6">
-                                        <div class="card card-background" style="background-image: url('{{ asset('front_site_office/images/techzara/card1.jpg') }}')">
+                                        {% set programme_image = programme.tzProgrammePhoto %}
+                                        {% if programme_image is null %}
+                                            {% set programme_image = 'front_site_office/images/techzara/card1.jpg'  %}
+                                        {% endif %}
+                                        <div class="card card-background" style="background-image: url('{{ asset(programme_image) }}')">
                                             <a href="#pablo"></a>
                                             <div class="content">
                                                 <label class="label label-primary">{{ programme.tzProgrammeIntervenants }}</label>
