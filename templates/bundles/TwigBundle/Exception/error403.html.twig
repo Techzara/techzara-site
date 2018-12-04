@@ -3,11 +3,8 @@
 {% block title %} {{ parent() }} Erreur 403 {% endblock %}
 
 {% block body %}
-    <div class="container">
+    <div class="container tz-content-error">
         <img src="{{ asset('front_site_office/images/techzara/exception/error.jpeg') }}" alt="error image" />
-        <div class="text-center">
-            <p>Accès non autorisé</p>
-        </div>
     </div>
     <style type="text/css">
         footer{
@@ -15,6 +12,8 @@
             bottom: 0!important;
             width: 100%!important;
         }
+        .tz-content-error{text-align: center}
+        img{width: 95%;height: 78vh}
         .navbar{position: relative!important;}
     </style>
 {% endblock %}
