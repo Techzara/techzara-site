@@ -1,0 +1,15 @@
+article_details:
+  path:     /
+  defaults: { _controller: "ApiBundle:TzApiGlobal:index" }
+
+admin_liste:
+  path:     /admin
+  defaults: { _controller: "ApiBundle:TzApiGlobal:admin" }
+
+activite_liste:
+  path:   /activite
+  defaults: { _controller: "ApiBundle:TzApiGlobal:activite"}
+
+members_liste:
+  path:   /membres
+  defaults: { _controller: "ApiBundle:TzApiGlobal:members"}

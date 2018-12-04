@@ -11,6 +11,7 @@ namespace App\Techzara\FrontSiteOffice\FrontSiteBundle\Controller;
 
 use App\Techzara\Service\MetierManagerBundle\Utils\ServiceName;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class TzProgrammeController extends Controller
 {

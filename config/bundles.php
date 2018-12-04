@@ -15,6 +15,7 @@ return [
     Symfony\Bundle\MakerBundle\MakerBundle::class => ['dev' => true],
     FOS\UserBundle\FOSUserBundle::class => ['all' => true],
     App\Techzara\BackOffice\AdminBundle\AdminBundle::class => ['all' => true],
+    App\Techzara\Api\ApiBundle\ApiBundle::class => ['all' => true],
 //    App\Techzara\FrontOffice\FrontBundle\FrontBundle::class => ['all' => true],
     App\Techzara\FrontSiteOffice\FrontSiteBundle\FrontSiteBundle::class => ['all' => true],
     App\Techzara\Service\MetierManagerBundle\MetierManagerBundle::class => ['all' => true],

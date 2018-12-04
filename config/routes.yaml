@@ -6,6 +6,10 @@ app_file:
     resource: '@AdminBundle/Resources/config/routing.yml'
     prefix:   /admin
 
+api_url:
+    resource:   '@ApiBundle/Resources/config/routing.yml'
+    prefix:   /
+
 user:
     resource: "@UserBundle/Resources/config/routing.yml"
     prefix:   /
