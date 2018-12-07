@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "libele": "shop001",
+    "open": true
+  },
+  {
+    "id": 2,
+    "lebele": "shop002",
+    "open": true
+  },
+  {
+    "id": 3,
+    "lebele": "shop003",
+    "open": true
+  },
+  {
+    "id": 4,
+    "libele": "shop004",
+    "open": true
+  }
+
+]
