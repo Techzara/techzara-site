@@ -1,0 +1,59 @@
+
+<div class="view gradient-card-header blue darken-2">
+  <h4 class="h4-responsive text-white"> Ajout nouveau prof </h4>
+</div>
+<!-- First Step -->
+<form role="form" action=""  #form method="post">
+  <div class="row setup-content-2" #step1 id="step-1">
+    <div class="col-md-12">
+      <h3 class="font-weight-bold pl-0 my-4"><strong>Information du profs</strong></h3>
+      <div class="md-form">
+        <input type="text" id="nom" name="nom" #nom class="form-control" mdbInputDirective>
+        <label for="nom">Nom</label>
+      </div>
+      <div class="md-form">
+        <input type="text" id="prenom" #prenom class="form-control" mdbInputDirective>
+        <label for="prenom">Prénom</label>
+      </div>
+      <div class="md-form">
+        <input type="text" id="adresse" #adresse class="form-control" mdbInputDirective>
+        <label for="adresse">Adresse</label>
+      </div>
+      <div class="md-form">
+        <input type="text" id="contact" #contact class="form-control" mdbInputDirective>
+        <label for="contact">Contact</label>
+      </div>
+      <div class="md-form">
+        <input type="text" id="matiere" #matiere class="form-control" mdbInputDirective>
+        <label for="contact">Matiere</label>
+      </div>
+      <button class="btn btn-mdb-color btn-rounded nextBtn-2 float-right" type="button"
+              (click)="step2.style.display='block';step1.style.display='none'">Next</button>
+    </div>
+  </div>
+
+  <!-- Third Step -->
+  <div class="row setup-content-2 " #step2 style="display: none" id="step-2">
+    <div class="col-md-12">
+      <h2 class="text-center font-weight-bold my-4">Apropos du profs</h2>
+      <table class="w-100">
+        <tr>
+          <td>
+            <ul class="list-group">
+              <li class="list-group-item">{{nom.value}}</li>
+              <li class="list-group-item">{{prenom.value}}</li>
+              <li class="list-group-item">{{adresse.value}}</li>
+              <li class="list-group-item">{{contact.value}}</li>
+              <li class="list-group-item">{{matiere.value}}</li>
+            </ul>
+          </td>
+        </tr>
+      </table>
+
+      <button class="btn btn-mdb-color btn-rounded prevBtn-2 float-left" type="button"
+              (click)="step1.style.display='block';step2.style.display='none'">Previous</button>
+      <button class="btn btn-success btn-rounded float-right" type="submit">Submit</button>
+      <a href="menu/profs" class="btn btn-warning btn-rounded float-right" type="submit" (click)="form.reset()">Cancel</a>
+    </div>
+  </div>
+</form>

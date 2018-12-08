@@ -1,0 +1,31 @@
+<div class="view gradient-card-header blue darken-2">
+  <h4 class="h4-responsive text-white"> Listes des administrateurs </h4>
+</div>
+<section class="mt-lg-5">
+  <div class="row">
+    <div class="col-xl-3 col-md-6  m-5 mb-r m-5" *ngFor='let user of userList'>
+      <mdb-card>
+        <div class="view rgba-white-slight waves-light" mdbWavesEffect>
+          <div class="avatar mx-auto">
+            <img src="https://mdbootstrap.com/img/Mockups/Lightbox/Thumbnail/img%20(67).jpg" class="tz-pdc" alt="Card image cap">
+            <img src="{{user.photo}}" class="rounded-circle m-auto">
+          </div>
+          <a>
+            <div class="mask"></div>
+          </a>
+        </div>
+        <mdb-card-body>
+          <mdb-card-title>
+            <h4 class="text-center">{{user.name}}</h4>
+          </mdb-card-title>
+          <p>
+            Some quick example text to build on the card title and make up the bulk of the card's
+            content.
+          </p>
+          <a href="menu/details-prof" mdbBtn color="primary" class="w-100" mdbWavesEffect>Voir le profils</a>
+        </mdb-card-body>
+      </mdb-card>
+    </div>
+  </div>
+</section>
+

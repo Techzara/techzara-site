@@ -1,0 +1,74 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    class="mat-sidenav"
+    #drawer
+    class="sidenav"
+    fixedInViewport="true"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="!(isHandset$ | async)">
+
+    <mat-toolbar color="primary" class="header-box-shadow">
+        <span>Techzara - Sekoliko</span>
+    </mat-toolbar>
+    <div class="my-2" fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="10px">
+      <div>
+        <a routerLink="/menu/principal-interface">
+          <img class="circle" src="./assets/icons/techzara.jpg" width="100" height="100" style="border-radius:50%;margin-top: 15px">
+        </a>
+        <br/>
+        <a>
+          <span class="lead">Sekoliko</span>
+        </a>
+      </div>
+    </div>
+    <div class="mt-3" *ngFor="let menuItem of menuItems.getMenuitem()">
+      <mat-nav-list class="p-2" dense *ngIf="menuItem.child.length > 0;">
+        <mat-list-item *ngFor="let child of menuItem.child" routerLinkActive="selected">
+          <a [routerLink]="child.state">
+            <div class="row">
+              <mat-icon>{{ child.icon }}</mat-icon>
+              <span class="item">{{child.name}}</span>
+            </div>
+          </a>
+        </mat-list-item>
+      </mat-nav-list>
+    </div>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary" class="header-box-shadow">
+      <div class="row" style="width: 100%;">
+        <div class="grid">
+          <button mat-icon-button (click)="drawer.toggle()" >
+            <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+          </button>
+        </div>
+        <div class="grid example">
+          <button mat-icon-button [matMenuTriggerFor]="menu" style="margin-right: 5px">
+            <mat-icon>account_circle</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu" overlapTrigger="false">
+            <button mat-menu-item>
+              <mat-icon>account_circle</mat-icon>
+              <span>My Account</span>
+            </button>
+            <button mat-menu-item>
+              <mat-icon>settings</mat-icon>
+              <span>Settings</span>
+            </button>
+            <button mat-menu-item (click)="logOut()">
+              <mat-icon>money</mat-icon>
+              <span>logout</span>
+            </button>
+          </mat-menu>
+        </div>
+      </div>
+    </mat-toolbar>
+    <div class="card card-cascade narrower">
+      <div class="content-card " style="padding: 2%">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
+

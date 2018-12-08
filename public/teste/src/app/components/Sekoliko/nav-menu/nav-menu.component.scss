@@ -1,0 +1,135 @@
+
+.sidenav-container {
+  height: 100%;
+}
+.text-right {
+  text-align: right !important;
+}
+.grid {
+  flex: 1;
+  min-width: 20%;
+  padding : 2px;
+}
+
+.row{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item {
+  padding-top: 3px;
+  margin-left: 10px;
+}
+
+.example {
+  margin-right: 10px;
+  text-align: right;
+}
+.sidenav {
+  width: 200px;
+  box-shadow: 3px 0 6px rgba(0,0,0,.24);
+}
+footer {
+  z-index: 10;
+  position: sticky;
+  display: flow-root;
+  bottom: 0;
+  background: #2e6bb1;
+}
+.footer-text {
+  padding: 5px;
+  color: white;
+  font-size: 10pt;
+  text-align: right;
+}
+.mt-3{
+  margin-top: 25px;
+}
+.menu-nav{
+  margin-right: 10px;
+}
+.spacer {
+  flex: 1 1 auto;
+}
+.lead {
+  font-size: 1.50rem;
+  font-weight: 300;
+}
+.full-content{
+  margin: 20px;
+  min-height: 79vh;
+}
+.back-content {
+  width: 100%;
+  height: 100%;
+}
+.content-card{
+  min-height: calc(100vh - 204px);
+  /*display: flex;*/
+  position: relative;
+  //padding: 24px;
+  border-radius: 2px;
+  justify-content: center;
+  background-color: #e9ebee;
+}
+.container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.content {
+  flex: 1;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+.mat-sidenav {
+  background-color: #e9ebee;
+  width: 250px;
+}
+
+.with-bg {
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  max-height: 130px;
+}
+
+.no-shadow {
+  box-shadow: none;
+  background-color: #e9ebee;
+}
+
+::ng-deep .mat-expansion-panel-body {
+  padding: 0px ;
+  padding-left: 10px ;
+}
+
+.header-box-shadow {
+  box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+background-color: #2e6bb1;
+}
+
+.bottom-to-top {
+  border: 0px;
+  border-right: 1px;
+  border-style: solid;
+  border-image:
+    linear-gradient(to top, #c1c1c1, rgba(0, 0, 0, 0)) 1 100%
+}
+
+mat-toolbar {
+  position: sticky;
+  // position: fixed;
+}
+.mat-card{padding: 0px!important;}
+.card{margin: 25px; margin-bottom: 87px;}
