@@ -1,0 +1,93 @@
+{
+  "configVersion": 1,
+  "index": "sekoliko_front/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "sekoliko_front/0.5be6a0a8ec5a8adce610.js",
+        "sekoliko_front/1.d9b8886726cd3eb9ae2e.js",
+        "sekoliko_front/2.2ff25133574ca4468b79.js",
+        "sekoliko_front/index.html",
+        "sekoliko_front/main.aee4e3d46cd29f5011d0.js",
+        "sekoliko_front/polyfills.74d6d5146da3b05395fa.js",
+        "sekoliko_front/runtime.936786d9f26a186b4110.js",
+        "sekoliko_front/scripts.968f55bfb751cd0febb2.js",
+        "sekoliko_front/styles.4a4b2df74f0691bd7e10.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "urls": [
+        "sekoliko_front/assets/api/login.json",
+        "sekoliko_front/assets/api/logout.json",
+        "sekoliko_front/assets/api/shop.json",
+        "sekoliko_front/assets/icons/bankaccount.jpg",
+        "sekoliko_front/assets/icons/domotica.jpg",
+        "sekoliko_front/assets/icons/ecole.jpg",
+        "sekoliko_front/assets/icons/icon-512x512.png",
+        "sekoliko_front/assets/icons/index.jpg",
+        "sekoliko_front/assets/icons/office.jpg",
+        "sekoliko_front/assets/icons/sidebar-4.jpg",
+        "sekoliko_front/assets/icons/techzara.jpg",
+        "sekoliko_front/assets/images/220px-Taka_Shiba.jpg",
+        "sekoliko_front/assets/images/man.jpeg",
+        "sekoliko_front/assets/images/profile.jpg",
+        "sekoliko_front/assets/images/shibainu.jpg",
+        "sekoliko_front/assets/jq/jq.js"
+      ],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [],
+  "hashTable": {
+    "sekoliko_front/0.5be6a0a8ec5a8adce610.js": "a685a5efb718b03f0fe50f3b39557058a0d4654e",
+    "sekoliko_front/1.d9b8886726cd3eb9ae2e.js": "ffd156d8a879d071b2c67b00ad37ffab123e88c7",
+    "sekoliko_front/2.2ff25133574ca4468b79.js": "cc532fc967719333cacd00e98ddbc47d82114243",
+    "sekoliko_front/assets/api/login.json": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+    "sekoliko_front/assets/api/logout.json": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+    "sekoliko_front/assets/api/shop.json": "088e1bfd59ecc07a76c10b41fb604f84b0fab34d",
+    "sekoliko_front/assets/icons/bankaccount.jpg": "446e9b861b720c6bf3d68b34423d12b92cf8f96a",
+    "sekoliko_front/assets/icons/domotica.jpg": "763a4da306987b5b5ad417cb5625bbc356cbf9e7",
+    "sekoliko_front/assets/icons/ecole.jpg": "0b1ee87f2214f65c903965b8c5ba72a96dcb7ca6",
+    "sekoliko_front/assets/icons/icon-512x512.png": "e9b23ca79a2f8e31e791c84c2113771ee2b9317c",
+    "sekoliko_front/assets/icons/index.jpg": "cfe1074d04bb349d4cd8721e92be6a74b0a1144f",
+    "sekoliko_front/assets/icons/office.jpg": "048dd4ae0755d6b56758e48ef94b97b0f4908333",
+    "sekoliko_front/assets/icons/sidebar-4.jpg": "0a1b00c842c66c0694c769ca2aea92f66649b2e3",
+    "sekoliko_front/assets/icons/techzara.jpg": "5fbdaa370c047cf3cba2cdc07cab980422af13ec",
+    "sekoliko_front/assets/images/220px-Taka_Shiba.jpg": "1d09eed01869b2a58ab650e3a63d217964ec3a7c",
+    "sekoliko_front/assets/images/man.jpeg": "fee89093a086f5390a0fed4604e13069ce28c7cd",
+    "sekoliko_front/assets/images/profile.jpg": "7ac5443e66163a34db930b5b69364ad909f2563a",
+    "sekoliko_front/assets/images/shibainu.jpg": "7d122672686ff781ca336a79043c3fae645a2636",
+    "sekoliko_front/assets/jq/jq.js": "cce64088d6814dea43faedf0b14a913134b60e05",
+    "sekoliko_front/index.html": "4bf800723b71e24093c7e48939da7fe1463733fe",
+    "sekoliko_front/main.aee4e3d46cd29f5011d0.js": "a68782f9f68558fb716b62abdac7975d27d2f835",
+    "sekoliko_front/polyfills.74d6d5146da3b05395fa.js": "ac4018fccafc7da01af3eab6a316d3371e1f7779",
+    "sekoliko_front/runtime.936786d9f26a186b4110.js": "31281d51ce2b945c25a712fba7f83f29b8499245",
+    "sekoliko_front/scripts.968f55bfb751cd0febb2.js": "ac2dda83c40427eb9e9f2ad3e701187b8667c31a",
+    "sekoliko_front/styles.4a4b2df74f0691bd7e10.css": "1de5c67d2aa36f68a97a15d9a03bb718cfdaae28"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^\\/]*\\.[^\\/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^\\/]*__[^\\/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^\\/]*__[^\\/]*\\/.*$"
+    }
+  ]
+}
