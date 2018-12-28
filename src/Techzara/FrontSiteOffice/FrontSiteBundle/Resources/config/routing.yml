@@ -10,6 +10,10 @@ tz_article:
   resource: "@FrontSiteBundle/Resources/config/routing/article.yml"
   prefix:     /article
 
+tz_hiu:
+  resource: "@FrontSiteBundle/Resources/config/routing/hiu.yml"
+  prefix:     /hiu
+
 tz_programme:
   resource: "@FrontSiteBundle/Resources/config/routing/programme.yml"
   prefix:     /

@@ -1,0 +1,3 @@
+hiu_2k19:
+  path:    /
+  defaults: { _controller: "FrontSiteBundle:TzHiu:show" }
