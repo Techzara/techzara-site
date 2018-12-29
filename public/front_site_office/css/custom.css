@@ -26,4 +26,4 @@ footer{ background: #002740!important;color: white!important;}
 .tz-btn-slide {margin: 5px!important;}
 .tz-voeux ,.tz-tache{ display: none!important;}
 .main-raised { margin: 95px 35px 16px!important; }
-*{font-family: Montserrat, sans-serif!important;}
+body, h1, h2, h3, h4, h5, h6,a, .h1, .h2, .h3, .h4{font-family: Montserrat, sans-serif!important;}

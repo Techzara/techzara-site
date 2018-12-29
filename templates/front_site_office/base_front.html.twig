@@ -14,7 +14,8 @@
             <link rel="stylesheet" type="text/css" href="{{ asset('front_site_office/css/bootstrap.min.css') }}" />
             <link rel="stylesheet" type="text/css" href="{{ asset('front_site_office/css/material-kit.css') }}" />
             <link rel="stylesheet" type="text/css" href="{{ asset('front_site_office/css/responsive.css') }}" />
-            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" />
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+                  integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
             <link rel="stylesheet" type="text/css" href="{{ asset('front_site_office/css/custom.css') }}" />
             <link rel="stylesheet" type="text/css" href="{{ asset('front_site_office/js/owl/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css') }}" />
         {% endblock %}
@@ -22,23 +23,21 @@
     </head>
 
     <body id="{% if current_route == 'home_site_index' %}id-home{% endif %}" class="tz-front-site">
-        <!-- Google Tag Manager (noscript) -->
-
-        {#<div class="se-pre-con"></div>#}
         <div class="wrapper">
-
-            <!-- Header -->
             {{ include("front_site_office/base_front_header.html.twig") }}
             <div class="wrapper">
                 <!-- Main content -->
                 {% block body %}{% endblock %}
             </div>
-
-            <!-- Footer -->
             {{ render(controller('FrontSiteBundle:TzFooter:show')) }}
         </div>
 
         {% block javascripts %}
+            <script>
+                window.FontAwesomeConfig = {
+                    searchPseudoElements: true
+                }
+            </script>
             <script type="text/javascript" src="{{ asset('front_site_office/js/jquery.min.js') }}"></script>
             <script type="text/javascript" src="{{ asset('front_site_office/js/bootstrap.min.js') }}"></script>
             <script type="text/javascript" src="{{ asset('front_site_office/js/material.min.js') }}"></script>
@@ -46,12 +45,6 @@
             <script type="text/javascript" src="{{ asset('front_site_office/js/custom.js') }}"></script>
             <script type="text/javascript" src="{{ asset('front_site_office/js/owl/OwlCarousel2-2.3.4/dist/owl.carousel.min.js') }}"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
-            {#<script type="text/javascript">#}
-                {#$(document).ready(function(){#}
-                    {#RevolutionSlider.initRSfullScreenOffset();#}
-                {#});#}
-            {#</script>#}
-            <!--[if lt IE 9]>
             <script src="{{ asset('front_site_office/js/ie9/respond.js') }}"></script>
             <script src="{{ asset('front_site_office/js/ie9/html5shiv.js') }}"></script>
             <script src="{{ asset('front_site_office/js/ie9/placeholder-IE-fixes.js') }}"></script>

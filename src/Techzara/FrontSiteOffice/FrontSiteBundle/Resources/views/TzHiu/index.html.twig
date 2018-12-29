@@ -6,17 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Techzara 2018</title>
-    <link rel="shortcut icon" href="{{ asset('front_site_office/images/techzara/icon.jpg') }}"/>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
-    <link href="https://mdbootstrap.com/previews/docs/latest/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://mdbootstrap.com/previews/docs/latest/css/mdb.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800&amp;subset=cyrillic-ext,latin-ext" rel="stylesheet">
+    {% block stylesheets %}
+        <link rel="shortcut icon" href="{{ asset('front_site_office/images/techzara/icon.jpg') }}"/>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css">
+        <link href="https://mdbootstrap.com/previews/docs/latest/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://mdbootstrap.com/previews/docs/latest/css/mdb.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800&amp;subset=cyrillic-ext,latin-ext" rel="stylesheet">
+    {% endblock %}
 </head>
 <style>
     *{font-family: Montserrat, sans-serif}
 </style>
 <main>
-
     <div class="view jarallax" style="height: 100vh;">
         <img class="jarallax-img" src="https://mdbootstrap.com/img/Photos/Others/img%20%2844%29.jpg" alt="">
         <div class="mask rgba-blue-slight">
