@@ -19,8 +19,8 @@
     </head>
 
     <body id="{% if current_route == 'home_site_index' %}id-home{% endif %}" class="tz-front-site">
-        <div id="fh5co-wrapper">
-            <div id="fh5co-page">
+        <div id="tz-wrapper">
+            <div id="tz-page">
             {{ include("front_site_office/base_front_header.html.twig") }}
                 <!-- Main content -->
                 {% block body %}{% endblock %}
@@ -45,8 +45,6 @@
             <script type="text/javascript" src="{{ asset('front_site_office/tznew/js/hoverIntent.js') }}"></script>
             <script type="text/javascript" src="{{ asset('front_site_office/tznew/js/superfish.js') }}"></script>
             <script type="text/javascript" src="{{ asset('front_site_office/tznew/js/main.js') }}"></script>
-            <script type="text/javascript" src="{{ asset('front_site_office/js/custom.js') }}"></script>
-            <script type="text/javascript" src="{{ asset('front_site_office/js/popper.min.js') }}"></script>
         {% endblock %}
     </body>
 </html>

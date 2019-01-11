@@ -187,6 +187,10 @@ figure {
     heifght: inherit;
     padding: 3em 0;
   }
+  .tz-cover .btn {
+    padding: 10px!important;
+    opacity: .9;
+  }
 }
 .tz-cover .btn {
   padding: 1em 2em;
@@ -197,7 +201,7 @@ figure {
 }
 @media screen and (max-width: 768px) {
   .tz-cover.tz-cover_2 {
-    heifght: inherit;
+    height: inherit;
     padding: 3em 0;
   }
 }
@@ -689,7 +693,7 @@ figure {
 }
 
 #tz-portfolio {
-  padding: 7em 0;
+  padding: 0;
   min-height: 500px;
 }
 @media screen and (max-width: 768px) {
@@ -1054,7 +1058,8 @@ figure {
   margin-bottom: 60px;
 }
 .tz-blog a img {
-  width: 100%;
+  width: 200px!important;
+  height: 200px!important;
 }
 @media screen and (max-width: 768px) {
   .tz-blog {
