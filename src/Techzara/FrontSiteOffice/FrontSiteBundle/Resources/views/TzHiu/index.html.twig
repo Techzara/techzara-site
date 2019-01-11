@@ -12,6 +12,7 @@
         <link href="https://mdbootstrap.com/previews/docs/latest/css/bootstrap.min.css" rel="stylesheet">
         <link href="https://mdbootstrap.com/previews/docs/latest/css/mdb.min.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,800&amp;subset=cyrillic-ext,latin-ext" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('front_site_office/tznew/css/count.css') }}">
     {% endblock %}
 </head>
 <style>
@@ -25,6 +26,7 @@
                 <div class="row mt-5">
                     <div class="col-md-12 col-xl-8 mx-auto wow fadeIn">
                         <h1 class="display-3 font-weight-bold mb-2 wow fadeInDown" data-wow-delay="0.3s">Hackathon InterUniversitaire 2019</h1>
+                        <div class="simply-countdown simply-countdown-one"></div>
                     </div>
                 </div>
             </div>
@@ -165,6 +167,7 @@
 <script type="text/javascript" src="https://mdbootstrap.com/previews/docs/latest/js/bootstrap.min.js"></script>
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://mdbootstrap.com/previews/docs/latest/js/mdb.min.js"></script>
+<script type="text/javascript" src="{{ asset('front_site_office/tznew/js/simplyCountdown.js') }}"></script>
 <script>
     // object-fit polyfill run
     objectFitImages();
@@ -173,6 +176,23 @@
 
     jarallax(document.querySelectorAll('.jarallax-keep-img'), {
         keepImg: true,
+    });
+
+    var d = new Date(new Date().getTime() + 240 * 120 * 120 * 2000);
+
+    // default example
+    simplyCountdown('.simply-countdown-one', {
+        year: d.getFullYear(),
+        month: d.getMonth() + 1,
+        day: d.getDate()
+    });
+
+    //jQuery example
+    $('#simply-countdown-losange').simplyCountdown({
+        year: d.getFullYear(),
+        month: d.getMonth() + 1,
+        day: d.getDate(),
+        enableUtc: false
     });
 </script>
 </body>
