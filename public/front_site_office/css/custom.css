@@ -11,11 +11,8 @@ a h2 ,a p{color: white!important;}
     color: white!important;
     font-weight: bold;
 }
-.card .card-image {height: 200px!important;
-    width: 200px!important;
-
-    margin-left: 23%!important;
-    border-radius: 50%!important;}
+.card .card-image {height: 200px!important; width: 200px!important;
+    margin-left: 23%!important;border-radius: 50%!important;}
 .tz-inscription { background: #0c020c!important;padding: 49px;}
 .form-group .checkbox label, .form-group .radio label, .form-group label {color: white!important;}
 .tz-content-form {padding-top: 2%!important;}

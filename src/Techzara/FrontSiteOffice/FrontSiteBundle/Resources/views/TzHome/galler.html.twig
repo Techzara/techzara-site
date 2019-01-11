@@ -1,0 +1,23 @@
+{% extends 'front_site_office/base_front.html.twig' %}
+{% block body %}
+<div class="row row-bottom-padded-md">
+    <div class="col-md-12">
+        <ul id="tz-portfolio-list">
+            {% for images in image %}
+                {% set gallery = images %}
+                {% if gallery is null  %}
+                    {% set gallery = asset('front_site_office/images/techzara/icon.jpg') %}
+                {% endif %}
+                <li class="two-third animate-box" data-animate-effect="fadeIn" style="background-image: url('{{ gallery }}'); width: 30%">
+                    <a href="#" class="color-3">
+                        <div class="case-studies-summary">
+                            <span>Techzara Madagascar</span>
+                            <h2>Mandray - Mivelona - Mizara</h2>
+                        </div>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}

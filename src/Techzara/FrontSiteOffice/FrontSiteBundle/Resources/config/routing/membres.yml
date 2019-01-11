@@ -2,10 +2,10 @@ membres_liste:
   path:     /
   defaults: { _controller: "FrontSiteBundle:TzMembres:index" }
 
-membres_new:
-  path:     /new
-  defaults: { _controller: "FrontSiteBundle:TzMembres:new" }
-  methods: [GET,POST]
+#membres_new:
+#  path:     /new
+#  defaults: { _controller: "FrontSiteBundle:TzMembres:new" }
+#  methods: [GET,POST]
 
 membres_show:
   path:     /{id}/show

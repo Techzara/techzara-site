@@ -1,0 +1,36 @@
+<div id="tz-content-section" class="tz-section-gray">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
+                <h3>Ireo mpiandraikitra ny Techzara</h3>
+                <p>Ireo miandraikitra sy mitarika ny fikamabanan'ny Techzara.</p>
+            </div>
+        </div>
+    </div>
+    <div  class="container-fluid">
+        <div class="row">
+            {% for admin in users %}
+                <div class="col-md-2" style="margin-bottom: 81px;">
+                    <div class="tz-testimonial text-center animate-box">
+                        <figure>
+                            {% set photo_profil = admin.usrPhoto %}
+                            {% if photo_profil is null %}
+                                {% set photo_profil = asset('front_site_office/images/techzara/icon.jpg') %}
+                            {% endif %}
+                            <img src="{{ photo_profil }}" alt="user">
+                        </figure>
+                        <blockquote>
+                            {% set quotes = admin.quotes %}
+                            {% if quotes is null %}
+                            {% set quotes = 'Résponsable au niveau Techzara' %}
+                            {% endif %}
+
+                            <p>&ldquo;{{ quotes }}.&rdquo;</p>
+                        </blockquote>
+                        <span>{{ admin.usrFullName }}.</span>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

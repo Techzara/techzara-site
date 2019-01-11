@@ -25,12 +25,22 @@ class TzHomeController extends Controller
         $_programme       = $_programme_manager->getAllProgramme();
         $_activite        = $_activite_manager->getAllActivite();
         $_article         = $_article_manager->getAllArticle();
+        $_files = glob('./front_site_office/images/slide/*.{jpg,png,gif}', GLOB_BRACE);
+//        var_dump($_files);
 
         return $this->render('FrontSiteBundle:TzHome:index.html.twig', array(
             'users'           => $_admin,
             'programmes'      => $_programme,
             'activites'       => $_activite,
-            'articles'         => $_article
+            'articles'        => $_article,
+            'image'           => $_files,
+        ));
+    }
+
+    public function galleryAction(){
+        $_files = glob('./front_site_office/images/slide/*.{jpg,png,gif,JPG}', GLOB_BRACE);
+        return $this->render('FrontSiteBundle:TzHome:galler.html.twig', array(
+            'image'           => $_files,
         ));
     }
 }

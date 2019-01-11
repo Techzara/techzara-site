@@ -3,27 +3,8 @@ home_site_index:
     defaults: { _controller: "FrontSiteBundle:TzHome:index" }
     methods:  GET
 
-home_site_applications:
-    path:    /applications/
-    defaults: { _controller: "FrontSiteBundle:TzHome:application" }
-
-home_site_confiance:
-    path:     /ils-nous-font-confiance/
-    defaults: { _controller: "FrontSiteBundle:TzHome:confiance" }
-    methods:  GET
-
-home_site_site:
-    path:     /site/
-    defaults: { _controller: "FrontSiteBundle:TzHome:site" }
-    methods:  GET
-
-home_site_ccm:
-    path:     /comment-ca-marche/
-    defaults: { _controller: "FrontSiteBundle:TzHome:ccm" }
-    methods:  GET
-
-home_site_temoignage:
-    path:     /temoignages/
-    defaults: { _controller: "FrontSiteBundle:TzHome:temoignage" }
+home_site_gallery:
+    path:     /gallery
+    defaults: { _controller: "FrontSiteBundle:TzHome:gallery" }
     methods:  GET
 

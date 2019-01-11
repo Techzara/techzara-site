@@ -1,48 +1,37 @@
 {% set current_route = app.request.attributes.get('_route') %}
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-    <img src="{{ asset('front_site_office/images/techzara/techzara-logo.jpg') }}" style="margin: 10px" width="80px" height="40px"  alt="">
-    <a class="navbar-brand" href="#">TECHZARA MADAGASCAR</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarCollapse">
-        <div class="tz-mobile-nav d-none">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
-                </li>
-            </ul>
+        <div class="header-top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-sm-6 text-left tz-link">
+                        <a href="#">techzara.mada@gmail.com</a>
+                        <a href="#footer">032 94 730 33</a>
+                    </div>
+                    <div class="col-md-6 col-sm-6 text-right tz-social">
+                        <a href="https://web.facebook.com/Techzara" target="_blank" class="grow">
+                            <i class="icon-facebook"></i>
+                        </a>
+                        <a href="https://github.com/Techzara" target="_blank"  class="grow">
+                            <i class="icon-github-with-circle"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <ul class="navbar-nav mr-auto"></ul>
-
-        <ul class="navbar-nav">
-            <li class="nav-item active">
-                <a class="nav-link" href="{{ path('home_site_index') }}">Accueil <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ path('hiu_2k19') }}">Hiu 2K_19</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#apropos">A propos</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#event">Evenement</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{ path('membres_liste') }}">Membres</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#article">Geek</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#contact">Contact</a>
-            </li>
-        </ul>
-    </div>
-</nav>
+        <header id="tz-header-section" class="sticky-banner">
+            <div class="container">
+                <div class="nav-header">
+                    <a href="#" class="js-tz-nav-toggle tz-nav-toggle dark"><i></i></a>
+                    <h1 id="tz-logo"><a href="{{ path('home_site_index') }}">TECHZARA</a></h1>
+                    <!-- START #tz-menu-wrap -->
+                    <nav id="tz-menu-wrap" role="navigation">
+                        <ul class="sf-menu" id="tz-primary-menu">
+                            <li class="active"><a href="{{ path('home_site_index') }}">Tongasoa</a></li>
+                            <li><a href="{{ path('membres_liste') }}">Mpikambana</a></li>
+                            <li><a href="#tz-services-section">Projets</a></li>
+                            <li><a href="#footer">Fifandraisana</a></li>
+                            <li><a href="{{ path('hiu_2k19') }}" target="_blank">HIU_2019</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>

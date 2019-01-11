@@ -1,0 +1,27 @@
+
+<div class="row row-bottom-padded-md">
+    <div class="col-md-12">
+        <ul id="tz-portfolio-list">
+            {% for images in image | slice(1,6) %}
+                {% set gallery = images %}
+                {% if gallery is null  %}
+                    {% set gallery = asset('front_site_office/images/techzara/icon.jpg') %}
+                {% endif %}
+                <li class="two-third animate-box" data-animate-effect="fadeIn" style="background-image: url('{{ gallery }}'); width: 30%">
+                    <a href="#" class="color-3">
+                        <div class="case-studies-summary">
+                            <span>Techzara Madagascar</span>
+                            <h2>Mandray - Mivelona - Mizara</h2>
+                        </div>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4 col-md-offset-4 text-center animate-box" style="margin-bottom: 10px">
+        <a href="{{ path('home_site_gallery') }}" target="_blank" class="btn btn-primary btn-lg">Voir toutes les photos</a>
+    </div>
+</div>

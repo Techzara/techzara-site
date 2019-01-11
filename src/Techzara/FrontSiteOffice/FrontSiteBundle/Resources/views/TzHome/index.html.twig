@@ -4,275 +4,330 @@
 
 {% block body %}
     {{ include('@FrontSite/TzHome/head.html.twig') }}
-    {#{{ include('@FrontSite/TzArticle/index.html.twig') }}#}
-    <div class="container">
-        <section>
-            <div class="features-3">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="phone-container owl-carousel">
-                            <img src="{{ asset('front_site_office/images/slide/s1.jpg') }}" />
-                            <img src="{{ asset('front_site_office/images/slide/s2.jpg') }}" />
-                            <img src="{{ asset('front_site_office/images/slide/s3.jpg') }}" />
-                            <img src="{{ asset('front_site_office/images/slide/s6.jpg') }}" />
-                            <img src="{{ asset('front_site_office/images/slide/s7.jpg') }}" />
-                            <img src="{{ asset('front_site_office/images/slide/s8.jpg') }}" />
-                            <img src="{{ asset('front_site_office/images/slide/s9.jpg') }}" />
-                            <img src="{{ asset('front_site_office/images/slide/s5.jpg') }}" />
-                            <img src="{{ asset('front_site_office/images/slide/s11.jpg') }}" />
-                            <img src="{{ asset('front_site_office/images/slide/s13.jpg') }}" />
-                            <img src="{{ asset('front_site_office/images/slide/s14.jpg') }}" />
+    <div id="tz-features">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="feature-left">
+							<span class="icon">
+								<i class="icon-bookmark"></i>
+							</span>
+                        <div class="feature-copy">
+                            <h3>Mandray</h3>
+                            <p>Raiso ny fahalalana rehetra ho anao na avy amin'ny fifampizarana na avy amin'ny olana mitranga.</p>
                         </div>
-                        <div id="customNav"></div>
                     </div>
-                    <div class="col-md-6">
+                </div>
 
-                        <div class="info info-horizontal">
-                            <div class="icon icon-primary">
-                                <i class="fas fa-laptop"></i>
-                            </div>
-                            <div class="description">
-                                <h4 class="info-title">Mise en niveau</h4>
-                                <p>Amélioration des capacités  techniques pour les étudiants.</p>
-                            </div>
+                <div class="col-md-4">
+                    <div class="feature-left">
+							<span class="icon">
+								<i class="icon-happy"></i>
+							</span>
+                        <div class="feature-copy">
+                            <h3>Mivelona</h3>
+                            <p>Ny fahalalana rehetra norantovinao dia ezaho hitarina , hampitomboina ary hivelomanao ihany koa.</p>
                         </div>
-
-                        <div class="info info-horizontal">
-                            <div class="icon icon-primary">
-                                <i class="fas fa-user-circle"></i>
-                            </div>
-                            <div class="description">
-                                <h4 class="info-title">Partage entre les membres</h4>
-                                <p>Partage d'expérience entre les membres  pour améliorer  leur niveaux d'apprentissage. </p>
-                            </div>
-                        </div>
-
-                        <div class="info info-horizontal">
-                            <div class="icon icon-primary">
-                                <i class="fas fa-server"></i>
-                            </div>
-                            <div class="description">
-                                <h4 class="info-title">Promotion de la technologie</h4>
-                                <p>Promotion de la nouvelle Technologie au niveau des jeunes.</p>
-                            </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-left">
+							<span class="icon">
+								<i class="icon-share"></i>
+							</span>
+                        <div class="feature-copy">
+                            <h3>Mizara</h3>
+                            <p>Arakaraka ny hizaranao ny fahaizana sy fahalalana anananao no mampitombo izany bebe kokoa.</p>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
+    </div>
+    <div id="tz-portfolio">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 text-center heading-section animate-box">
+                    <h3>Sarinay</h3>
+                    <p>Ireo sary rehetra nandritra ny fiarahan'ny Techzara.</p>
+                </div>
+            </div>
+            {{ include('@FrontSite/TzHome/gallery.html.twig') }}
+            {{ include('@FrontSite/TzHome/admin.html.twig') }}
+            {{ include('@FrontSite/TzHome/project.html.twig') }}
+            {{ include('@FrontSite/TzHome/blog.html.twig') }}
+        </div>
+    </div>
+
+    {#<div class="container">#}
+        {#<section>#}
+            {#<div class="features-3">#}
+                {#<div class="row">#}
+                    {#<div class="col-md-6">#}
+                        {#<div class="phone-container owl-carousel">#}
+                            {#<img src="{{ asset('front_site_office/images/slide/s1.jpg') }}" />#}
+                            {#<img src="{{ asset('front_site_office/images/slide/s2.jpg') }}" />#}
+                            {#<img src="{{ asset('front_site_office/images/slide/s3.jpg') }}" />#}
+                            {#<img src="{{ asset('front_site_office/images/slide/s6.jpg') }}" />#}
+                            {#<img src="{{ asset('front_site_office/images/slide/s7.jpg') }}" />#}
+                            {#<img src="{{ asset('front_site_office/images/slide/s8.jpg') }}" />#}
+                            {#<img src="{{ asset('front_site_office/images/slide/s9.jpg') }}" />#}
+                            {#<img src="{{ asset('front_site_office/images/slide/s5.jpg') }}" />#}
+                            {#<img src="{{ asset('front_site_office/images/slide/s11.jpg') }}" />#}
+                            {#<img src="{{ asset('front_site_office/images/slide/s13.jpg') }}" />#}
+                            {#<img src="{{ asset('front_site_office/images/slide/s14.jpg') }}" />#}
+                        {#</div>#}
+                        {#<div id="customNav"></div>#}
+                    {#</div>#}
+                    {#<div class="col-md-6">#}
+
+                        {#<div class="info info-horizontal">#}
+                            {#<div class="icon icon-primary">#}
+                                {#<i class="fas fa-laptop"></i>#}
+                            {#</div>#}
+                            {#<div class="description">#}
+                                {#<h4 class="info-title">Mise en niveau</h4>#}
+                                {#<p>Amélioration des capacités  techniques pour les étudiants.</p>#}
+                            {#</div>#}
+                        {#</div>#}
+
+                        {#<div class="info info-horizontal">#}
+                            {#<div class="icon icon-primary">#}
+                                {#<i class="fas fa-user-circle"></i>#}
+                            {#</div>#}
+                            {#<div class="description">#}
+                                {#<h4 class="info-title">Partage entre les membres</h4>#}
+                                {#<p>Partage d'expérience entre les membres  pour améliorer  leur niveaux d'apprentissage. </p>#}
+                            {#</div>#}
+                        {#</div>#}
+
+                        {#<div class="info info-horizontal">#}
+                            {#<div class="icon icon-primary">#}
+                                {#<i class="fas fa-server"></i>#}
+                            {#</div>#}
+                            {#<div class="description">#}
+                                {#<h4 class="info-title">Promotion de la technologie</h4>#}
+                                {#<p>Promotion de la nouvelle Technologie au niveau des jeunes.</p>#}
+                            {#</div>#}
+                        {#</div>#}
+                    {#</div>#}
+                {#</div>#}
+            {#</div>#}
+        {#</section>#}
         {#{% if cms.translate('fr').cmstContent|striptags != '' %}#}
         {#{{ cms.translate('fr').cmstContent|raw }}#}
         {#{% else %}#}
-        <section id="apropos" class="tz-services tz-section-with-title">
-            <div class="about-team team-1">
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <h2 class="title">Nous sommes une association</h2>
-                        <h5 class="description">Techzara est une association des jeunes passionées dans le dommaine de la nouvelle
-                            téchnologie de l'informatique , pour objectif de partager des éxperiences entre les jeunes.
-                        </h5>
-                    </div>
-                </div>
-                <div class="row">
-                    {% for user in users %}
-                        <div class="col-md-3">
-                            <div class="card card-profile card-plain">
-                                <div class="card-avatar">
-                                    <a href="#pablo">
-                                        {% set photo_profil = user.usrPhoto %}
-                                        {% if photo_profil is null %}
-                                            {% set photo_profil = asset('front_site_office/images/techzara/icon.jpg') %}
-                                        {% endif %}
-                                        <img class="img" src="{{ photo_profil }}"  style="width: 131px;height: 131px"  alt="{{ user.username }}"  />
-                                    </a>
-                                </div>
+        {#<section id="apropos" class="tz-services tz-section-with-title">#}
+            {#<div class="about-team team-1">#}
+                {#<div class="row">#}
+                    {#<div class="col-md-12 text-center">#}
+                        {#<h2 class="title">Nous sommes une association</h2>#}
+                        {#<h5 class="description">Techzara est une association des jeunes passionées dans le dommaine de la nouvelle#}
+                            {#téchnologie de l'informatique , pour objectif de partager des éxperiences entre les jeunes.#}
+                        {#</h5>#}
+                    {#</div>#}
+                {#</div>#}
+                {#<div class="row">#}
+                    {#{% for user in users %}#}
+                        {#<div class="col-md-3">#}
+                            {#<div class="card card-profile card-plain">#}
+                                {#<div class="card-avatar">#}
+                                    {#<a href="#pablo">#}
+                                        {#{% set photo_profil = user.usrPhoto %}#}
+                                        {#{% if photo_profil is null %}#}
+                                            {#{% set photo_profil = asset('front_site_office/images/techzara/icon.jpg') %}#}
+                                        {#{% endif %}#}
+                                        {#<img class="img" src="{{ photo_profil }}"  style="width: 131px;height: 131px"  alt="{{ user.username }}"  />#}
+                                    {#</a>#}
+                                {#</div>#}
 
-                                <div class="content">
-                                    <h4 class="card-title">{{ user.usrFullName }}</h4>
-                                    <h6 class="category text-muted">
-                                        {% set tache = user.tache %}
-                                        {% if tache is null %}
-                                            {% set tache = 'Résponsable' %}
-                                        {% endif %}
-                                        {{ tache }}
-                                    </h6>
+                                {#<div class="content">#}
+                                    {#<h4 class="card-title">{{ user.usrFullName }}</h4>#}
+                                    {#<h6 class="category text-muted">#}
+                                        {#{% set tache = user.tache %}#}
+                                        {#{% if tache is null %}#}
+                                            {#{% set tache = 'Résponsable' %}#}
+                                        {#{% endif %}#}
+                                        {#{{ tache }}#}
+                                    {#</h6>#}
 
-                                    <p class="card-description">
-                                        {% set quotes = user.quotes %}
-                                        {% if quotes is null %}
-                                            {% set quotes = 'Résponsable au niveau Techzara' %}
-                                        {% endif %}
-                                        {{ quotes }}
-                                    </p>
-                                    <div class="footer">
-                                        <a href="#pablo" class="btn btn-just-icon btn-simple btn-twitter"><i class="fab fa-twitter-square"></i></a>
-                                        {% set facebook = user.socialCount %}
-                                        {% if facebook is null %}
-                                            {% set facebook = 'https://www.facebook.com' %}
-                                        {% endif %}
-                                        <a href="{{ facebook }}" target="_blank" class="btn btn-just-icon btn-simple btn-facebook"><i class="fab fa-facebook-square"></i></a>
-                                        <a href="#pablo" class="btn btn-just-icon btn-simple btn-google"><i class="fab fa-google-plus-square"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-            <div class="about-services features-2">
-                <div class="row">
-                    <div class="col-md-12 text-center">
-                        <h2 class="title">Notre activité</h2>
-                        <h5 class="description">Notre activité consiste en des ateliers de création d'applications et de partage d'expérience sur les différentes nouveautés du domaine de la Technologie.
-                        </h5>
-                    </div>
-                </div>
-                <div class="row">
-                {% set active_liste = activites %}
-                {% for activite in active_liste  %}
-                    <div class="col-md-4">
-                        <div class="card"   >
-                            <div class="content content-success">
-                                <h4 class="card-title">
-                                    <a href="#pablo">{{ activite.title }}</a>
-                                </h4>
-                                <p class="card-description">
-                                    {{ activite.desc }}
-                                </p>
-                                <div class="footer text-center">
-                                    <a href="#" class="btn btn-white btn-round">Details</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                {% else %}
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="info info-horizontal">
-                            <div class="icon icon-rose">
-                                <i class="fas fa-share"></i>
-                            </div>
-                            <div class="description">
-                                <h4 class="info-title">1. Partage</h4>
-                                <p>Atelier tous les samedis matin de 08 - 12H pour partager des éxperiences entre les membres </p>
-                                <a href="#pablo">Voir plus ...</a>
-                            </div>
-                        </div>
+                                    {#<p class="card-description">#}
+                                        {#{% set quotes = user.quotes %}#}
+                                        {#{% if quotes is null %}#}
+                                            {#{% set quotes = 'Résponsable au niveau Techzara' %}#}
+                                        {#{% endif %}#}
+                                        {#{{ quotes }}#}
+                                    {#</p>#}
+                                    {#<div class="footer">#}
+                                        {#<a href="#pablo" class="btn btn-just-icon btn-simple btn-twitter"><i class="fab fa-twitter-square"></i></a>#}
+                                        {#{% set facebook = user.socialCount %}#}
+                                        {#{% if facebook is null %}#}
+                                            {#{% set facebook = 'https://www.facebook.com' %}#}
+                                        {#{% endif %}#}
+                                        {#<a href="{{ facebook }}" target="_blank" class="btn btn-just-icon btn-simple btn-facebook"><i class="fab fa-facebook-square"></i></a>#}
+                                        {#<a href="#pablo" class="btn btn-just-icon btn-simple btn-google"><i class="fab fa-google-plus-square"></i></a>#}
+                                    {#</div>#}
+                                {#</div>#}
+                            {#</div>#}
+                        {#</div>#}
+                    {#{% endfor %}#}
+                {#</div>#}
+            {#</div>#}
+            {#<div class="about-services features-2">#}
+                {#<div class="row">#}
+                    {#<div class="col-md-12 text-center">#}
+                        {#<h2 class="title">Notre activité</h2>#}
+                        {#<h5 class="description">Notre activité consiste en des ateliers de création d'applications et de partage d'expérience sur les différentes nouveautés du domaine de la Technologie.#}
+                        {#</h5>#}
+                    {#</div>#}
+                {#</div>#}
+                {#<div class="row">#}
+                {#{% set active_liste = activites %}#}
+                {#{% for activite in active_liste  %}#}
+                    {#<div class="col-md-4">#}
+                        {#<div class="card"   >#}
+                            {#<div class="content content-success">#}
+                                {#<h4 class="card-title">#}
+                                    {#<a href="#pablo">{{ activite.title }}</a>#}
+                                {#</h4>#}
+                                {#<p class="card-description">#}
+                                    {#{{ activite.desc }}#}
+                                {#</p>#}
+                                {#<div class="footer text-center">#}
+                                    {#<a href="#" class="btn btn-white btn-round">Details</a>#}
+                                {#</div>#}
+                            {#</div>#}
+                        {#</div>#}
+                    {#</div>#}
+                {#{% else %}#}
+                {#</div>#}
+                {#<div class="row">#}
+                    {#<div class="col-md-4">#}
+                        {#<div class="info info-horizontal">#}
+                            {#<div class="icon icon-rose">#}
+                                {#<i class="fas fa-share"></i>#}
+                            {#</div>#}
+                            {#<div class="description">#}
+                                {#<h4 class="info-title">1. Partage</h4>#}
+                                {#<p>Atelier tous les samedis matin de 08 - 12H pour partager des éxperiences entre les membres </p>#}
+                                {#<a href="#pablo">Voir plus ...</a>#}
+                            {#</div>#}
+                        {#</div>#}
 
-                    </div>
+                    {#</div>#}
 
-                    <div class="col-md-4">
-                        <div class="info info-horizontal">
-                            <div class="icon icon-rose">
-                                <i class="fas fa-object-group"></i>
-                            </div>
-                            <div class="description">
-                                <h4 class="info-title">2. Formation</h4>
-                                <p>Formation de 3 mois pour ameliorer le niveau des étudiants</p>
-                                <a href="#pablo">Voir plus ...</a>
-                            </div>
-                        </div>
-                    </div>
+                    {#<div class="col-md-4">#}
+                        {#<div class="info info-horizontal">#}
+                            {#<div class="icon icon-rose">#}
+                                {#<i class="fas fa-object-group"></i>#}
+                            {#</div>#}
+                            {#<div class="description">#}
+                                {#<h4 class="info-title">2. Formation</h4>#}
+                                {#<p>Formation de 3 mois pour ameliorer le niveau des étudiants</p>#}
+                                {#<a href="#pablo">Voir plus ...</a>#}
+                            {#</div>#}
+                        {#</div>#}
+                    {#</div>#}
 
-                    <div class="col-md-4">
-                        <div class="info info-horizontal">
-                            <div class="icon icon-rose">
-                                <i class="fab fa-app-store-ios"></i>
-                            </div>
-                            <div class="description">
-                                <h4 class="info-title">3. Projets</h4>
-                                <p>TechZara a créé différents projets dans le but d'augmenter notre expérience .
-                                </p>
-                                <a href="#pablo">Voir plus ...</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </section>
-        <section id="article">
-            <div class="text-center">
-                <h1>Actualité</h1>
-            </div>
-            <div class="row">
-                {% for article in articles %}
-                    <div class="col-md-4">
-                        <div class="card card-blog">
-                            <div class="card-image">
-                                <a href="{{ path('article_details', { 'id': article.id }) }}">
-                                    {% set photo_article = article.artphoto %}
-                                        {% if photo_article is null %}
-                                            {% set photo_article = asset('front_site_office/images/techzara/icon.jpg') %}
-                                        {% endif %}
-                                    <img class="img" src="{{ photo_article }}" />
-                                </a>
-                            </div>
+                    {#<div class="col-md-4">#}
+                        {#<div class="info info-horizontal">#}
+                            {#<div class="icon icon-rose">#}
+                                {#<i class="fab fa-app-store-ios"></i>#}
+                            {#</div>#}
+                            {#<div class="description">#}
+                                {#<h4 class="info-title">3. Projets</h4>#}
+                                {#<p>TechZara a créé différents projets dans le but d'augmenter notre expérience .#}
+                                {#</p>#}
+                                {#<a href="#pablo">Voir plus ...</a>#}
+                            {#</div>#}
+                        {#</div>#}
+                    {#</div>#}
+                {#</div>#}
+                {#{% endfor %}#}
+            {#</div>#}
+        {#</section>#}
+        {#<section id="article">#}
+            {#<div class="text-center">#}
+                {#<h1>Actualité</h1>#}
+            {#</div>#}
+            {#<div class="row">#}
+                {#{% for article in articles %}#}
+                    {#<div class="col-md-4">#}
+                        {#<div class="card card-blog">#}
+                            {#<div class="card-image">#}
+                                {#<a href="{{ path('article_details', { 'id': article.id }) }}">#}
+                                    {#{% set photo_article = article.artphoto %}#}
+                                        {#{% if photo_article is null %}#}
+                                            {#{% set photo_article = asset('front_site_office/images/techzara/icon.jpg') %}#}
+                                        {#{% endif %}#}
+                                    {#<img class="img" src="{{ photo_article }}" />#}
+                                {#</a>#}
+                            {#</div>#}
 
-                            <div class="content">
-                                <h4 class="card-title">
-                                    <a href="{{ path('article_details', { 'id': article.id }) }}">{{ article.title }}</a>
-                                </h4>
-                                <a href="{{ path('article_details', { 'id': article.id }) }}" class="card-description">
-                                    {{ article.content|length > 50 ? article.content|slice(0, 50) ~ ' ... ' : article.content }}
-                                </a>
-                                <div class="footer">
-                                    <div class="author">
-                                        <a href="#">
-                                            <span>
-                                                {% set author = article.author %}
-                                                    {% if author is null %}
-                                                        {% set author = 'Techzara Admin'  %}
-                                                    {% endif %}
-                                                {{  author }}
-                                            </span>
-                                        </a>
-                                    </div>
-                                    <div class="stats">
-                                        {{ article.artDate|date('Y-m-d H:i:s') }}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                {% endfor %}
-            </div>
-        </section>
-        <section>
-            <div id="event" class="tab-content">
-                <div class="tab-pane active work" id="work">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h1 class="title text-center">Prochaines activité</h1>
-                            <div class="row collections">
-                                {% for programme in programmes %}
-                                    <div class="col-md-6">
-                                        {% set programme_image = programme.tzProgrammePhoto %}
-                                        {% if programme_image is null %}
-                                            {% set programme_image = 'front_site_office/images/techzara/card1.jpg'  %}
-                                        {% endif %}
-                                        <div class="card card-background" style="background-image: url('{{ asset(programme_image) }}')">
-                                            <a href="#pablo"></a>
-                                            <div class="content">
-                                                <label class="label label-primary">{{ programme.tzProgrammeIntervenants }}</label>
-                                                <a href="#pablo">
-                                                    <h2>{{  programme.tzProgrammeDateDebut|date('d/m/Y') }} <br>
-                                                        {{  programme.tzProgrammeDateDebut|date('H') }} à {{  programme.tzProgrammeDateFin|date('H') }}</h2>
-                                                    <h2 class="card-title">{{ programme.tzProgrammeIntervenants }}</h2>
-                                                    <p>{{ programme.tzProgrammeDescription|length > 50 ? programme.tzProgrammeDescription|slice(0, 50) ~ ' ... ' : programme.tzProgrammeDescription }}</p>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                {% endfor %}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </div>
+                            {#<div class="content">#}
+                                {#<h4 class="card-title">#}
+                                    {#<a href="{{ path('article_details', { 'id': article.id }) }}">{{ article.title }}</a>#}
+                                {#</h4>#}
+                                {#<a href="{{ path('article_details', { 'id': article.id }) }}" class="card-description">#}
+                                    {#{{ article.content|length > 50 ? article.content|slice(0, 50) ~ ' ... ' : article.content }}#}
+                                {#</a>#}
+                                {#<div class="footer">#}
+                                    {#<div class="author">#}
+                                        {#<a href="#">#}
+                                            {#<span>#}
+                                                {#{% set author = article.author %}#}
+                                                    {#{% if author is null %}#}
+                                                        {#{% set author = 'Techzara Admin'  %}#}
+                                                    {#{% endif %}#}
+                                                {#{{  author }}#}
+                                            {#</span>#}
+                                        {#</a>#}
+                                    {#</div>#}
+                                    {#<div class="stats">#}
+                                        {#{{ article.artDate|date('Y-m-d H:i:s') }}#}
+                                    {#</div>#}
+                                {#</div>#}
+                            {#</div>#}
+                        {#</div>#}
+                    {#</div>#}
+                {#{% endfor %}#}
+            {#</div>#}
+        {#</section>#}
+        {#<section>#}
+            {#<div id="event" class="tab-content">#}
+                {#<div class="tab-pane active work" id="work">#}
+                    {#<div class="row">#}
+                        {#<div class="col-md-12">#}
+                            {#<h1 class="title text-center">Prochaines activité</h1>#}
+                            {#<div class="row collections">#}
+                                {#{% for programme in programmes %}#}
+                                    {#<div class="col-md-6">#}
+                                        {#{% set programme_image = programme.tzProgrammePhoto %}#}
+                                        {#{% if programme_image is null %}#}
+                                            {#{% set programme_image = 'front_site_office/images/techzara/card1.jpg'  %}#}
+                                        {#{% endif %}#}
+                                        {#<div class="card card-background" style="background-image: url('{{ asset(programme_image) }}')">#}
+                                            {#<a href="#pablo"></a>#}
+                                            {#<div class="content">#}
+                                                {#<label class="label label-primary">{{ programme.tzProgrammeIntervenants }}</label>#}
+                                                {#<a href="#pablo">#}
+                                                    {#<h2>{{  programme.tzProgrammeDateDebut|date('d/m/Y') }} <br>#}
+                                                        {#{{  programme.tzProgrammeDateDebut|date('H') }} à {{  programme.tzProgrammeDateFin|date('H') }}</h2>#}
+                                                    {#<h2 class="card-title">{{ programme.tzProgrammeIntervenants }}</h2>#}
+                                                    {#<p>{{ programme.tzProgrammeDescription|length > 50 ? programme.tzProgrammeDescription|slice(0, 50) ~ ' ... ' : programme.tzProgrammeDescription }}</p>#}
+                                                {#</a>#}
+                                            {#</div>#}
+                                        {#</div>#}
+                                    {#</div>#}
+                                {#{% endfor %}#}
+                            {#</div>#}
+                        {#</div>#}
+                    {#</div>#}
+                {#</div>#}
+            {#</div>#}
+        {#</section>#}
+    {#</div>#}
 
 {% endblock %}
 
