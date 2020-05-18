@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * @author <julienrajerison5@gmail.com>.
+ */
 namespace App\Entity;
 
 use App\Repository\ChallengeRepository;
@@ -44,10 +46,26 @@ class Challenge
      */
     private $challengePerCandidat;
 
+    /**
+     * @ORM\Column(type="boolean")
+     */
+    private $isActif;
+
+    /**
+     * @ORM\Column(type="string", length=200)
+     */
+    private $name;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Participants::class, mappedBy="challenge", cascade={"persist"})
+     */
+    private $participants;
+
     public function __construct()
     {
         $this->subjects = new ArrayCollection();
         $this->challengePerCandidat = new ArrayCollection();
+        $this->participants = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -147,6 +165,61 @@ class Challenge
             // set the owning side to null (unless already changed)
             if ($challengePerCandidat->getChallenge() === $this) {
                 $challengePerCandidat->setChallenge(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function getIsActif(): ?bool
+    {
+        return $this->isActif;
+    }
+
+    public function setIsActif(bool $isActif): self
+    {
+        $this->isActif = $isActif;
+
+        return $this;
+    }
+
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+
+    public function setName(string $name): self
+    {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Participants[]
+     */
+    public function getParticipants(): Collection
+    {
+        return $this->participants;
+    }
+
+    public function addParticipant(Participants $participant): self
+    {
+        if (!$this->participants->contains($participant)) {
+            $this->participants[] = $participant;
+            $participant->setChallenge($this);
+        }
+
+        return $this;
+    }
+
+    public function removeParticipant(Participants $participant): self
+    {
+        if ($this->participants->contains($participant)) {
+            $this->participants->removeElement($participant);
+            // set the owning side to null (unless already changed)
+            if ($participant->getChallenge() === $this) {
+                $participant->setChallenge(null);
             }
         }
 

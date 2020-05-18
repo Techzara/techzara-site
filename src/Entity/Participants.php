@@ -23,7 +23,7 @@ class Participants
     private $pseudo;
 
     /**
-     * @ORM\Column(type="string", length=10)
+     * @ORM\Column(type="string", length=10, nullable=true)
      */
     private $nombre;
 
@@ -31,6 +31,16 @@ class Participants
      * @ORM\Column(type="boolean", nullable=true)
      */
     private $isActif;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Challenge::class, inversedBy="participants")
+     */
+    private $challenge;
+
+    /**
+     * @ORM\Column(type="string", length=100)
+     */
+    private $choice;
 
     public function getId(): ?int
     {
@@ -49,12 +59,20 @@ class Participants
         return $this;
     }
 
+    /**
+     * @return string|null
+     */
     public function getNombre(): ?string
     {
         return $this->nombre;
     }
 
-    public function setNombre(string $nombre): self
+    /**
+     * @param string|null $nombre
+     *
+     * @return $this
+     */
+    public function setNombre(?string $nombre): self
     {
         $this->nombre = $nombre;
 
@@ -69,6 +87,30 @@ class Participants
     public function setIsActif(?bool $isActif): self
     {
         $this->isActif = $isActif;
+
+        return $this;
+    }
+
+    public function getChallenge(): ?Challenge
+    {
+        return $this->challenge;
+    }
+
+    public function setChallenge(?Challenge $challenge): self
+    {
+        $this->challenge = $challenge;
+
+        return $this;
+    }
+
+    public function getChoice(): ?string
+    {
+        return $this->choice;
+    }
+
+    public function setChoice(string $choice): self
+    {
+        $this->choice = $choice;
 
         return $this;
     }
