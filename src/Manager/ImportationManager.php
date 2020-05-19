@@ -63,7 +63,7 @@ class ImportationManager
                 ++$i;
             };
             $challenge->setIsActif(true);
-            $challenge->setName($name ?? 'Challenge');
+            $challenge->setName($name ?? 'Challenge-1');
 
             $this->em->persist($challenge);
             $this->em->flush();

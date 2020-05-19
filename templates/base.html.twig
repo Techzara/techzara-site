@@ -12,6 +12,7 @@
     {% block stylesheets %}{% endblock %}
 </head>
 <body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+{% include 'menu/_top_menu.html.twig' %}
 <div id="overlayer"></div>
 <div class="loader">
     <div class="spinner-border text-primary" role="status">
@@ -27,7 +28,6 @@
         </div>
         <div class="site-mobile-menu-body"></div>
     </div>
-    {% include 'menu/_top_menu.html.twig' %}
     {% block body %}{% endblock %}
 </div>
 {% block footer %}{% endblock %}

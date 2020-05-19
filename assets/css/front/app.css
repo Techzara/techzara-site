@@ -9,7 +9,3 @@
 @import "../../theme/fonts/flaticon/font/flaticon.css";
 @import "../../theme/css/aos.css";
 @import "../../theme/css/style.css";
-
-body {
-    background-color: lightgray;
-}

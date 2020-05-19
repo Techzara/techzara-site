@@ -6,8 +6,10 @@
 namespace App\Controller\Front;
 
 use App\Controller\AbstractBaseController;
+use App\Entity\Challenge;
 use App\Repository\ChallengeRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use Symfony\Component\Security\Csrf\TokenGenerator\TokenGeneratorInterface;
@@ -18,9 +20,9 @@ use Symfony\Component\Security\Csrf\TokenGenerator\TokenGeneratorInterface;
 class HomeController extends AbstractBaseController
 {
     /**
-     * @var
+     * @var ChallengeRepository
      */
-    private $participants;
+    private $challengeRepository;
 
     /**
      * HomeController constructor.
@@ -28,11 +30,12 @@ class HomeController extends AbstractBaseController
      * @param EntityManagerInterface       $entityManager
      * @param TokenGeneratorInterface      $tokenGenerator
      * @param UserPasswordEncoderInterface $userPasswordEncoder
-     * @param ChallengeRepository          $participantsRepository
+     * @param ChallengeRepository          $challengeRepository
      */
-    public function __construct(EntityManagerInterface $entityManager, TokenGeneratorInterface $tokenGenerator, UserPasswordEncoderInterface $userPasswordEncoder, ChallengeRepository $participantsRepository)
+    public function __construct(EntityManagerInterface $entityManager, TokenGeneratorInterface $tokenGenerator, UserPasswordEncoderInterface $userPasswordEncoder, ChallengeRepository $challengeRepository)
     {
         parent::__construct($entityManager, $tokenGenerator, $userPasswordEncoder);
+        $this->challengeRepository = $challengeRepository;
     }
 
     /**
@@ -43,8 +46,31 @@ class HomeController extends AbstractBaseController
         return $this->render('front/_front_index.html.twig');
     }
 
-    public function findAllParticipants()
+    /**
+     * @Route("/wcc", name="wcc_accueil", methods={"POST","GET"})
+     */
+    public function allChallenge()
     {
+        $challenges = $this->challengeRepository->findAll();
 
+        return $this->render('front/contest/_wcc_section.html.twig', ['challenges' => $challenges]);
+    }
+
+    /**
+     * @Route("/wcc/{challenge?}", name="wcc_participants", methods={"POST","GET"})
+     *
+     * @param Challenge $challenge
+     *
+     * @return Response
+     */
+    public function participantsByChallenge(Challenge $challenge)
+    {
+        return $this->render(
+            'front/contest/_participants.html.twig',
+            [
+                'participants' => $challenge->getParticipants(),
+                'challenge' => $challenge,
+            ]
+        );
     }
 }

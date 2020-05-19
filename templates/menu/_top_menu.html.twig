@@ -2,7 +2,7 @@
     <div class="container-fluid">
         <div class="d-flex align-items-center">
             <div class="site-logo">
-                <a href="#" class="text-uppercase">TECHZARA</a>
+                <a href="{{path('app_front_home_homepage') }}" class="text-uppercase">TECHZARA</a>
             </div>
             <div>
                 <nav class="site-navigation position-relative text-right" role="navigation">
@@ -12,6 +12,7 @@
             <div class="ml-auto">
                 <nav class="site-navigation position-relative text-right" role="navigation">
                     <ul class="site-menu main-menu site-menu-dark js-clone-nav mr-auto d-none d-xl-block">
+                        <li><a href="{{ path('wcc_accueil') }}" class="nav-link">WCC</a></li>
                         <li><a href="#contact-section" class="nav-link">CONTACT</a></li>
                     </ul>
                 </nav>
