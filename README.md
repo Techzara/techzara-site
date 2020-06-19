@@ -1,3 +1,3 @@
-# techzara-site
+# Techzara website
 
-Techzara website
+
